@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="WAD_Assignment.admin.admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="master_admin.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <div class="master_sidebar">
+                <div class="master_inner_sidebar">
+                    <div class="master_sidebar_title"> Tarfly Admin</div>
+                    <div class="hr_div">
+                        <hr class="master_hr"/>
+                    </div>
+                    <div class="master_sidebar_content">
+                        <asp:HyperLink ID="navUser" runat="server" NavigateUrl="~/admin/admin_manage_user.aspx" class="fa master_button">&#xf007; <p> &nbsp;&nbsp;Manage User</p></asp:HyperLink><br />
+                        <asp:HyperLink ID="navFlight" runat="server" NavigateUrl="~/admin/admin_manage_flight.aspx" class="fa master_button">&#xf072; <p> &nbsp;&nbsp;Manage Flight</p></asp:HyperLink><br />
+                        <asp:HyperLink ID="navTicket" runat="server" NavigateUrl="~/admin/admin_manage_ticket.aspx" class="fa master_button">&#xf145; <p> &nbsp;&nbsp;Manage Ticket</p></asp:HyperLink>
+                        <asp:HyperLink ID="navFood" runat="server" NavigateUrl="~/admin/admin_manage_food.aspx" class="fa master_button">&#xf0f5; <p> &nbsp;&nbsp;Manage Food</p></asp:HyperLink>
+                        <asp:HyperLink ID="navPlane" runat="server" NavigateUrl="~/admin/admin_manage_plane.aspx" class="fa master_button">&#xf072; <p> &nbsp;&nbsp;Manage Plane</p></asp:HyperLink>
+                    </div>
+                </div>
+            </div>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
