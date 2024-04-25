@@ -1,0 +1,121 @@
+﻿html {
+    background-image: url("Image/plane.jpg");
+    background-size: cover;
+}
+
+#main {
+    margin: 160px auto 0px auto;
+}
+
+.checkin {
+    margin: 0px auto 30px auto;
+    line-height: 2.5;
+    width: 600px;
+    padding: 50px;
+    font-size: 14pt;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #888888;
+    background: antiquewhite;
+    opacity: 0.8;
+}
+
+
+#txtFlightNo {
+    height: 25px;
+    width: 230px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: 15pt;
+}
+
+#txtFName {
+    height: 25px;
+    width: 230px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    background-color: transparent;
+    font-size: 15pt;
+}
+
+#txtLName {
+    height: 25px;
+    width: 230px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: 15pt;
+}
+
+#DropDownList1 {
+    height: 25px;
+    width: 230px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: 12pt;
+    text-align: center;
+}
+
+#txtIdentification {
+    height: 25px;
+    width: 230px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    background-color: transparent;
+    font-size: 15pt;
+}
+
+#fileIdentification {
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Arial;
+    border: 1px solid black;
+    background: transparent;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    cursor: pointer;
+    -webkit-border-radius: 6px;
+    width: 230px;
+}
+
+#filePhoto {
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    vertical-align: middle;
+    font-family: Arial;
+    border: 1px solid black;
+    background: transparent;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    cursor: pointer;
+    -webkit-border-radius: 6px;
+    width: 230px;
+}
+
+#btncheckin {
+    background-color: #FFBB40;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    width: 350px;
+    margin: auto;
+}
+
+    #btncheckin:hover {
+        opacity: 0.8;
+        color: black;
+    }

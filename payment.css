@@ -1,0 +1,203 @@
+﻿html {
+    background-image: url("Image/plane.jpg");
+    background-size: cover;
+}
+
+.Main {
+    display: flex;
+    margin: 160px 100px 0px 110px;
+    line-height: 1.5;
+    border: 1px solid antiquewhite;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.title {
+    width: 100%;
+}
+
+.Checkout {
+    flex: 50%;
+    /*margin-left:100px;*/
+    background-color: antiquewhite;
+    opacity: 0.8;
+    padding: 50px;
+    /*padding: 5px;*/
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+
+.locationTime {
+    width: 100%;
+    text-align: center;
+}
+
+    .locationTime td {
+        padding: 10px;
+    }
+
+    .locationTime img {
+        width: 70px;
+    }
+
+.paymentType {
+    margin-top: 20px;
+}
+
+.radiobtnPayment {
+    width: 50%;
+    font-size: 15pt;
+    line-height: 2;
+    margin-top: 20px;
+}
+
+.txtCheckbox {
+    margin-top: 20px;
+}
+
+
+div#summary {
+    border-radius: 5px;
+    border: rgb(217, 219, 224) solid 1px;
+    background-color: white;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5%;
+    width: 70%;
+    font-size: 15px;
+}
+
+    div#summary > p {
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: rgb(217, 219, 224) 1px solid;
+        width: 100%;
+        display: flex;
+        padding-bottom: 3%;
+        margin-bottom: 5%;
+    }
+
+    div#summary > div > div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3%;
+        align-items: center;
+    }
+
+        div#summary > div > div > span {
+            font-size: 18px;
+        }
+
+div#totalAmount {
+    display: flex;
+    justify-content: space-between;
+    border-top: rgb(217, 219, 224) 1px solid;
+    margin-top: 3%;
+    padding-top: 7%;
+    align-items: center;
+}
+
+    div#totalAmount > span {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+div#right > #continueCheckout {
+    border: none;
+    background-color: #FFBB40;
+    outline: none;
+    border-radius: 100px;
+    width: 100%;
+    font-size: 23px;
+    padding: 3% 0;
+}
+
+.paymentProceed {
+    margin-left: 120px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lnkProceed {
+    background-color: #FFBB40;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+}
+
+    .lnkProceed:hover {
+        opacity: 0.8;
+        color: black;
+    }
+
+.lnkVoucher {
+    text-decoration: none;
+}
+
+    .lnkVoucher:hover {
+        color: black;
+    }
+
+#txtVoucher {
+    height: 25px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+}
+
+#lblError {
+    color: red;
+}
+
+
+
+
+@media only screen and (max-width: 1280px) {
+    .Main {
+        display: flex;
+    }
+
+    .title {
+        width: 600px;
+    }
+
+    .Checkout {
+        flex: 50%;
+        /*padding: 5px;*/
+    }
+
+    .locationTime {
+        width: 100%;
+    }
+
+    .radiobtnPayment {
+        width: 100%;
+        font-size: 15pt;
+        line-height: 2;
+        margin-top: 20px;
+    }
+
+    .paymentDetails {
+        width: 320px;
+    }
+}
+
+@media only screen and (max-width: 1510px) {
+
+    .paymentDetails {
+        width: 320px;
+    }
+
+    .paymentProceed {
+        width: 320px;
+    }
+}

@@ -1,0 +1,51 @@
+﻿body {
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.about{
+    width: 100%;
+    padding: 18px 0px;
+    background-color: #ffffff;
+}
+
+    .about img {
+        height: 420px;
+        width: 540px;
+        margin: 10px 17px;
+    }
+
+.about-text{
+    width: 750px
+}
+
+.main{
+    width: 1330px;
+    max-width: 95%;
+    margin: 8px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about h1{
+    color: black;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 0px 0px 0px 900px;
+}
+
+
+.about-text p{
+    color: #808080ff;
+    letter-spacing: 2px;
+    line-height: 8px;
+    font-size: 20px;
+    margin-bottom: 45px;
+}

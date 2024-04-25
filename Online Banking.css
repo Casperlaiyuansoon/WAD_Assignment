@@ -1,0 +1,59 @@
+﻿html {
+    background-image: url("Image/plane.jpg");
+    background-size: cover;
+}
+
+#main {
+    margin: 160px auto 0px auto;
+}
+
+.Login {
+    margin: 0px auto 30px auto;
+    line-height: 2.5;
+    width: 400px;
+    padding: 35px;
+    font-size: 14pt;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15pt;
+    background: antiquewhite;
+    opacity: 0.8;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+
+#txtLoginID {
+    height: 40px;
+    width: 230px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+#txtPassword {
+    height: 40px;
+    width: 230px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+#lnkConfirm, #lnkCancel {
+    background-color: #FFBB40;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 10px;
+    width: 230px;
+    margin: 10px auto 10px auto;
+}
+
+    #lnkConfirm:hover, #lnkCancel:hover {
+        color: black;
+    }

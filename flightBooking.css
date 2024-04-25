@@ -1,0 +1,314 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+form#form1 {
+    display: flex;
+    justify-content: center;
+    font-family: Arial;
+}
+
+    form#form1 > div {
+        margin-top: 3%;
+    }
+
+div#left {
+    width: 50%;
+    margin-bottom: 10%;
+}
+
+    div#left > h3:first-of-type {
+        font-size: 18px;
+        margin-bottom: 3%;
+    }
+
+    div#left > div {
+        border-radius: 5px;
+        border: rgb(217, 219, 224) solid 1px;
+        background-color: white;
+        margin-bottom: 5%;
+        padding: 3%;
+    }
+
+
+div#right {
+    width: 25%;
+    margin-left: 2%;
+    position: sticky;
+    top: 4%;
+    height: fit-content;
+}
+
+
+/*      BOOKING DETAILS     */
+
+div#booking_details {
+    display: flex;
+}
+
+div#depart {
+    margin-right: 10%;
+}
+
+div#return {
+    visibility: visible;
+}
+
+div#depart_date img, div#return_date img {
+    width: 19px;
+    margin-right: 5%;
+}
+
+div#return_date img {
+    transform: scaleX(-1);
+}
+
+div#depart_date, div#return_date {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+    div#depart_date > span > p, div#return_date > span > p {
+        margin-bottom: 2%;
+    }
+
+    div#depart_date > span > span, div#return_date > span > span {
+        font-size: 19px;
+    }
+
+div#depart_route img, div#return_route img {
+    width: 17px;
+    margin: 0 1%;
+}
+
+
+/*      GUEST DETAILS       */
+
+div.guest > span:first-of-type {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: rgb(217, 219, 224) 1px solid;
+    width: 100%;
+    display: flex;
+    padding-bottom: 1%;
+    margin-bottom: 3%;
+}
+
+div.info1, div.info2 {
+    display: flex;
+}
+
+div.inputC {
+    border: rgb(217, 219, 224) 1px solid;
+    padding: 1% 2%;
+    border-radius: 3px;
+    margin-bottom: 3%;
+    margin-right: 1%;
+}
+
+    div.inputC p {
+        font-size: 15px;
+        color: rgb(217, 219, 224);
+        margin-bottom: 2%;
+    }
+
+    div.inputC input {
+        outline: none;
+        background: none;
+        border: none;
+        font-size: 18px;
+        padding: 1% 0;
+        width: 100%;
+    }
+
+div.first_name, div.last_name {
+    width: 35%;
+}
+
+div.dob, div.expiryDate {
+    width: 20%;
+}
+
+div.passport {
+    width: 25%;
+}
+
+div.gender {
+    display: flex;
+}
+
+    div.gender > input {
+        border: rgb(217, 219, 224) 1px solid;
+        outline: none;
+        background-color: white;
+        font-size: 18px;
+        width: 15%;
+        padding: 2% 0;
+        cursor: pointer;
+    }
+
+        div.gender > input.active {
+            background-color: lawngreen;
+        }
+
+        div.gender > input:not(.active):hover {
+            background-color: rgb(217, 219, 224);
+        }
+
+
+/*      CONTACT_DETAILS     */
+
+div#contact_details > p {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: rgb(217, 219, 224) 1px solid;
+    width: 100%;
+    display: flex;
+    padding-bottom: 1%;
+    margin-bottom: 3%;
+}
+
+div#contact_details > span {
+    font-size: 17px;
+    margin-left: 1%;
+}
+
+div#contact_details > div {
+    display: flex;
+    margin-top: 2%;
+}
+
+div#contact_details .inputC {
+    margin-bottom: 0;
+    width: 40%;
+}
+
+
+/*      SUMMARY     */
+
+div#summary {
+    border-radius: 5px;
+    border: rgb(217, 219, 224) solid 1px;
+    background-color: white;
+    margin-bottom: 5%;
+    padding: 5%;
+}
+
+    div#summary > p {
+        font-size: 18px;
+        font-weight: bold;
+        border-bottom: rgb(217, 219, 224) 1px solid;
+        width: 100%;
+        display: flex;
+        padding-bottom: 3%;
+        margin-bottom: 5%;
+    }
+
+    div#summary > div > div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 3%;
+        align-items: center;
+    }
+
+        div#summary > div > div > span {
+            font-size: 18px;
+        }
+
+div#totalAmount {
+    display: flex;
+    justify-content: space-between;
+    border-top: rgb(217, 219, 224) 1px solid;
+    margin-top: 3%;
+    padding-top: 7%;
+    align-items: center;
+}
+
+    div#totalAmount > span {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+div#right > #continueCheckout {
+    border: none;
+    background-color: #FFBB40;
+    outline: none;
+    border-radius: 100px;
+    width: 100%;
+    font-size: 23px;
+    padding: 3% 0;
+}
+
+
+/*      ADDON       */
+
+div#addon > p {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: rgb(217, 219, 224) 1px solid;
+    width: 100%;
+    display: flex;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+}
+
+div.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    div.product > div {
+        display: flex;
+        align-items: center;
+    }
+
+        div.product > div > img {
+            width: 20vh;
+            border-radius: 10px;
+        }
+
+div.qty input[type="button"] {
+    background: rgb(217, 219, 224);
+    outline: none;
+    border: none;
+    font-size: 2.5vh;
+    width: 2.5vh;
+    height: 2.5vh;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+div.qty p.number {
+    margin: 0 20px;
+    font-size: 2vh;
+    font-family: Arial;
+}
+
+div.productDetails > span {
+    font-size: 20px;
+}
+
+div.product > div:first-of-type {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.productDetails {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    div.productDetails span:first-of-type {
+        width: 65%;
+    }
+
+    div.productDetails span:last-of-type {
+        width: 25%;
+        text-align: end;
+    }
