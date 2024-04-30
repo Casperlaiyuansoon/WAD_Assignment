@@ -24,6 +24,24 @@ namespace tarfly
         protected global::System.Web.UI.HtmlControls.HtmlForm register_form;
 
         /// <summary>
+        /// name_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator name_required;
+
+        /// <summary>
+        /// name_regex_validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator name_regex_validate;
+
+        /// <summary>
         /// register_name control.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,24 @@ namespace tarfly
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox register_name;
+
+        /// <summary>
+        /// email_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator email_required;
+
+        /// <summary>
+        /// email_regex_validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator email_regex_validate;
 
         /// <summary>
         /// register_email control.
@@ -42,6 +78,24 @@ namespace tarfly
         protected global::System.Web.UI.WebControls.TextBox register_email;
 
         /// <summary>
+        /// phone_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator phone_required;
+
+        /// <summary>
+        /// phone_regex_validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator phone_regex_validate;
+
+        /// <summary>
         /// register_phone control.
         /// </summary>
         /// <remarks>
@@ -49,6 +103,24 @@ namespace tarfly
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox register_phone;
+
+        /// <summary>
+        /// password_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator password_required;
+
+        /// <summary>
+        /// password_regex_validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator password_regex_validate;
 
         /// <summary>
         /// register_password control.
@@ -60,6 +132,24 @@ namespace tarfly
         protected global::System.Web.UI.WebControls.TextBox register_password;
 
         /// <summary>
+        /// password_c_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator password_c_required;
+
+        /// <summary>
+        /// password_compare control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator password_compare;
+
+        /// <summary>
         /// register_c_password control.
         /// </summary>
         /// <remarks>
@@ -69,49 +159,94 @@ namespace tarfly
         protected global::System.Web.UI.WebControls.TextBox register_c_password;
 
         /// <summary>
-        /// address1 control.
+        /// address_one_required control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator address_one_required;
 
         /// <summary>
-        /// address2 control.
+        /// register_address1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox address2;
+        protected global::System.Web.UI.WebControls.TextBox register_address1;
 
         /// <summary>
-        /// city control.
+        /// address_two_required control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox city;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator address_two_required;
 
         /// <summary>
-        /// state control.
+        /// register_address2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox state;
+        protected global::System.Web.UI.WebControls.TextBox register_address2;
 
         /// <summary>
-        /// country control.
+        /// city_required control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox country;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator city_required;
+
+        /// <summary>
+        /// register_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_city;
+
+        /// <summary>
+        /// state_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator state_required;
+
+        /// <summary>
+        /// register_state control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_state;
+
+        /// <summary>
+        /// country_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator country_required;
+
+        /// <summary>
+        /// register_country control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_country;
 
         /// <summary>
         /// register_submit control.
