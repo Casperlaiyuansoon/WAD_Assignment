@@ -33,16 +33,17 @@ namespace tarfly
                 string state = register_state.Text;
                 string country = register_country.Text;
 
-                // Check if the user already exists
                 int count = 0;
-                string userExistenceCheckQuery = "SELECT COUNT(*) FROM Customer WHERE email = @email";
+                Session["registerStatus"] = false;
+
+                string userExistenceCheckQuery = "SELECT COUNT(*) FROM Customer WHERE email = @email"; // Check if the user already exist
 
                 using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConMember"].ConnectionString))
                 using (SqlCommand command = new SqlCommand(userExistenceCheckQuery, connection))
                 {
-                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@email", email); // Setup parameter
                     connection.Open();
-                    count = (int)command.ExecuteScalar();
+                    count = (int)command.ExecuteScalar(); // Store the total record fetched from database into the "count"
                 }
 
                 if (count > 0) // If user already exists
@@ -51,14 +52,13 @@ namespace tarfly
                 }
                 else // If user does not exist
                 {
-                    // Insert the new user
                     string newUserInsertQuery = "INSERT INTO Customer (name, email, password, phone_number, address_line_1, address_line_2, city, state, country) " +
-                        "VALUES (@name, @email, @password, @phone_number, @address_line_1, @address_line_2, @city, @state, @country)";
+                        "VALUES (@name, @email, @password, @phone_number, @address_line_1, @address_line_2, @city, @state, @country)"; // Insert the new user
 
                     using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConMember"].ConnectionString))
                     using (SqlCommand command = new SqlCommand(newUserInsertQuery, connection))
                     {
-                        command.Parameters.AddWithValue("@name", name);
+                        command.Parameters.AddWithValue("@name", name); // Setup parameter
                         command.Parameters.AddWithValue("@email", email);
                         command.Parameters.AddWithValue("@password", password);
                         command.Parameters.AddWithValue("@phone_number", phone);
@@ -72,8 +72,9 @@ namespace tarfly
                         command.ExecuteNonQuery();
                     }
 
-                    // Redirect to login page or display success message
-                    Response.Redirect("login.aspx");
+                    // Display success message and redirect to login page
+                    Session["registerStatus"] = true;
+                    Response.Redirect("register.aspx");
                 }
             }
         }
