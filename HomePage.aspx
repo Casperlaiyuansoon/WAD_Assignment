@@ -22,10 +22,10 @@
 
     <section class="section__container booking__container">
         <div class="booking__nav">
-            <asp:Button ID="btneEconomy" CssClass="booking__nav" runat="server" text="Economy" />
-            <asp:Button ID="btnPremiumEconomy" runat="server" text="Premium Economy" />
-            <asp:Button ID="btnBusinessClass" runat="server" text="Business Class" />
-            <asp:Button ID="btnFirstClass" runat="server" text="First Class" />
+            <span>Economy</span>
+            <span>Premium Economy</span>
+            <span>Business Class</span>
+            <span>First Class</span>
         </div>
 
          <%--Destination Location--%>
