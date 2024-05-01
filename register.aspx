@@ -10,10 +10,23 @@
     </head>
 
     <body>
+        <%
+            if (Session["registerStatus"] != null && (bool)Session["registerStatus"]) // If this session contain value
+            {
+                %>
+                    <script>
+                        alert("Account Registered Successfully");
+                        <%
+                            Session["registerStatus"] = null;
+                        %>
+                        window.location.href = "login.aspx";
+                    </script>
+                <%
+            }    
+        %>
 
         <div class="container">
             <div class="inner-container">
-
 
                 <!-- REGISTER FORM -->
                 <form id="register_form" runat="server">
@@ -163,7 +176,7 @@
 
                         <br />
                         <div class="inputField">
-                            <asp:Button ID="register_submit" runat="server" Text="Register"/>
+                            <asp:Button ID="register_submit" runat="server" Text="Register" OnClick="register_submit_Click" />
                         </div>
 
                     </div>

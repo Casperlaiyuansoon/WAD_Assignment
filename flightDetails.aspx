@@ -95,7 +95,7 @@
                         <img src="../icon/pin.png" alt="flyfrom" />
                         <div>
                             <p>Flying from</p>
-                            <asp:TextBox CssClass="textBox" ID="flyFrom" runat="server" placeholder="Flying from" />
+                            <asp:TextBox CssClass="textBox" ID="txtFlightFrom" runat="server" placeholder="Flying from" />
                         </div>
                     </div>
 
@@ -104,7 +104,7 @@
                         <img src="../icon/pin.png" alt="flyto" />
                         <div>
                             <p>Going to</p>
-                            <asp:TextBox CssClass="textBox" ID="flyTo" runat="server" placeholder="Flying to" />
+                            <asp:TextBox CssClass="textBox" ID="txtFlightTo" runat="server" placeholder="Flying to" />
                         </div>
                     </div>
 
@@ -117,10 +117,10 @@
                                 <p id="returnLabel">Return</p>
                             </div>
                             <div>
-                                <asp:TextBox CssClass="textBox" ID="depart" runat="server" TextMode="Date" />
+                                <asp:TextBox CssClass="textBox" ID="txtDepart" runat="server" TextMode="Date" />
 
                                 <!-- return date : activate when trip type = round-trip -->
-                                <asp:TextBox CssClass="textBox" ID="return" runat="server" TextMode="Date" />
+                                <asp:TextBox CssClass="textBox" ID="txtReturn" runat="server" TextMode="Date" />
                             </div>
                         </div>
                     </div>
