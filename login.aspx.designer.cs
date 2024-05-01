@@ -24,6 +24,24 @@ namespace tarfly
         protected global::System.Web.UI.HtmlControls.HtmlForm login_form;
 
         /// <summary>
+        /// email_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator email_required;
+
+        /// <summary>
+        /// email_regex_validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator email_regex_validate;
+
+        /// <summary>
         /// login_email control.
         /// </summary>
         /// <remarks>
@@ -33,6 +51,15 @@ namespace tarfly
         protected global::System.Web.UI.WebControls.TextBox login_email;
 
         /// <summary>
+        /// password_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator password_required;
+
+        /// <summary>
         /// login_password control.
         /// </summary>
         /// <remarks>
@@ -40,6 +67,15 @@ namespace tarfly
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox login_password;
+
+        /// <summary>
+        /// rememberMe control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox rememberMe;
 
         /// <summary>
         /// login_submit control.
