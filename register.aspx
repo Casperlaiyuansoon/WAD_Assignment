@@ -14,7 +14,6 @@
         <div class="container">
             <div class="inner-container">
 
-
                 <!-- REGISTER FORM -->
                 <form id="register_form" runat="server">
                     <div>
@@ -163,7 +162,7 @@
 
                         <br />
                         <div class="inputField">
-                            <asp:Button ID="register_submit" runat="server" Text="Register"/>
+                            <asp:Button ID="register_submit" runat="server" Text="Register" OnClick="register_submit_Click" />
                         </div>
 
                     </div>
