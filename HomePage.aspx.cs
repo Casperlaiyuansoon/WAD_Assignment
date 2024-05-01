@@ -23,5 +23,11 @@ namespace WAD_Assignment
         {
 
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("flightDetails.aspx?From="+txtLocation.Text+"&To="+txtDestination.Text+
+            "&DepartureDate="+txtstartdate.Text+"&DetinationDate="+txtReturnDate.Text);
+        }
     }
 }

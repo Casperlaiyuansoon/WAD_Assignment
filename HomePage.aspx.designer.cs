@@ -15,6 +15,42 @@ namespace WAD_Assignment
     {
 
         /// <summary>
+        /// btneEconomy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btneEconomy;
+
+        /// <summary>
+        /// btnPremiumEconomy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPremiumEconomy;
+
+        /// <summary>
+        /// btnBusinessClass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBusinessClass;
+
+        /// <summary>
+        /// btnFirstClass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFirstClass;
+
+        /// <summary>
         /// txtLocation control.
         /// </summary>
         /// <remarks>
@@ -33,13 +69,13 @@ namespace WAD_Assignment
         protected global::System.Web.UI.WebControls.Label lbLocation;
 
         /// <summary>
-        /// txtdestination control.
+        /// txtDestination control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtdestination;
+        protected global::System.Web.UI.WebControls.TextBox txtDestination;
 
         /// <summary>
         /// lbdestination control.
@@ -93,7 +129,7 @@ namespace WAD_Assignment
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnSearch;
+        protected global::System.Web.UI.WebControls.Button btnSearch;
 
         /// <summary>
         /// txtemail control.

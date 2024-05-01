@@ -42,40 +42,40 @@ namespace Tarfly.page
         protected global::System.Web.UI.WebControls.HiddenField guest_number;
 
         /// <summary>
-        /// flyFrom control.
+        /// txtFlightFrom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox flyFrom;
+        protected global::System.Web.UI.WebControls.TextBox txtFlightFrom;
 
         /// <summary>
-        /// flyTo control.
+        /// txtFlightTo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox flyTo;
+        protected global::System.Web.UI.WebControls.TextBox txtFlightTo;
 
         /// <summary>
-        /// depart control.
+        /// txtDepart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox depart;
+        protected global::System.Web.UI.WebControls.TextBox txtDepart;
 
         /// <summary>
-        /// return control.
+        /// txtReturn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox @return;
+        protected global::System.Web.UI.WebControls.TextBox txtReturn;
 
         /// <summary>
         /// clearAll control.

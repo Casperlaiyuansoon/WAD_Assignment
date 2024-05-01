@@ -22,13 +22,13 @@
 
     <section class="section__container booking__container">
         <div class="booking__nav">
-            <span>Economy</span>
-            <span>Premium Economy</span>
-            <span>Business Class</span>
-            <span>First Class</span>
+            <asp:Button ID="btneEconomy" CssClass="booking__nav" runat="server" text="Economy" />
+            <asp:Button ID="btnPremiumEconomy" runat="server" text="Premium Economy" />
+            <asp:Button ID="btnBusinessClass" runat="server" text="Business Class" />
+            <asp:Button ID="btnFirstClass" runat="server" text="First Class" />
         </div>
 
-         <%--Departure Location--%>
+         <%--Destination Location--%>
         <form>
             <div class="form__group">
                 <span><i class="ri-map-pin-line"></i></span>
@@ -41,19 +41,19 @@
                 </div>
             </div>
 
-             <%--Destination Location--%>
+             <%--Daparture Date--%>
             <div class="form__group">
                 <span><i class="ri-map-pin-line"></i></span>
                 <div class="input__content">
                     <div class="input__group">
                         <p>To</p>
-                        <asp:TextBox ID="txtdestination" runat="server" placeholder="Frying to"></asp:TextBox>
+                        <asp:TextBox ID="txtDestination" runat="server" placeholder="Frying to"></asp:TextBox>
                         <asp:Label ID="lbdestination" runat="server"></asp:Label>
                     </div>
                 </div>
             </div>
             
-            <%--Daparture Date--%>
+            <%--Return Date--%>
             <div class="form__group">
                 <span><i class="ri-calendar-line"></i></span>
                 <div class="input__content">
@@ -65,7 +65,7 @@
                 </div>
             </div>
 
-            <%--Return Date--%>
+            <%--Search button --%>
             <div class="form__group">
                 <span><i class="ri-calendar-line"></i></span>
                 <div class="input__content">
@@ -78,7 +78,7 @@
             </div>
 
             <%--Search button --%>
-            <asp:LinkButton ID="btnSearch" CssClass="btn" runat="server" Text="Search" PostBackUrl="~/flightDetails.aspx" ><i class="ri-search-line"></i></asp:LinkButton>
+            <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" OnClick="btnSearch_Click"></asp:Button>
                
         </form>
 
