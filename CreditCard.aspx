@@ -57,7 +57,7 @@
             <%------Card Number Input-------%>
             <div class="inputBox">
                 <span>card number</span>
-                <asp:TextBox ID="txtCardNumber" runat="server" required="required" maxLength="16" CssClass="card-number-input"></asp:TextBox>
+                <asp:TextBox ID="txtCardNumber" runat="server" required="required" maxLength="16" CssClass="card-number-input" TextMode="Number"></asp:TextBox>
             </div>
 
              <%------Card Holder Input-------%>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="inputBox">
                     <span>cvv</span>
-                    <asp:TextBox ID="txtCvv" runat="server" required="required" maxLength="3" CssClass="cvv-input"></asp:TextBox> 
+                    <asp:TextBox ID="txtCvv" runat="server" required="required" maxLength="3" CssClass="cvv-input" TextMode="Number"></asp:TextBox> 
                 </div>
             </div>
             <asp:Button ID="btnCreditCardSubmit" runat="server" Text="Submit" CssClass="submit-btn" OnClick="btnCreditCardSubmit_Click" />  
