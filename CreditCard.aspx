@@ -57,20 +57,20 @@
             <%------Card Number Input-------%>
             <div class="inputBox">
                 <span>card number</span>
-                <asp:TextBox ID="txtCardNumber" runat="server"  maxLength="16" CssClass="card-number-input"></asp:TextBox>
+                <asp:TextBox ID="txtCardNumber" runat="server" required="required" maxLength="16" CssClass="card-number-input"></asp:TextBox>
             </div>
 
              <%------Card Holder Input-------%>
             <div class="inputBox">
                 <span>card holder</span>
-                <asp:TextBox ID="txtCardHolder" runat="server"  maxLength="25" CssClass="card-holder-input"></asp:TextBox>
+                <asp:TextBox ID="txtCardHolder" runat="server" required="required" maxLength="25" CssClass="card-holder-input"></asp:TextBox>
             </div>
 
              <%------Card Date Input-------%>
             <div class="flexbox">
                 <div class="inputBox">
                     <span>expiration mm</span>
-                    <select name="" id="" class="month-input">
+                    <select name="" id="" class="month-input" required="required">
                         <option value="month" selected disabled>month</option>
                         <option value="01">01</option>
                         <option value="02">02</option>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="inputBox">
                     <span>expiration yy</span>
-                    <select name="" id="" class="year-input">
+                    <select name="" id="" class="year-input" required="required">
                         <option value="year" selected disabled>year</option>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="inputBox">
                     <span>cvv</span>
-                    <asp:TextBox ID="txtCvv" runat="server"  maxLength="3" CssClass="cvv-input"></asp:TextBox> 
+                    <asp:TextBox ID="txtCvv" runat="server" required="required" maxLength="3" CssClass="cvv-input"></asp:TextBox> 
                 </div>
             </div>
             <asp:Button ID="btnCreditCardSubmit" runat="server" Text="Submit" CssClass="submit-btn" OnClick="btnCreditCardSubmit_Click" />  
