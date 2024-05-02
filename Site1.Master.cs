@@ -26,7 +26,7 @@ namespace WAD_Assignment
 
         protected void btnlogout_Click(object sender, EventArgs e)
         {
-            Session["userId"] = null; // Clear all the session value for login
+            Session["userId"] = null;
             Session["username"] = null;
             Session["email"] = null;
 
