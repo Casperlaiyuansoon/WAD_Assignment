@@ -23,5 +23,14 @@ namespace WAD_Assignment
         {
             Response.Redirect("~/register.aspx");
         }
+
+        protected void btnlogout_Click(object sender, EventArgs e)
+        {
+            Session["userId"] = null; // Clear all the session value for login
+            Session["username"] = null;
+            Session["email"] = null;
+
+            Response.Redirect("~/login.aspx");
+        }
     }
 }

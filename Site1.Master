@@ -26,8 +26,22 @@
                 </ul>
 
                 <div>
-                <asp:Button ID="btnlogin" CssClass="btn" runat="server" Text="Login" OnClick="btnlogin_Click"/>
-                <asp:Button ID="btnregister" CssClass="btn" runat="server" Text="Register" OnClick="btnregister_Click"/>
+                    <%
+                        if (Session["username"] != null && Session["email"] != null) // User already logged in
+                        {
+                            %>
+                    <asp:Button ID="btnlogout" CssClass="btn" runat="server" Text="Logout" OnClick="btnlogout_Click" />
+                            <%
+                        }
+                        else
+                        {
+                            %>
+                                <asp:Button ID="btnlogin" CssClass="btn" runat="server" Text="Login" OnClick="btnlogin_Click"/>
+                                <asp:Button ID="btnregister" CssClass="btn" runat="server" Text="Register" OnClick="btnregister_Click"/>
+                            <%
+                        }
+                        
+                    %>
                </div>
             </nav>
         </div>
