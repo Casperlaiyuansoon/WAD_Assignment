@@ -44,7 +44,8 @@ namespace Assignment
                 if (a > 0)
                 {   
                     lblError.Visible = false;
-                    Response.Redirect("~/E-CheckIn VAL.aspx");
+                    string redirectURL = String.Format("~/E-CheckIn VAL.aspx?txtFlightNo={0}&txtFName={1}&txtLName={2}",flightNo, fname,lname);
+                    Response.Redirect(redirectURL);
                 }
                 else
                 {
