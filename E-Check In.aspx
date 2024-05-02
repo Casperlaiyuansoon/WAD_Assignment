@@ -47,7 +47,7 @@
                 </tr>
                 <tr>
                     <td colspan="3">
-                        <asp:Label ID="lblError" runat="server" ViewStateMode="Disabled" Visible="False"></asp:Label>
+                        <asp:Label ID="lblError" runat="server" ViewStateMode="Disabled"></asp:Label>
                     </td>
                 </tr>
             </table>
