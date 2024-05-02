@@ -8,6 +8,20 @@
     <link rel="stylesheet" href="admin_login.css" />
 </head>
 <body>
+    <%
+        if (Session["adminLoginStatus"] != null && (bool)Session["adminLoginStatus"] && Session["admin_name"] != null) // If this session value is true (login success)
+        {
+            %>
+                <script>
+                    alert("You are now logged in as, <%= Session["admin_name"].ToString() %>");
+                    <%
+                        Session["adminLoginStatus"] = null;
+                    %>
+                    window.location.href = "admin_manage_user.aspx";
+                </script>
+            <%
+        }
+    %>
     <div class="container">
 
         <div class="inner-container">
