@@ -30,7 +30,7 @@
                         if (Session["username"] != null && Session["email"] != null) // User already logged in
                         {
                             %>
-                    <asp:Button ID="btnlogout" CssClass="btn" runat="server" Text="Logout" OnClick="btnlogout_Click" />
+                                <asp:Button ID="btnlogout" CssClass="btn" runat="server" Text="Logout" OnClick="btnlogout_Click" />
                             <%
                         }
                         else
