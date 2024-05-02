@@ -13,5 +13,10 @@ namespace tarfly
         {
 
         }
+
+        protected void admin_register_submit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
