@@ -38,7 +38,7 @@ namespace tarfly
 
                 string userExistenceCheckQuery = "SELECT COUNT(*) FROM Customer WHERE email = @email"; // Check if the user already exist
 
-                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConMember"].ConnectionString))
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
                 using (SqlCommand command = new SqlCommand(userExistenceCheckQuery, connection))
                 {
                     command.Parameters.AddWithValue("@email", email); // Setup parameter
@@ -55,7 +55,7 @@ namespace tarfly
                     string newUserInsertQuery = "INSERT INTO Customer (name, email, password, phone_number, address_line_1, address_line_2, city, state, country) " +
                         "VALUES (@name, @email, @password, @phone_number, @address_line_1, @address_line_2, @city, @state, @country)"; // Insert the new user
 
-                    using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConMember"].ConnectionString))
+                    using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
                     using (SqlCommand command = new SqlCommand(newUserInsertQuery, connection))
                     {
                         command.Parameters.AddWithValue("@name", name); // Setup parameter

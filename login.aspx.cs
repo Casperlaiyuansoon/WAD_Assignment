@@ -29,7 +29,7 @@ namespace tarfly
 
                 string userCredentialCheckQuery = "SELECT * FROM Customer WHERE email = @email AND password = @password"; // Check if the user already exist
 
-                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConMember"].ConnectionString))
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
                 using (SqlCommand command = new SqlCommand(userCredentialCheckQuery, connection))
                 {
                     command.Parameters.AddWithValue("@email", email); // Setup parameter

@@ -10,6 +10,21 @@
     </head>
 
     <body>
+
+        <%
+            if (Session["adminRegisterStatus"] != null && (bool)Session["adminRegisterStatus"])
+            {
+                %>
+                    <script>
+                        alert("Account Registered Successfully");
+                        <%
+                            Session["adminRegisterStatus"] = null;
+                        %>
+                        window.location.href = "admin_login.aspx";
+                    </script>
+                <%
+            }
+        %>
         <div class="container">
 
             <div class="inner-container">
