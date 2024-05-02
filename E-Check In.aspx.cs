@@ -17,7 +17,7 @@ namespace Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblError.Text = "";
         }
 
         protected void lnkSearch_Click(object sender, EventArgs e)
@@ -43,13 +43,12 @@ namespace Assignment
 
                 if (a > 0)
                 {   
-                    lblError.Visible = false;
+                    lblError.Text = "";
                     string redirectURL = String.Format("~/E-CheckIn VAL.aspx?txtFlightNo={0}&txtFName={1}&txtLName={2}",flightNo, fname,lname);
                     Response.Redirect(redirectURL);
                 }
                 else
                 {
-                    lblError.Visible = true;
                     lblError.Text = "Unable to find this RECORD!";
                     
                 }

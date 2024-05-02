@@ -101,11 +101,17 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3">&nbsp;</td>
+                    <td colspan="3" style="line-height:10px">
+                        <asp:RegularExpressionValidator ID="ReValidator" runat="server" ControlToValidate="txtIdentification"></asp:RegularExpressionValidator>
+                        <br />
+                        <asp:Label ID="lblErrorID" runat="server"></asp:Label>
+                        <br />
+                        <br />
+                    </td>
                 </tr>
             </table>
             </div>
-                <asp:LinkButton ID="btncheckin" runat="server" PostBackUrl="~/CheckIn Success.aspx" OnClick="btncheckin_Click">Check In</asp:LinkButton>
+                <asp:LinkButton ID="btncheckin" runat="server" OnClick="btncheckin_Click">Check In</asp:LinkButton>
         </div>
     </form>
 </body>
