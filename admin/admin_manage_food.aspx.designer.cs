@@ -15,24 +15,6 @@ namespace WAD_Assignment.admin
     {
 
         /// <summary>
-        /// search_user control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search_user;
-
-        /// <summary>
-        /// search_user_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button search_user_btn;
-
-        /// <summary>
         /// food_name control.
         /// </summary>
         /// <remarks>
@@ -51,13 +33,31 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.TextBox food_price;
 
         /// <summary>
-        /// register_submit control.
+        /// add_food_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button register_submit;
+        protected global::System.Web.UI.WebControls.Button add_food_submit;
+
+        /// <summary>
+        /// search_food control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox search_food;
+
+        /// <summary>
+        /// search_food_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button search_food_btn;
 
         /// <summary>
         /// food_id_value control.

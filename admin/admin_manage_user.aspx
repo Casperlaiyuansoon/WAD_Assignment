@@ -30,14 +30,6 @@
         <div class="inner-container">
             <form>
 
-                <h2 class="section">Search User</h2>
-
-                <div class="search-section">
-                    <asp:TextBox ID="search_user" runat="server" class="search_user_field" placeholder="Enter a username..."></asp:TextBox>
-                    <asp:Button ID="search_user_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
-                </div>
-                
-
                 <h2 class="section">Add User</h2>
 
                 <button type="button" id="add_user_btn" class="add_btn" onclick="displayForm()">+ Add New User</button>
@@ -144,12 +136,17 @@
                     </div>
 
                     <div class="inputField">
-                        <asp:Button ID="register_submit" class="register_submit" runat="server" Text="Add" />
+                        <asp:Button ID="add_user_submit" class="register_submit" runat="server" Text="Add" />
                     </div>
                 </div>
 
                 <br />
                 <h2 class="section">Existing User</h2>
+
+                    <div class="search-section">
+                        <asp:TextBox ID="search_user" runat="server" class="search_user_field" placeholder="Enter a username..."></asp:TextBox>
+                        <asp:Button ID="search_user_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
+                    </div>
                 <br />
 
                 <table>
