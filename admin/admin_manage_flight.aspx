@@ -43,7 +43,9 @@
                         <!-- FIRST ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Departure Date Time:</span>
+                                <span>Departure Date Time:
+                                    <asp:RequiredFieldValidator ID="departure_date_time_required" runat="server" ErrorMessage="Departure Date and Time is required" Text="*" ForeColor="Red" ControlToValidate="departure_date"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register name -->
                                 <br />
                                 <div class="inputField">
@@ -54,11 +56,13 @@
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Airplane ID:</span>
+                                <span>Airplane ID:
+                                    <asp:RequiredFieldValidator ID="airplane_id_required" runat="server" ErrorMessage="Aieplane ID is required" Text="*" ForeColor="Red" ControlToValidate="airplane_id"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register name -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="airplane_id" class="textField" runat="server" placeholder="e.g. 2"></asp:TextBox><br />
+                                    <asp:TextBox ID="airplane_id" class="textField" runat="server" TextMode="Number" placeholder="e.g. 2"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -69,7 +73,9 @@
                         <!-- SECOND ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Departure City :</span>
+                                <span>Departure City :
+                                    <asp:RequiredFieldValidator ID="departure_city_required" runat="server" ErrorMessage="Departure city is required" Text="*" ForeColor="Red" ControlToValidate="departure_city"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register password -->
                                 <br />
                                 <div class="inputField">
@@ -80,11 +86,13 @@
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Destination City :</span>
+                                <span>Destination City :
+                                    <asp:RequiredFieldValidator ID="destination_city_required" runat="server" ErrorMessage="Destination city is required" Text="*" ForeColor="Red" ControlToValidate="destination_city"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="route" class="textField" runat="server" placeholder="e.g. Tokyo"></asp:TextBox><br />
+                                    <asp:TextBox ID="destination_city" class="textField" runat="server" placeholder="e.g. Tokyo"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -95,7 +103,9 @@
                         <!-- THIRD ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Duration :</span>
+                                <span>Duration :
+                                    <asp:RequiredFieldValidator ID="duration_required" runat="server" ErrorMessage="Duration city is required" Text="*" ForeColor="Red" ControlToValidate="duration"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
@@ -106,7 +116,9 @@
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Economy Price :</span>
+                                <span>Economy Price :
+                                    <asp:RequiredFieldValidator ID="eco_price_required" runat="server" ErrorMessage="Economy price is required" Text="*" ForeColor="Red" ControlToValidate="eco_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
@@ -121,18 +133,22 @@
                         <!-- THIRD ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Premium Economy Price :</span>
+                                <span>Premium Economy Price :
+                                    <asp:RequiredFieldValidator ID="prem_eco_price_required" runat="server" ErrorMessage="Premium Economy price is required" Text="*" ForeColor="Red" ControlToValidate="prem_eco_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="pre_eco_price" class="textField" runat="server" TextMode="Number" placeholder="300"></asp:TextBox><br />
+                                    <asp:TextBox ID="prem_eco_price" class="textField" runat="server" TextMode="Number" placeholder="300"></asp:TextBox><br />
                                 </div>
                             </div>
 
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Business Price :</span>
+                                <span>Business Price :
+                                    <asp:RequiredFieldValidator ID="buss_price_required" runat="server" ErrorMessage="Business price is required" Text="*" ForeColor="Red" ControlToValidate="buss_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
@@ -145,7 +161,9 @@
                         <!-- THIRD ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>First Class Price :</span>
+                                <span>First Class Price :
+                                    <asp:RequiredFieldValidator ID="fclass_price_required" runat="server" ErrorMessage="First Class price is required" Text="*" ForeColor="Red" ControlToValidate="fclass_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
@@ -189,7 +207,7 @@
                     </tr>
                     <!-- END HEAD -->
                     <%
-                        if (Session["flightAvailable"] != null && (bool)Session["flightAvailable"])
+                        if (Session["flightAvailable"] != null && (bool)Session["flightAvailable"]) // If there is record available
                         {
                             %>
                                 <asp:Repeater ID="flight_repeater" runat="server">
@@ -214,7 +232,7 @@
                                 </asp:Repeater>
                             <%
                         }
-                        else
+                        else // If there is no record available
                         {
                             %>
                                 <tr class="data_row">

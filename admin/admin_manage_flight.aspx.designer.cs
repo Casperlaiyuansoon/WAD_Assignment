@@ -15,6 +15,15 @@ namespace WAD_Assignment.admin
     {
 
         /// <summary>
+        /// departure_date_time_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator departure_date_time_required;
+
+        /// <summary>
         /// departure_date control.
         /// </summary>
         /// <remarks>
@@ -22,6 +31,15 @@ namespace WAD_Assignment.admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox departure_date;
+
+        /// <summary>
+        /// airplane_id_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator airplane_id_required;
 
         /// <summary>
         /// airplane_id control.
@@ -33,6 +51,15 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.TextBox airplane_id;
 
         /// <summary>
+        /// departure_city_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator departure_city_required;
+
+        /// <summary>
         /// departure_city control.
         /// </summary>
         /// <remarks>
@@ -42,13 +69,31 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.TextBox departure_city;
 
         /// <summary>
-        /// route control.
+        /// destination_city_required control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox route;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator destination_city_required;
+
+        /// <summary>
+        /// destination_city control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox destination_city;
+
+        /// <summary>
+        /// duration_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator duration_required;
 
         /// <summary>
         /// duration control.
@@ -60,6 +105,15 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.TextBox duration;
 
         /// <summary>
+        /// eco_price_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator eco_price_required;
+
+        /// <summary>
         /// eco_price control.
         /// </summary>
         /// <remarks>
@@ -69,13 +123,31 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.TextBox eco_price;
 
         /// <summary>
-        /// pre_eco_price control.
+        /// prem_eco_price_required control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pre_eco_price;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator prem_eco_price_required;
+
+        /// <summary>
+        /// prem_eco_price control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox prem_eco_price;
+
+        /// <summary>
+        /// buss_price_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator buss_price_required;
 
         /// <summary>
         /// buss_price control.
@@ -85,6 +157,15 @@ namespace WAD_Assignment.admin
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox buss_price;
+
+        /// <summary>
+        /// fclass_price_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator fclass_price_required;
 
         /// <summary>
         /// fclass_price control.
