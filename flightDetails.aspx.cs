@@ -12,10 +12,40 @@ namespace Tarfly.page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //From
             txtFlightFrom.Text = Request.QueryString["From"];
+            //To
             txtFlightTo.Text = Request.QueryString["To"];
+            //DepartureDate
             txtDepart.Text = Request.QueryString["DepartureDate"];
+            //DetinationDate
             txtReturn.Text = Request.QueryString["DetinationDate"];
+
+            //Cabin Class
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["option"] != null)
+                { 
+                string selectedOption = Request.QueryString["option"];
+                ListItem selectedItem = cabinClass.Items.FindByValue(selectedOption);
+
+                  if (selectedItem != null)
+                   {
+                    selectedItem.Selected = true;
+                   }
+                }
+            }
+
+            //Trip Type
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["tripTypeoption"] != null)
+                {
+                    string selectedOption = Request.QueryString["tripTypeoption"];
+
+                    txtTripType.Text = selectedOption;
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

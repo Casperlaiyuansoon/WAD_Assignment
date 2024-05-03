@@ -29,5 +29,16 @@ namespace WAD_Assignment
             Response.Redirect("flightDetails.aspx?From="+txtLocation.Text+"&To="+txtDestination.Text+
             "&DepartureDate="+txtstartdate.Text+"&DetinationDate="+txtReturnDate.Text);
         }
+
+        protected void cabinClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("flightDetails.aspx?option=" + cabinClass.SelectedValue);
+        }
+
+        protected void tripType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("flightDetails.aspx?tripTypeoption=" + tripType.SelectedValue);
+        }
+
     }
 }
