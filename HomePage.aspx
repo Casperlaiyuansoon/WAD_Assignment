@@ -33,14 +33,68 @@
                 <asp:ListItem Text="Business Class" Value="3" />
                 <asp:ListItem Text="First Class" Value="4" />
             </asp:DropDownList>
-        </div>
+        
 
         <%--Trip Type--%>
-        <div>
             <asp:DropDownList ID="tripType" runat="server">
                 <asp:ListItem Text="One Way" Value="One Way" />
                 <asp:ListItem Text="Round Trip" Value="Round Trip" />
             </asp:DropDownList>
+
+         <%--Guest--%>
+            <div id="guest">
+                <div>
+                    <input type="button" name="btn_guest" id="btn_guest" value="1 Guest" onclick="triggerDropDownList('guestDropDownList')" />
+                    <img src="../icon/downward-arrow.png" alt="Down arrow" />
+                    <!-- GUEST NUMBER VALUE: HIDDEN; format:  adult,child,infant  -->
+                    <asp:HiddenField ID="guest_number" runat="server" Value="1,0,0" />
+                </div>
+                <!-- guest number add/minus  -->
+                <div id="guestDropDownList" class="ddlist guestList" style="display: none">
+                    <!-- adult number  -->
+                    <div id="adult_guest">
+                        <div>
+                            <p class="guestType">Adult</p>
+                            <p class="description">Above 12 years</p>
+                        </div>
+                        <!-- add/minus buttons  -->
+                        <div>
+                            <input type="button" class="btn_minus" value="-" onclick="updateGuestNumber(0, this.value)" />
+                            <p class="number">1</p>
+                            <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(0, this.value)" />
+                        </div>
+                    </div>
+                    <!-- child number -->
+                    <div id="child_guest">
+                        <div>
+                            <p class="guestType">Child</p>
+                            <p class="description">2 - 11 years on travel date</p>
+                        </div>
+                        <!-- add/minus buttons -->
+                        <div>
+                            <input type="button" class="btn_minus" value="-" onclick="updateGuestNumber(1, this.value)" />
+                            <p class="number">0</p>
+                            <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(1, this.value)" />
+                        </div>
+                    </div>
+                    <!-- infant number -->
+                    <div id="infant_guest">
+                        <div>
+                            <p class="guestType">Infant</p>
+                            <p class="description">Below 2 year on travel date.</p>
+                            <p class="description">Seated on lap</p>
+                        </div>
+                        <!-- add/minus buttons -->
+                        <div>
+                            <input type="button" class="btn_minus" value="-" onclick="updateGuestNumber(2, this.value)" />
+                            <p class="number">0</p>
+                            <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(2, this.value)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
 
