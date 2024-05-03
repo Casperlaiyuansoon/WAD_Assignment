@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeBehind="admin_manage_plane.aspx.cs" Inherits="WAD_Assignment.admin.admin_manage_plane" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/admin.Master" AutoEventWireup="true" CodeBehind="admin_manage_plane.aspx.cs" Inherits="WAD_Assignment.admin.admin_manage_plane" EnableViewState="true"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>Tarfly | Admin Plane Management</title>
     <link rel="stylesheet" href="admin_manage_plane.css" />

@@ -17,6 +17,7 @@
             }
         }
     </script>
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -58,7 +59,24 @@
                                 <!-- register name -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="departure_date" class="textField" runat="server" TextMode="DateTimeLocal"></asp:TextBox><br />
+                                    <asp:TextBox ID="departure_date" class="textField" runat="server" TextMode="DateTimeLocal" ClientIDMode="Static"></asp:TextBox><br />
+
+                                    <script>
+                                        var departureDateTextbox = document.getElementById('departure_date');
+                                        var currentDate = new Date();
+                                        var utcDateTime = new Date(currentDate.getTime() - currentDate.getTimezoneOffset() * 60000);
+                                        var currentDateTimeString = utcDateTime.toISOString().slice(0, 16);
+                                        departureDateTextbox.value = currentDateTimeString;
+
+                                        departureDateTextbox.addEventListener('change', function () {
+                                            var selectedDateTime = new Date(this.value);
+
+                                            if (selectedDateTime < utcDateTime) {
+                                                this.value = currentDateTimeString;
+                                            }
+                                        });
+                                    </script>
+
                                 </div>
                             </div>
 
@@ -97,6 +115,7 @@
                             <div class="inner-flex-content">
                                 <span>Destination City :
                                     <asp:RequiredFieldValidator ID="destination_city_required" runat="server" ErrorMessage="Destination city is required" Text="*" ForeColor="Red" ControlToValidate="destination_city"></asp:RequiredFieldValidator>
+                                    <asp:CompareValidator ID="departure_destination_compare" runat="server" ErrorMessage="Departure city and destination city cannot be the same" Text="*" ForeColor="Red" ControlToValidate="destination_city" ControlToCompare="departure_city" Operator="NotEqual"></asp:CompareValidator>
                                 </span>
                                 <!-- register confirm password -->
                                 <br />

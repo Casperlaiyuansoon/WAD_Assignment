@@ -78,6 +78,15 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator destination_city_required;
 
         /// <summary>
+        /// departure_destination_compare control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator departure_destination_compare;
+
+        /// <summary>
         /// destination_city control.
         /// </summary>
         /// <remarks>

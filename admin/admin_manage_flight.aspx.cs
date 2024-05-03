@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -44,7 +45,9 @@ namespace WAD_Assignment.admin
         protected void add_flight_submit_Click(object sender, EventArgs e)
         {
             int planeId = int.Parse(airplane_id.Text);
+
             DateTime flightDateTime = DateTime.Parse(departure_date.Text);
+
             string departureCity = departure_city.Text;
             string destinationCity = destination_city.Text;
             int duration = int.Parse(flight_duration.Text);
@@ -103,8 +106,10 @@ namespace WAD_Assignment.admin
                     connection.Open();
                     command.ExecuteNonQuery();
                 }
+                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('" + flightDateTime + "');", true);
 
                 Session["flightAdded"] = true;
+                Response.Redirect("admin_manage_flight.aspx");
             }
         }
     }
