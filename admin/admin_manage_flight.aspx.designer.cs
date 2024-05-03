@@ -96,13 +96,13 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator duration_required;
 
         /// <summary>
-        /// duration control.
+        /// flight_duration control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox duration;
+        protected global::System.Web.UI.WebControls.TextBox flight_duration;
 
         /// <summary>
         /// eco_price_required control.
@@ -150,13 +150,13 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator buss_price_required;
 
         /// <summary>
-        /// buss_price control.
+        /// bus_price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox buss_price;
+        protected global::System.Web.UI.WebControls.TextBox bus_price;
 
         /// <summary>
         /// fclass_price_required control.
