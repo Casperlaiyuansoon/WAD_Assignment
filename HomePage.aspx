@@ -22,7 +22,7 @@
 
     <section class="section__container booking__container">
         <div class="booking__nav">
-            <span>Econom</span>
+            <span>Econo</span>
             <span>Premium Economy</span>
             <span>Business Class</span>
             <span>First Class</span>
