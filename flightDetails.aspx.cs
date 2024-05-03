@@ -21,18 +21,19 @@ namespace Tarfly.page
             //DetinationDate
             txtReturn.Text = Request.QueryString["DetinationDate"];
 
+
             //Cabin Class
             if (!IsPostBack)
             {
                 if (Request.QueryString["option"] != null)
-                { 
-                string selectedOption = Request.QueryString["option"];
-                ListItem selectedItem = cabinClass.Items.FindByValue(selectedOption);
+                {
+                    string selectedOption = Request.QueryString["option"];
+                    ListItem selectedItem = cabinClass.Items.FindByValue(selectedOption);
 
-                  if (selectedItem != null)
-                   {
-                    selectedItem.Selected = true;
-                   }
+                    if (selectedItem != null)
+                    {
+                        selectedItem.Selected = true;
+                    }
                 }
             }
 

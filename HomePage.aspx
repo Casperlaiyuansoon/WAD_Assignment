@@ -27,7 +27,7 @@
         
         <%--Cabin Class--%>
         <div>
-            <asp:DropDownList ID="cabinClass" runat="server" OnSelectedIndexChanged="cabinClass_SelectedIndexChanged" AutoPostBack="True">
+            <asp:DropDownList ID="cabinClass" runat="server">
                 <asp:ListItem Text="Economy" Value="1" />
                 <asp:ListItem Text="Premium Economy" Value="2" />
                 <asp:ListItem Text="Business Class" Value="3" />
@@ -37,9 +37,9 @@
 
         <%--Trip Type--%>
         <div>
-            <asp:DropDownList ID="tripType" runat="server" OnSelectedIndexChanged="tripType_SelectedIndexChanged" AutoPostBack="True">
-                <asp:ListItem Text="One Way" Value="Option1" />
-                <asp:ListItem Text="Round Trip" Value="Option2" />
+            <asp:DropDownList ID="tripType" runat="server">
+                <asp:ListItem Text="One Way" Value="One Way" />
+                <asp:ListItem Text="Round Trip" Value="Round Trip" />
             </asp:DropDownList>
         </div>
 
