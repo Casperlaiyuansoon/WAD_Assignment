@@ -50,7 +50,7 @@ namespace WAD_Assignment.admin
 
             string departureCity = departure_city.Text;
             string destinationCity = destination_city.Text;
-            int duration = int.Parse(flight_duration.Text);
+            string duration = flight_duration.Text;
             int economy_price = int.Parse(eco_price.Text);
             int premium_economy_price = int.Parse(prem_eco_price.Text);
             int business_price = int.Parse(bus_price.Text);
@@ -111,6 +111,40 @@ namespace WAD_Assignment.admin
                 Session["flightAdded"] = true;
                 Response.Redirect("admin_manage_flight.aspx");
             }
+        }
+
+        protected void flight_remove_button_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string flightId = btn.CommandArgument.ToString(); // get flight id from button clicked
+
+            string deleteFlightQuery = "DELETE FROM Flight WHERE flight_id = @flightId";
+            Session["flightDeleted"] = false;
+
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
+            using (SqlCommand command = new SqlCommand(deleteFlightQuery, connection))
+            {
+                command.Parameters.AddWithValue("@flightId", flightId);
+
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0) // If sucessful deleted
+                {
+                    Session["flightDeleted"] = true;
+                    Response.Redirect("admin_manage_flight.aspx");
+                }
+                else // If delete unsuccessful
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Something wrong, maybe the record already deleted');", true);
+                }
+            }
+
+        }
+
+        protected void flight_modify_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

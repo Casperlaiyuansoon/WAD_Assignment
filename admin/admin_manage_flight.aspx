@@ -23,12 +23,20 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     <%
-        if (Session["flightAdded"] != null && (bool)Session["flightAdded"])
+        if (Session["flightAdded"] != null && (bool)Session["flightAdded"]) // Added flight
         {
             %>
                 <script>alert("New flight added successfully");</script>
             <%
             Session["flightAdded"] = null;
+        }
+
+        if (Session["flightDeleted"] != null && (bool)Session["flightDeleted"]) // Deleted flight
+        {
+            %>
+                <script>alert("Flight successfully deleted");</script>
+            <%
+            Session["flightDeleted"] = null;
         }
     %>
     <div class="container">
@@ -252,8 +260,13 @@
                                             <td><asp:Label ID="business_price_value" runat="server" Text='<%# Eval("business_price") %>'></asp:Label></td>
                                             <td><asp:Label ID="first_class_price_value" runat="server" Text='<%# Eval("first_class_price") %>'></asp:Label></td>
                                             <td class="btn_section">
-                                                <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" />
-                                                <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" />
+                                                <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" OnClick="flight_modify_button_Click" CommandArgument='<%# Eval("flight_id") %>'/>
+                                                <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" OnClick="flight_remove_button_Click" CommandArgument='<%# Eval("flight_id") %>' OnClientClick="return confirmDelete();" />
+                                                <script>
+                                                    function confirmDelete() {
+                                                        return confirm("Are you sure you want to delete this flight?");
+                                                    }
+                                                </script>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
