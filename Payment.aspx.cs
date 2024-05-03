@@ -13,6 +13,12 @@ namespace Assignment
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
+            if (!IsPostBack)
+            {
+                TimeSpan time = TimeSpan.FromSeconds(Convert.ToInt32(countdownLabel.Text) * 60);
+                string str = time.ToString(@"hh\:mm\:ss");
+                countdownLabel.Text = str;
+            }
         }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -50,6 +56,14 @@ namespace Assignment
                     Response.Redirect("~/Online Banking.aspx");
                 }
             }
+        }
+
+        protected void CountdownTimer_Tick(object sender, EventArgs e)
+        {
+            TimeSpan result = TimeSpan.FromMilliseconds(countdownTimer.Interval);
+            result = result.Subtract(TimeSpan.FromMilliseconds(-100));
+            string fromTimeString = result.ToString(@"hh\:mm\:ss");
+            countdownLabel.Text = fromTimeString;
         }
     }
 }
