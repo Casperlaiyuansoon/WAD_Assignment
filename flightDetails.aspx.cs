@@ -25,9 +25,9 @@ namespace Tarfly.page
             //Cabin Class
             if (!IsPostBack)
             {
-                if (Request.QueryString["option"] != null)
+                if (Request.QueryString["cabinClassOption"] != null)
                 {
-                    string selectedOption = Request.QueryString["option"];
+                    string selectedOption = Request.QueryString["cabinClassOption"];
                     ListItem selectedItem = cabinClass.Items.FindByValue(selectedOption);
 
                     if (selectedItem != null)
@@ -40,9 +40,9 @@ namespace Tarfly.page
             //Trip Type
             if (!IsPostBack)
             {
-                if (Request.QueryString["tripTypeoption"] != null)
+                if (Request.QueryString["tripTypeOption"] != null)
                 {
-                    string selectedOption = Request.QueryString["tripTypeoption"];
+                    string selectedOption = Request.QueryString["tripTypeOption"];
 
                     txtTripType.Text = selectedOption;
                 }

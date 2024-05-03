@@ -26,7 +26,6 @@ namespace WAD_Assignment
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-
             string cabinClassOption = cabinClass.SelectedValue;
             string tripTypeOption = tripType.SelectedValue;
             string from = txtLocation.Text;
