@@ -189,82 +189,29 @@
                     </tr>
                     <!-- END HEAD -->
 
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="flight_id_value" runat="server" Text="1"></asp:Label></td>
-                        <td><asp:Label ID="departure_time_value" runat="server" Text="28/3/2024 18:01:00"></asp:Label></td>
-                        <td><asp:Label ID="airplane_id_value" runat="server" Text="1"></asp:Label></td>
-                        <td><asp:Label ID="departure_city_value" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="destination_city_value" runat="server" Text="Taipei"></asp:Label></td>
-                        <td><asp:Label ID="duration_value" runat="server" Text="0800"></asp:Label></td>
-                        <td><asp:Label ID="economy_price_value" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="premium_economy_price_value" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="business_price_value" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="first_class_price_value" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="user_modify1" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="user_delete1" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="Label1" runat="server" Text="2"></asp:Label></td>
-                        <td><asp:Label ID="Label2" runat="server" Text="28/3/2024 19:01:00"></asp:Label></td>
-                        <td><asp:Label ID="Label3" runat="server" Text="2"></asp:Label></td>
-                        <td><asp:Label ID="Label4" runat="server" Text="Taipei"></asp:Label></td>
-                        <td><asp:Label ID="Label5" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="Label6" runat="server" Text="0800"></asp:Label></td>
-                        <td><asp:Label ID="Label25" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="Label29" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="Label30" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="Label31" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button1" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="Button2" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="Label7" runat="server" Text="3"></asp:Label></td>
-                        <td><asp:Label ID="Label8" runat="server" Text="29/3/2024 18:01:00"></asp:Label></td>
-                        <td><asp:Label ID="Label9" runat="server" Text="3"></asp:Label></td>
-                        <td><asp:Label ID="Label10" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="Label11" runat="server" Text="German"></asp:Label></td>
-                        <td><asp:Label ID="Label12" runat="server" Text="1200"></asp:Label></td>
-                        <td><asp:Label ID="Label26" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="Label32" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="Label33" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="Label34" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button3" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="Button4" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="Label13" runat="server" Text="4"></asp:Label></td>
-                        <td><asp:Label ID="Label14" runat="server" Text="29/3/2024 18:05:00"></asp:Label></td>
-                        <td><asp:Label ID="Label15" runat="server" Text="4"></asp:Label></td>
-                        <td><asp:Label ID="Label16" runat="server" Text="German"></asp:Label></td>
-                        <td><asp:Label ID="Label17" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="Label18" runat="server" Text="1200"></asp:Label></td>
-                        <td><asp:Label ID="Label27" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="Label35" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="Label36" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="Label37" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button5" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="Button6" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
+                    <asp:Repeater ID="flight_repeater" runat="server">
+                        <ItemTemplate>
+                            <tr class="data_row">
+                                <td><asp:Label ID="flight_id_value" runat="server" Text='<%# Eval("flight_id") %>'></asp:Label></td>
+                                <td><asp:Label ID="airplane_id_value" runat="server" Text='<%# Eval("plane_id") %>'></asp:Label></td>
+                                <td><asp:Label ID="departure_time_value" runat="server" Text='<%# Eval("departure_date_time") %>'></asp:Label></td>
+                                <td><asp:Label ID="departure_city_value" runat="server" Text='<%# Eval("departure_city") %>'></asp:Label></td>
+                                <td><asp:Label ID="destination_city_value" runat="server" Text='<%# Eval("destination_city") %>'></asp:Label></td>
+                                <td><asp:Label ID="duration_value" runat="server" Text='<%# Eval("duration") %>'></asp:Label></td>
+                                <td><asp:Label ID="economy_price_value" runat="server" Text='<%# Eval("economy_price") %>'></asp:Label></td>
+                                <td><asp:Label ID="premium_economy_price_value" runat="server" Text='<%# Eval("premium_economy_price") %>'></asp:Label></td>
+                                <td><asp:Label ID="business_price_value" runat="server" Text='<%# Eval("business_price") %>'></asp:Label></td>
+                                <td><asp:Label ID="first_class_price_value" runat="server" Text='<%# Eval("first_class_price") %>'></asp:Label></td>
+                                <td class="btn_section">
+                                    <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" />
+                                    <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" />
+                                </td>
+                            </tr>
+                        </ItemTemplate>
+                    </asp:Repeater>
                 </table>
+
+                    
             </form>
         </div>
     </div>
