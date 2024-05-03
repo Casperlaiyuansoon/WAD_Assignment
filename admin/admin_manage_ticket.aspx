@@ -16,23 +16,23 @@
         <div class="inner-container">
             <form>
 
-                <h2 class="section">Search Ticket</h2>
-
-                    <div class="search-section">
-                        <asp:TextBox ID="search_user" runat="server" class="search_user_field" placeholder="Enter a username..."></asp:TextBox>
-                        <asp:Button ID="search_user_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
-                    </div>
-
                 <h2 class="section">Existing Booking</h2>
+
+                <div class="search-section">
+                    <asp:TextBox ID="search_ticket" runat="server" class="search_user_field" placeholder="Enter a username..."></asp:TextBox>
+                    <asp:Button ID="search_ticket_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
+                </div>
+                    
+                <br />
 
                 <table>
 
                     <!-- TITLE -->
-                    <tr class="data_section">
+                    <%--<tr class="data_section">
                         <th style="visibility: hidden"></th>
                         <th colspan="2">Customer</th>
                         <th colspan="5">Flight</th>
-                    </tr>
+                    </tr>--%>
                     <!-- END TITLE -->
 
                     <!-- HEAD -->

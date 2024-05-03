@@ -45,9 +45,14 @@
                         <asp:TextBox ID="txtBookingNo" runat="server"></asp:TextBox>
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="3">
+                        <asp:Label ID="lblError" runat="server" ViewStateMode="Disabled"></asp:Label>
+                    </td>
+                </tr>
             </table>
         </div>
-            <asp:LinkButton ID="lnkSearch" CssClass="lnkSearch" runat="server" PostBackUrl="~/E-CheckIn VAL.aspx">Search</asp:LinkButton>
+            <asp:LinkButton ID="lnkSearch" CssClass="lnkSearch" runat="server" OnClick="lnkSearch_Click">Search</asp:LinkButton>
         </div>
             
     </form>

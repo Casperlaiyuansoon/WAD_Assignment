@@ -30,13 +30,6 @@
         <div class="inner-container">
             <form>
 
-                <h2 class="section">Search Flight</h2>
-
-                <div class="search-section">
-                    <asp:TextBox ID="search_user" runat="server" class="search_user_field" placeholder="Enter a flight..."></asp:TextBox>
-                    <asp:Button ID="search_user_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
-                </div>
-
                 <h2 class="section">Add Flight</h2>
 
                 <button type="button" id="add_flight_btn" class="add_btn" onclick="displayForm()">+ Add New Flight</button>
@@ -117,7 +110,7 @@
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="seat_quantity" class="textField" runat="server" TextMode="Number" placeholder="200"></asp:TextBox><br />
+                                    <asp:TextBox ID="eco_price" class="textField" runat="server" TextMode="Number" placeholder="200"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -132,7 +125,7 @@
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="cabin_class_price" class="textField" runat="server" TextMode="Number" placeholder="300"></asp:TextBox><br />
+                                    <asp:TextBox ID="pre_eco_price" class="textField" runat="server" TextMode="Number" placeholder="300"></asp:TextBox><br />
                                 </div>
                             </div>
 
@@ -143,7 +136,7 @@
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="TextBox1" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
+                                    <asp:TextBox ID="buss_price" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -156,7 +149,7 @@
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="TextBox2" class="textField" runat="server" TextMode="Number" placeholder="700"></asp:TextBox><br />
+                                    <asp:TextBox ID="fclass_price" class="textField" runat="server" TextMode="Number" placeholder="700"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -165,12 +158,18 @@
                     </div>
 
                     <div class="inputField">
-                        <asp:Button ID="register_submit" class="register_submit" runat="server" Text="Add" />
+                        <asp:Button ID="add_flight_submit" class="register_submit" runat="server" Text="Add" />
                     </div>
                 </div>
 
                 <br />
                 <h2 class="section">Existing Flight</h2>
+
+                <div class="search-section">
+                    <asp:TextBox ID="search_flight" runat="server" class="search_user_field" placeholder="Enter a flight..."></asp:TextBox>
+                    <asp:Button ID="search_flight_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
+                </div>
+
                 <br />
 
                 <table>

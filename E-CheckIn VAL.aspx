@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="E-CheckIn VAL.aspx.cs" Inherits="Assignment.E_CheckIn_VAL" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="E-CheckIn VAL.aspx.cs" Inherits="Assignment.E_CheckIn_VAL"%>
+
 
 <!DOCTYPE html>
 
@@ -41,14 +42,14 @@
                     <td class="auto-style5">
                         :</td>
                     <td class="auto-style10">
-                        <asp:TextBox ID="txtFlightNo" runat="server" Enabled="False">Q31JUS</asp:TextBox>
+                        <asp:TextBox ID="txtFlightNo" runat="server" Enabled="False"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3"><strong>First Name </strong> </td>
                     <td class="auto-style5">:</td>
                     <td class="auto-style10">
-                        <asp:TextBox ID="txtFName" runat="server" Enabled="False">FRANCIS</asp:TextBox>
+                        <asp:TextBox ID="txtFName" runat="server" Enabled="False"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -59,7 +60,7 @@
                     <td class="auto-style5">
                         :</td>
                     <td class="auto-style10">
-                        <asp:TextBox ID="txtLName" runat="server" Enabled="False">LEE JUN FENG</asp:TextBox>
+                        <asp:TextBox ID="txtLName" runat="server" Enabled="False"></asp:TextBox>
                     </td>
                 </tr>
             </table>
@@ -99,9 +100,18 @@
                         <asp:FileUpload ID="filePhoto" runat="server" />
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="3" style="line-height:10px">
+                        <asp:RegularExpressionValidator ID="ReValidator" runat="server" ControlToValidate="txtIdentification"></asp:RegularExpressionValidator>
+                        <br />
+                        <asp:Label ID="lblErrorID" runat="server"></asp:Label>
+                        <br />
+                        <br />
+                    </td>
+                </tr>
             </table>
             </div>
-                <asp:LinkButton ID="btncheckin" runat="server" PostBackUrl="~/CheckIn Success.aspx" OnClick="btncheckin_Click">Check In</asp:LinkButton>
+                <asp:LinkButton ID="btncheckin" runat="server" OnClick="btncheckin_Click">Check In</asp:LinkButton>
         </div>
     </form>
 </body>

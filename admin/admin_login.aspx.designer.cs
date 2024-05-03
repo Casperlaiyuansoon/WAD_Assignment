@@ -24,6 +24,24 @@ namespace tarfly
         protected global::System.Web.UI.HtmlControls.HtmlForm admin_login_form;
 
         /// <summary>
+        /// admin_email_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator admin_email_required;
+
+        /// <summary>
+        /// admin_email_regex_validate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator admin_email_regex_validate;
+
+        /// <summary>
         /// admin_login_email control.
         /// </summary>
         /// <remarks>
@@ -31,6 +49,15 @@ namespace tarfly
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox admin_login_email;
+
+        /// <summary>
+        /// admin_password_required control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator admin_password_required;
 
         /// <summary>
         /// admin_login_password control.

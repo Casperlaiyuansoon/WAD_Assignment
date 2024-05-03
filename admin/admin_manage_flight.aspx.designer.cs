@@ -15,24 +15,6 @@ namespace WAD_Assignment.admin
     {
 
         /// <summary>
-        /// search_user control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search_user;
-
-        /// <summary>
-        /// search_user_btn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button search_user_btn;
-
-        /// <summary>
         /// departure_date control.
         /// </summary>
         /// <remarks>
@@ -78,49 +60,67 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.TextBox duration;
 
         /// <summary>
-        /// seat_quantity control.
+        /// eco_price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox seat_quantity;
+        protected global::System.Web.UI.WebControls.TextBox eco_price;
 
         /// <summary>
-        /// cabin_class_price control.
+        /// pre_eco_price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox cabin_class_price;
+        protected global::System.Web.UI.WebControls.TextBox pre_eco_price;
 
         /// <summary>
-        /// TextBox1 control.
+        /// buss_price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox buss_price;
 
         /// <summary>
-        /// TextBox2 control.
+        /// fclass_price control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox fclass_price;
 
         /// <summary>
-        /// register_submit control.
+        /// add_flight_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button register_submit;
+        protected global::System.Web.UI.WebControls.Button add_flight_submit;
+
+        /// <summary>
+        /// search_flight control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox search_flight;
+
+        /// <summary>
+        /// search_flight_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button search_flight_btn;
 
         /// <summary>
         /// flight_id_value control.
