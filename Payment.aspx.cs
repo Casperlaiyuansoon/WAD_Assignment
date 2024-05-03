@@ -15,7 +15,7 @@ namespace Assignment
             lblError.Text = "";
             if (!IsPostBack)
             {
-                TimeSpan time = TimeSpan.FromMilliseconds(Convert.ToInt32(countdownTimer.Interval));
+                TimeSpan time = TimeSpan.FromMilliseconds(countdownTimer.Interval);
                 string str = time.ToString(@"hh\:mm\:ss");
                 countdownLabel.Text = str;
             }
@@ -60,7 +60,7 @@ namespace Assignment
 
         protected void CountdownTimer_Tick(object sender, EventArgs e)
         {
-            TimeSpan result = TimeSpan.FromMilliseconds(countdownTimer.Interval);
+            TimeSpan result = TimeSpan.FromMilliseconds((countdownTimer.Interval));
             result = result.Subtract(TimeSpan.FromSeconds(1));
             /*result = result - TimeSpan.FromSeconds(1);*/
             string fromTimeString = result.ToString(@"hh\:mm\:ss");
