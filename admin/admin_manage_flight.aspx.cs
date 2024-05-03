@@ -15,6 +15,7 @@ namespace WAD_Assignment.admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["flightAvailable"] = false;
             string getFlight = "SELECT * FROM Flight"; // Check if the user already exist
 
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
@@ -26,12 +27,23 @@ namespace WAD_Assignment.admin
                 {
                     DataTable flight = new DataTable();
                     sda.Fill(flight);
-                    flight_repeater.DataSource = flight;
-                    flight_repeater.DataBind();
+
+                    if (flight.Rows.Count > 0) // If at least one record was found
+                    {
+                        Session["flightAvailable"] = true;
+                        flight_repeater.DataSource = flight;
+                        flight_repeater.DataBind();
+                    }
+                    
                 }
 
                 //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Invalid Credential, please try again');", true);
             }
+        }
+
+        protected void add_flight_submit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

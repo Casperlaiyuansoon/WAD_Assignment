@@ -20,6 +20,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="container">
 
         <h1 style="color:white;">FLIGHT MANAGEMENT</h1>
@@ -28,7 +29,6 @@
         <br />
 
         <div class="inner-container">
-            <form>
 
                 <h2 class="section">Add Flight</h2>
 
@@ -158,7 +158,7 @@
                     </div>
 
                     <div class="inputField">
-                        <asp:Button ID="add_flight_submit" class="register_submit" runat="server" Text="Add" />
+                        <asp:Button ID="add_flight_submit" class="register_submit" runat="server" Text="Add" OnClick="add_flight_submit_Click" />
                     </div>
                 </div>
 
@@ -176,8 +176,8 @@
                     <!-- HEAD -->
                     <tr class="data_header">
                         <th>ID</th>
-                        <th>Departure Date Time</th>
                         <th>Airplane ID</th>
+                        <th>Departure Date Time</th>
                         <th>Departure City</th>
                         <th>Destination City</th>
                         <th>Duration</th>
@@ -188,31 +188,42 @@
                         <th>Action</th>
                     </tr>
                     <!-- END HEAD -->
-
-                    <asp:Repeater ID="flight_repeater" runat="server">
-                        <ItemTemplate>
-                            <tr class="data_row">
-                                <td><asp:Label ID="flight_id_value" runat="server" Text='<%# Eval("flight_id") %>'></asp:Label></td>
-                                <td><asp:Label ID="airplane_id_value" runat="server" Text='<%# Eval("plane_id") %>'></asp:Label></td>
-                                <td><asp:Label ID="departure_time_value" runat="server" Text='<%# Eval("departure_date_time") %>'></asp:Label></td>
-                                <td><asp:Label ID="departure_city_value" runat="server" Text='<%# Eval("departure_city") %>'></asp:Label></td>
-                                <td><asp:Label ID="destination_city_value" runat="server" Text='<%# Eval("destination_city") %>'></asp:Label></td>
-                                <td><asp:Label ID="duration_value" runat="server" Text='<%# Eval("duration") %>'></asp:Label></td>
-                                <td><asp:Label ID="economy_price_value" runat="server" Text='<%# Eval("economy_price") %>'></asp:Label></td>
-                                <td><asp:Label ID="premium_economy_price_value" runat="server" Text='<%# Eval("premium_economy_price") %>'></asp:Label></td>
-                                <td><asp:Label ID="business_price_value" runat="server" Text='<%# Eval("business_price") %>'></asp:Label></td>
-                                <td><asp:Label ID="first_class_price_value" runat="server" Text='<%# Eval("first_class_price") %>'></asp:Label></td>
-                                <td class="btn_section">
-                                    <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" />
-                                    <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" />
-                                </td>
-                            </tr>
-                        </ItemTemplate>
-                    </asp:Repeater>
-                </table>
-
-                    
-            </form>
+                    <%
+                        if (Session["flightAvailable"] != null && (bool)Session["flightAvailable"])
+                        {
+                            %>
+                                <asp:Repeater ID="flight_repeater" runat="server">
+                                    <ItemTemplate>
+                                        <tr class="data_row">
+                                            <td><asp:Label ID="flight_id_value" runat="server" Text='<%# Eval("flight_id") %>'></asp:Label></td>
+                                            <td><asp:Label ID="airplane_id_value" runat="server" Text='<%# Eval("plane_id") %>'></asp:Label></td>
+                                            <td><asp:Label ID="departure_time_value" runat="server" Text='<%# Eval("departure_date_time") %>'></asp:Label></td>
+                                            <td><asp:Label ID="departure_city_value" runat="server" Text='<%# Eval("departure_city") %>'></asp:Label></td>
+                                            <td><asp:Label ID="destination_city_value" runat="server" Text='<%# Eval("destination_city") %>'></asp:Label></td>
+                                            <td><asp:Label ID="duration_value" runat="server" Text='<%# Eval("duration") %>'></asp:Label></td>
+                                            <td><asp:Label ID="economy_price_value" runat="server" Text='<%# Eval("economy_price") %>'></asp:Label></td>
+                                            <td><asp:Label ID="premium_economy_price_value" runat="server" Text='<%# Eval("premium_economy_price") %>'></asp:Label></td>
+                                            <td><asp:Label ID="business_price_value" runat="server" Text='<%# Eval("business_price") %>'></asp:Label></td>
+                                            <td><asp:Label ID="first_class_price_value" runat="server" Text='<%# Eval("first_class_price") %>'></asp:Label></td>
+                                            <td class="btn_section">
+                                                <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" />
+                                                <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" />
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            <%
+                        }
+                        else
+                        {
+                            %>
+                                <tr class="data_row">
+                                    <td colspan="12" style="text-align:center;">No Record Available</td>
+                                </tr>
+                            <%
+                        }
+                    %>
+                </table>  
         </div>
     </div>
 </asp:Content>
