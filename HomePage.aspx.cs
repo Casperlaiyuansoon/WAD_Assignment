@@ -26,8 +26,19 @@ namespace WAD_Assignment
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            Response.Redirect("flightDetails.aspx?From="+txtLocation.Text+"&To="+txtDestination.Text+
-            "&DepartureDate="+txtstartdate.Text+"&DetinationDate="+txtReturnDate.Text);
-        }
+            string cabinClassOption = cabinClass.SelectedValue;
+            string tripTypeOption = tripType.SelectedValue;
+            string from = txtLocation.Text;
+            string to = txtDestination.Text;
+            string departureDate = txtstartdate.Text;
+            string detinationDate = txtReturnDate.Text;
+
+            
+            string queryString = $"cabinClassOption={cabinClassOption}&tripTypeOption={tripTypeOption}&From={from}&To={to}&DepartureDate={departureDate}&DetinationDate={detinationDate}";
+
+
+            Response.Redirect($"flightDetails.aspx?{queryString}");
+        }  
+
     }
 }
