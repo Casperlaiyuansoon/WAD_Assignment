@@ -17,10 +17,28 @@
             }
         }
     </script>
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <%
+        if (Session["flightAdded"] != null && (bool)Session["flightAdded"]) // Added flight
+        {
+            %>
+                <script>alert("New flight added successfully");</script>
+            <%
+            Session["flightAdded"] = null;
+        }
+
+        if (Session["flightDeleted"] != null && (bool)Session["flightDeleted"]) // Deleted flight
+        {
+            %>
+                <script>alert("Flight successfully deleted");</script>
+            <%
+            Session["flightDeleted"] = null;
+        }
+    %>
     <div class="container">
 
         <h1 style="color:white;">FLIGHT MANAGEMENT</h1>
@@ -49,7 +67,24 @@
                                 <!-- register name -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="departure_date" class="textField" runat="server" TextMode="DateTimeLocal"></asp:TextBox><br />
+                                    <asp:TextBox ID="departure_date" class="textField" runat="server" TextMode="DateTimeLocal" ClientIDMode="Static"></asp:TextBox><br />
+
+                                    <script>
+                                        var departureDateTextbox = document.getElementById('departure_date');
+                                        var currentDate = new Date();
+                                        var utcDateTime = new Date(currentDate.getTime() - currentDate.getTimezoneOffset() * 60000);
+                                        var currentDateTimeString = utcDateTime.toISOString().slice(0, 16);
+                                        departureDateTextbox.value = currentDateTimeString;
+
+                                        departureDateTextbox.addEventListener('change', function () {
+                                            var selectedDateTime = new Date(this.value);
+
+                                            if (selectedDateTime < utcDateTime) {
+                                                this.value = currentDateTimeString;
+                                            }
+                                        });
+                                    </script>
+
                                 </div>
                             </div>
 
@@ -88,6 +123,7 @@
                             <div class="inner-flex-content">
                                 <span>Destination City :
                                     <asp:RequiredFieldValidator ID="destination_city_required" runat="server" ErrorMessage="Destination city is required" Text="*" ForeColor="Red" ControlToValidate="destination_city"></asp:RequiredFieldValidator>
+                                    <asp:CompareValidator ID="departure_destination_compare" runat="server" ErrorMessage="Departure city and destination city cannot be the same" Text="*" ForeColor="Red" ControlToValidate="destination_city" ControlToCompare="departure_city" Operator="NotEqual"></asp:CompareValidator>
                                 </span>
                                 <!-- register confirm password -->
                                 <br />
@@ -104,12 +140,12 @@
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
                                 <span>Duration :
-                                    <asp:RequiredFieldValidator ID="duration_required" runat="server" ErrorMessage="Duration city is required" Text="*" ForeColor="Red" ControlToValidate="duration"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="duration_required" runat="server" ErrorMessage="Duration city is required" Text="*" ForeColor="Red" ControlToValidate="flight_duration"></asp:RequiredFieldValidator>
                                 </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="duration" class="textField" runat="server" TextMode="Number" placeholder="e.g. 0800"></asp:TextBox><br />
+                                    <asp:TextBox ID="flight_duration" class="textField" runat="server" TextMode="Number" placeholder="e.g. 0800"></asp:TextBox><br />
                                 </div>
                             </div>
 
@@ -147,12 +183,12 @@
 
                             <div class="inner-flex-content">
                                 <span>Business Price :
-                                    <asp:RequiredFieldValidator ID="buss_price_required" runat="server" ErrorMessage="Business price is required" Text="*" ForeColor="Red" ControlToValidate="buss_price"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="buss_price_required" runat="server" ErrorMessage="Business price is required" Text="*" ForeColor="Red" ControlToValidate="bus_price"></asp:RequiredFieldValidator>
                                 </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="buss_price" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
+                                    <asp:TextBox ID="bus_price" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -224,8 +260,13 @@
                                             <td><asp:Label ID="business_price_value" runat="server" Text='<%# Eval("business_price") %>'></asp:Label></td>
                                             <td><asp:Label ID="first_class_price_value" runat="server" Text='<%# Eval("first_class_price") %>'></asp:Label></td>
                                             <td class="btn_section">
-                                                <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" />
-                                                <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" />
+                                                <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" OnClick="flight_modify_button_Click" CommandArgument='<%# Eval("flight_id") %>'/>
+                                                <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" OnClick="flight_remove_button_Click" CommandArgument='<%# Eval("flight_id") %>' OnClientClick="return confirmDelete();" />
+                                                <script>
+                                                    function confirmDelete() {
+                                                        return confirm("Are you sure you want to delete this flight?");
+                                                    }
+                                                </script>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
