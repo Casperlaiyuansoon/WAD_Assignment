@@ -20,6 +20,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
     <div class="container">
 
         <h1 style="color:white;">FLIGHT MANAGEMENT</h1>
@@ -28,14 +29,6 @@
         <br />
 
         <div class="inner-container">
-            <form>
-
-                <h2 class="section">Search Flight</h2>
-
-                <div class="search-section">
-                    <asp:TextBox ID="search_user" runat="server" class="search_user_field" placeholder="Enter a flight..."></asp:TextBox>
-                    <asp:Button ID="search_user_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
-                </div>
 
                 <h2 class="section">Add Flight</h2>
 
@@ -50,7 +43,9 @@
                         <!-- FIRST ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Departure Date Time:</span>
+                                <span>Departure Date Time:
+                                    <asp:RequiredFieldValidator ID="departure_date_time_required" runat="server" ErrorMessage="Departure Date and Time is required" Text="*" ForeColor="Red" ControlToValidate="departure_date"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register name -->
                                 <br />
                                 <div class="inputField">
@@ -61,11 +56,13 @@
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Airplane ID:</span>
+                                <span>Airplane ID:
+                                    <asp:RequiredFieldValidator ID="airplane_id_required" runat="server" ErrorMessage="Aieplane ID is required" Text="*" ForeColor="Red" ControlToValidate="airplane_id"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register name -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="airplane_id" class="textField" runat="server" placeholder="e.g. 2"></asp:TextBox><br />
+                                    <asp:TextBox ID="airplane_id" class="textField" runat="server" TextMode="Number" placeholder="e.g. 2"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -76,7 +73,9 @@
                         <!-- SECOND ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Departure City :</span>
+                                <span>Departure City :
+                                    <asp:RequiredFieldValidator ID="departure_city_required" runat="server" ErrorMessage="Departure city is required" Text="*" ForeColor="Red" ControlToValidate="departure_city"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register password -->
                                 <br />
                                 <div class="inputField">
@@ -87,11 +86,13 @@
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Destination City :</span>
+                                <span>Destination City :
+                                    <asp:RequiredFieldValidator ID="destination_city_required" runat="server" ErrorMessage="Destination city is required" Text="*" ForeColor="Red" ControlToValidate="destination_city"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="route" class="textField" runat="server" placeholder="e.g. Tokyo"></asp:TextBox><br />
+                                    <asp:TextBox ID="destination_city" class="textField" runat="server" placeholder="e.g. Tokyo"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -102,7 +103,9 @@
                         <!-- THIRD ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Duration :</span>
+                                <span>Duration :
+                                    <asp:RequiredFieldValidator ID="duration_required" runat="server" ErrorMessage="Duration city is required" Text="*" ForeColor="Red" ControlToValidate="duration"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
@@ -113,11 +116,13 @@
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Economy Price :</span>
+                                <span>Economy Price :
+                                    <asp:RequiredFieldValidator ID="eco_price_required" runat="server" ErrorMessage="Economy price is required" Text="*" ForeColor="Red" ControlToValidate="eco_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="seat_quantity" class="textField" runat="server" TextMode="Number" placeholder="200"></asp:TextBox><br />
+                                    <asp:TextBox ID="eco_price" class="textField" runat="server" TextMode="Number" placeholder="200"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -128,22 +133,26 @@
                         <!-- THIRD ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>Premium Economy Price :</span>
+                                <span>Premium Economy Price :
+                                    <asp:RequiredFieldValidator ID="prem_eco_price_required" runat="server" ErrorMessage="Premium Economy price is required" Text="*" ForeColor="Red" ControlToValidate="prem_eco_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="cabin_class_price" class="textField" runat="server" TextMode="Number" placeholder="300"></asp:TextBox><br />
+                                    <asp:TextBox ID="prem_eco_price" class="textField" runat="server" TextMode="Number" placeholder="300"></asp:TextBox><br />
                                 </div>
                             </div>
 
                             <br />
 
                             <div class="inner-flex-content">
-                                <span>Business Price :</span>
+                                <span>Business Price :
+                                    <asp:RequiredFieldValidator ID="buss_price_required" runat="server" ErrorMessage="Business price is required" Text="*" ForeColor="Red" ControlToValidate="buss_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="TextBox1" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
+                                    <asp:TextBox ID="buss_price" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -152,11 +161,13 @@
                         <!-- THIRD ROW -->
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
-                                <span>First Class Price :</span>
+                                <span>First Class Price :
+                                    <asp:RequiredFieldValidator ID="fclass_price_required" runat="server" ErrorMessage="First Class price is required" Text="*" ForeColor="Red" ControlToValidate="fclass_price"></asp:RequiredFieldValidator>
+                                </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="TextBox2" class="textField" runat="server" TextMode="Number" placeholder="700"></asp:TextBox><br />
+                                    <asp:TextBox ID="fclass_price" class="textField" runat="server" TextMode="Number" placeholder="700"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>
@@ -165,20 +176,26 @@
                     </div>
 
                     <div class="inputField">
-                        <asp:Button ID="register_submit" class="register_submit" runat="server" Text="Add" />
+                        <asp:Button ID="add_flight_submit" class="register_submit" runat="server" Text="Add" OnClick="add_flight_submit_Click" />
                     </div>
                 </div>
 
                 <br />
                 <h2 class="section">Existing Flight</h2>
+
+                <div class="search-section">
+                    <asp:TextBox ID="search_flight" runat="server" class="search_user_field" placeholder="Enter a flight..."></asp:TextBox>
+                    <asp:Button ID="search_flight_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
+                </div>
+
                 <br />
 
                 <table>
                     <!-- HEAD -->
                     <tr class="data_header">
                         <th>ID</th>
-                        <th>Departure Date Time</th>
                         <th>Airplane ID</th>
+                        <th>Departure Date Time</th>
                         <th>Departure City</th>
                         <th>Destination City</th>
                         <th>Duration</th>
@@ -189,84 +206,42 @@
                         <th>Action</th>
                     </tr>
                     <!-- END HEAD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="flight_id_value" runat="server" Text="1"></asp:Label></td>
-                        <td><asp:Label ID="departure_time_value" runat="server" Text="28/3/2024 18:01:00"></asp:Label></td>
-                        <td><asp:Label ID="airplane_id_value" runat="server" Text="1"></asp:Label></td>
-                        <td><asp:Label ID="departure_city_value" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="destination_city_value" runat="server" Text="Taipei"></asp:Label></td>
-                        <td><asp:Label ID="duration_value" runat="server" Text="0800"></asp:Label></td>
-                        <td><asp:Label ID="economy_price_value" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="premium_economy_price_value" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="business_price_value" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="first_class_price_value" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="user_modify1" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="user_delete1" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="Label1" runat="server" Text="2"></asp:Label></td>
-                        <td><asp:Label ID="Label2" runat="server" Text="28/3/2024 19:01:00"></asp:Label></td>
-                        <td><asp:Label ID="Label3" runat="server" Text="2"></asp:Label></td>
-                        <td><asp:Label ID="Label4" runat="server" Text="Taipei"></asp:Label></td>
-                        <td><asp:Label ID="Label5" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="Label6" runat="server" Text="0800"></asp:Label></td>
-                        <td><asp:Label ID="Label25" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="Label29" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="Label30" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="Label31" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button1" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="Button2" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="Label7" runat="server" Text="3"></asp:Label></td>
-                        <td><asp:Label ID="Label8" runat="server" Text="29/3/2024 18:01:00"></asp:Label></td>
-                        <td><asp:Label ID="Label9" runat="server" Text="3"></asp:Label></td>
-                        <td><asp:Label ID="Label10" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="Label11" runat="server" Text="German"></asp:Label></td>
-                        <td><asp:Label ID="Label12" runat="server" Text="1200"></asp:Label></td>
-                        <td><asp:Label ID="Label26" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="Label32" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="Label33" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="Label34" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button3" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="Button4" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td><asp:Label ID="Label13" runat="server" Text="4"></asp:Label></td>
-                        <td><asp:Label ID="Label14" runat="server" Text="29/3/2024 18:05:00"></asp:Label></td>
-                        <td><asp:Label ID="Label15" runat="server" Text="4"></asp:Label></td>
-                        <td><asp:Label ID="Label16" runat="server" Text="German"></asp:Label></td>
-                        <td><asp:Label ID="Label17" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td><asp:Label ID="Label18" runat="server" Text="1200"></asp:Label></td>
-                        <td><asp:Label ID="Label27" runat="server" Text="200"></asp:Label></td>
-                        <td><asp:Label ID="Label35" runat="server" Text="300"></asp:Label></td>
-                        <td><asp:Label ID="Label36" runat="server" Text="500"></asp:Label></td>
-                        <td><asp:Label ID="Label37" runat="server" Text="700"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button5" class="btn modify fa" runat="server" Text="&#xf013;" />
-                            <asp:Button ID="Button6" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-                </table>
-            </form>
+                    <%
+                        if (Session["flightAvailable"] != null && (bool)Session["flightAvailable"]) // If there is record available
+                        {
+                            %>
+                                <asp:Repeater ID="flight_repeater" runat="server">
+                                    <ItemTemplate>
+                                        <tr class="data_row">
+                                            <td><asp:Label ID="flight_id_value" runat="server" Text='<%# Eval("flight_id") %>'></asp:Label></td>
+                                            <td><asp:Label ID="airplane_id_value" runat="server" Text='<%# Eval("plane_id") %>'></asp:Label></td>
+                                            <td><asp:Label ID="departure_time_value" runat="server" Text='<%# Eval("departure_date_time") %>'></asp:Label></td>
+                                            <td><asp:Label ID="departure_city_value" runat="server" Text='<%# Eval("departure_city") %>'></asp:Label></td>
+                                            <td><asp:Label ID="destination_city_value" runat="server" Text='<%# Eval("destination_city") %>'></asp:Label></td>
+                                            <td><asp:Label ID="duration_value" runat="server" Text='<%# Eval("duration") %>'></asp:Label></td>
+                                            <td><asp:Label ID="economy_price_value" runat="server" Text='<%# Eval("economy_price") %>'></asp:Label></td>
+                                            <td><asp:Label ID="premium_economy_price_value" runat="server" Text='<%# Eval("premium_economy_price") %>'></asp:Label></td>
+                                            <td><asp:Label ID="business_price_value" runat="server" Text='<%# Eval("business_price") %>'></asp:Label></td>
+                                            <td><asp:Label ID="first_class_price_value" runat="server" Text='<%# Eval("first_class_price") %>'></asp:Label></td>
+                                            <td class="btn_section">
+                                                <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" />
+                                                <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" />
+                                            </td>
+                                        </tr>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            <%
+                        }
+                        else // If there is no record available
+                        {
+                            %>
+                                <tr class="data_row">
+                                    <td colspan="12" style="text-align:center;">No Record Available</td>
+                                </tr>
+                            <%
+                        }
+                    %>
+                </table>  
         </div>
     </div>
 </asp:Content>

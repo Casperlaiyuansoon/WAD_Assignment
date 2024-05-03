@@ -15,67 +15,67 @@ namespace WAD_Assignment.admin
     {
 
         /// <summary>
-        /// search_user control.
+        /// eco_seat_qty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search_user;
+        protected global::System.Web.UI.WebControls.TextBox eco_seat_qty;
 
         /// <summary>
-        /// search_user_btn control.
+        /// pre_eco_seat_qty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button search_user_btn;
+        protected global::System.Web.UI.WebControls.TextBox pre_eco_seat_qty;
 
         /// <summary>
-        /// departure_date control.
+        /// buss_seat_qty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox departure_date;
+        protected global::System.Web.UI.WebControls.TextBox buss_seat_qty;
 
         /// <summary>
-        /// airplane_id control.
+        /// fclass_seat_qty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox airplane_id;
+        protected global::System.Web.UI.WebControls.TextBox fclass_seat_qty;
 
         /// <summary>
-        /// departure_city control.
+        /// add_plane_submit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox departure_city;
+        protected global::System.Web.UI.WebControls.Button add_plane_submit;
 
         /// <summary>
-        /// route control.
+        /// search_plane control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox route;
+        protected global::System.Web.UI.WebControls.TextBox search_plane;
 
         /// <summary>
-        /// register_submit control.
+        /// search_plane_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button register_submit;
+        protected global::System.Web.UI.WebControls.Button search_plane_btn;
 
         /// <summary>
         /// flight_id_value control.

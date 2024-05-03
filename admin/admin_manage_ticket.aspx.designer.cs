@@ -15,22 +15,22 @@ namespace WAD_Assignment.admin
     {
 
         /// <summary>
-        /// search_user control.
+        /// search_ticket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox search_user;
+        protected global::System.Web.UI.WebControls.TextBox search_ticket;
 
         /// <summary>
-        /// search_user_btn control.
+        /// search_ticket_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button search_user_btn;
+        protected global::System.Web.UI.WebControls.Button search_ticket_btn;
 
         /// <summary>
         /// booked_id_value control.

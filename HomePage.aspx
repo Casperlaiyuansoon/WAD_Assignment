@@ -15,18 +15,34 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
     
+    <form id="form2" >
+
+    
     <header class="section__container header__container">
         <h1 class="section__header">Find And Book<br />A Great Experience</h1>
         <img src="Image/header.jpg" alt="header" />
     </header>
-
+       
     <section class="section__container booking__container">
-        <div class="booking__nav">
-            <span>Economy</span>
-            <span>Premium Economy</span>
-            <span>Business Class</span>
-            <span>First Class</span>
+        
+        <%--Cabin Class--%>
+        <div>
+            <asp:DropDownList ID="cabinClass" runat="server" OnSelectedIndexChanged="cabinClass_SelectedIndexChanged" AutoPostBack="True">
+                <asp:ListItem Text="Economy" Value="1" />
+                <asp:ListItem Text="Premium Economy" Value="2" />
+                <asp:ListItem Text="Business Class" Value="3" />
+                <asp:ListItem Text="First Class" Value="4" />
+            </asp:DropDownList>
         </div>
+
+        <%--Trip Type--%>
+        <div>
+            <asp:DropDownList ID="tripType" runat="server" OnSelectedIndexChanged="tripType_SelectedIndexChanged" AutoPostBack="True">
+                <asp:ListItem Text="One Way" Value="Option1" />
+                <asp:ListItem Text="Round Trip" Value="Option2" />
+            </asp:DropDownList>
+        </div>
+
 
          <%--Destination Location--%>
         <form>
@@ -247,6 +263,8 @@
           </form>
       </div>
     </section>
+    
+    </form>
     
 </asp:Content>
 

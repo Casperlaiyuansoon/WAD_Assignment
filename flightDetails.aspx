@@ -16,8 +16,14 @@
                 <!-- first row of flight search: trip type, guest, promo code. -->
                 <div id="top">
 
-                    <!-- trip type drop down -->
+                    
                     <div id="trip_type">
+                        <div>
+                        <!-- trip type textbox -->
+                        <asp:TextBox ID="txtTripType" runat="server"></asp:TextBox>
+                        </div>
+
+                        <!-- trip type drop down -->
                         <div>
                             <input type="button" name="btn_trip" id="btn_trip" value="Round-trip" onclick="triggerDropDownList('tripDropDownList')" />
                             <img src="../icon/downward-arrow.png" alt="Down arrow" />
@@ -149,10 +155,10 @@
                 <div>
                     <p>Cabin class</p>
                     <asp:RadioButtonList ID="cabinClass" runat="server">
-                        <asp:ListItem Selected="True" Text="Economy" />
-                        <asp:ListItem Text="Premium Economy" />
-                        <asp:ListItem Text="Business" />
-                        <asp:ListItem Text="First Class" />
+                        <asp:ListItem Text="Economy" Value="1"/>
+                        <asp:ListItem Text="Premium Economy" Value="2"/>
+                        <asp:ListItem Text="Business" Value="3"/>
+                        <asp:ListItem Text="First Class" Value="4"/>
                     </asp:RadioButtonList>
                 </div>
             </div>
