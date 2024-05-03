@@ -29,9 +29,6 @@
             .auto-style10 {
                 width: 230px;
             }
-            .auto-style11 {
-                height: 64px;
-            }
     </style>
 
 </head>
@@ -104,12 +101,11 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="line-height:20px" class="auto-style11">
+                    <td colspan="3" style="line-height:10px">
                         <asp:RegularExpressionValidator ID="ReValidator" runat="server" ControlToValidate="txtIdentification"></asp:RegularExpressionValidator>
                         <br />
-                        <asp:Label ID="lblErrorID" runat="server" ForeColor="Red"></asp:Label>
+                        <asp:Label ID="lblErrorID" runat="server"></asp:Label>
                         <br />
-                        <asp:Label ID="lblErrorPhoto" runat="server" ForeColor="Red"></asp:Label>
                         <br />
                     </td>
                 </tr>

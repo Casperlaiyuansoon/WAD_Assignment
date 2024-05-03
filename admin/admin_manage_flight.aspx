@@ -21,6 +21,15 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <%
+        if (Session["flightAdded"] != null && (bool)Session["flightAdded"])
+        {
+            %>
+                <script>alert("New flight added successfully");</script>
+            <%
+            Session["flightAdded"] = null;
+        }
+    %>
     <div class="container">
 
         <h1 style="color:white;">FLIGHT MANAGEMENT</h1>
@@ -104,12 +113,12 @@
                         <div class="inner-flex-form">
                             <div class="inner-flex-content">
                                 <span>Duration :
-                                    <asp:RequiredFieldValidator ID="duration_required" runat="server" ErrorMessage="Duration city is required" Text="*" ForeColor="Red" ControlToValidate="duration"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="duration_required" runat="server" ErrorMessage="Duration city is required" Text="*" ForeColor="Red" ControlToValidate="flight_duration"></asp:RequiredFieldValidator>
                                 </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="duration" class="textField" runat="server" TextMode="Number" placeholder="e.g. 0800"></asp:TextBox><br />
+                                    <asp:TextBox ID="flight_duration" class="textField" runat="server" TextMode="Number" placeholder="e.g. 0800"></asp:TextBox><br />
                                 </div>
                             </div>
 
@@ -147,12 +156,12 @@
 
                             <div class="inner-flex-content">
                                 <span>Business Price :
-                                    <asp:RequiredFieldValidator ID="buss_price_required" runat="server" ErrorMessage="Business price is required" Text="*" ForeColor="Red" ControlToValidate="buss_price"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="buss_price_required" runat="server" ErrorMessage="Business price is required" Text="*" ForeColor="Red" ControlToValidate="bus_price"></asp:RequiredFieldValidator>
                                 </span>
                                 <!-- register confirm password -->
                                 <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="buss_price" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
+                                    <asp:TextBox ID="bus_price" class="textField" runat="server" TextMode="Number" placeholder="500"></asp:TextBox><br />
                                 </div>
                             </div>
                         </div>

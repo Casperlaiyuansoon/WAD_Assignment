@@ -21,27 +21,28 @@ namespace Tarfly.page
             //DetinationDate
             txtReturn.Text = Request.QueryString["DetinationDate"];
 
+
             //Cabin Class
             if (!IsPostBack)
             {
-                if (Request.QueryString["option"] != null)
-                { 
-                string selectedOption = Request.QueryString["option"];
-                ListItem selectedItem = cabinClass.Items.FindByValue(selectedOption);
+                if (Request.QueryString["cabinClassOption"] != null)
+                {
+                    string selectedOption = Request.QueryString["cabinClassOption"];
+                    ListItem selectedItem = cabinClass.Items.FindByValue(selectedOption);
 
-                  if (selectedItem != null)
-                   {
-                    selectedItem.Selected = true;
-                   }
+                    if (selectedItem != null)
+                    {
+                        selectedItem.Selected = true;
+                    }
                 }
             }
 
             //Trip Type
             if (!IsPostBack)
             {
-                if (Request.QueryString["tripTypeoption"] != null)
+                if (Request.QueryString["tripTypeOption"] != null)
                 {
-                    string selectedOption = Request.QueryString["tripTypeoption"];
+                    string selectedOption = Request.QueryString["tripTypeOption"];
 
                     txtTripType.Text = selectedOption;
                 }

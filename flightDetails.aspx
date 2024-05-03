@@ -23,19 +23,19 @@
                         <asp:TextBox ID="txtTripType" runat="server"></asp:TextBox>
                         </div>
 
-                        <!-- trip type drop down -->
-                        <div>
+                        <!-- trip type drop down (old one change to txetbox already)-->
+                        <%--<div>
                             <input type="button" name="btn_trip" id="btn_trip" value="Round-trip" onclick="triggerDropDownList('tripDropDownList')" />
                             <img src="../icon/downward-arrow.png" alt="Down arrow" />
                             <!-- TRIP TYPE SELECTION VALUE : HIDDEN -->
                             <asp:HiddenField ID="selected_trip" runat="server" Value="Round-trip" />
-                        </div>
+                        </div>--%>
 
-                        <!-- trip type selection/options list -->
-                        <div id="tripDropDownList" class="ddlist" style="display: none">
+                        <!-- trip type selection/options list (old one change to txetbox already)-->  
+                        <%--<div id="tripDropDownList" class="ddlist" style="display: none">
                             <div class="option" id="round_trip" onclick="selectTrip(0)">Round-trip</div>
                             <div class="option" id="one_way" onclick="selectTrip(1)">One-way</div>
-                        </div>
+                        </div>--%>
                     </div>
 
                     <!-- guest drop down -->

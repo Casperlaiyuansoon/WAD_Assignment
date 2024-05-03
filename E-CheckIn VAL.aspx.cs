@@ -69,15 +69,13 @@ namespace Assignment
             }
             if(!fileIdentification.HasFile)
             {
-/*                string redirectURL = String.Format("~/E-CheckIn VAL.aspx?txtFlightNo={0}&txtFName={1}&txtLName={2}", txtFlightNo.Text, txtFName.Text, txtLName.Text);
-                Response.Redirect(redirectURL);*/
-                lblErrorID.Text = "Please Upload Your IC/Passport Photo!";
+                string redirectURL = String.Format("~/E-CheckIn VAL.aspx?txtFlightNo={0}&txtFName={1}&txtLName={2}", txtFlightNo.Text, txtFName.Text, txtLName.Text);
+                Response.Redirect(redirectURL);
             }
             if (!filePhoto.HasFile)
             {
-/*                string redirectURL = String.Format("~/E-CheckIn VAL.aspx?txtFlightNo={0}&txtFName={1}&txtLName={2}", txtFlightNo.Text, txtFName.Text, txtLName.Text);
-                Response.Redirect(redirectURL);*/
-                lblErrorPhoto.Text = "Please Upload Your Personal Photo!";
+                string redirectURL = String.Format("~/E-CheckIn VAL.aspx?txtFlightNo={0}&txtFName={1}&txtLName={2}", txtFlightNo.Text, txtFName.Text, txtLName.Text);
+                Response.Redirect(redirectURL);
             }
             else
             {
