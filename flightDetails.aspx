@@ -41,6 +41,10 @@
                     <!-- guest drop down -->
                     <div id="guest">
                         <div>
+                        <!-- Passeger textbox -->
+                        <asp:TextBox ID="txtPasseger" runat="server" ReadOnly="true"></asp:TextBox>
+                         </div>
+                       <%-- <div>
                             <input type="button" name="btn_guest" id="btn_guest" value="1 Guest" onclick="triggerDropDownList('guestDropDownList')" />
                             <img src="../icon/downward-arrow.png" alt="Down arrow" />
                             <!-- GUEST NUMBER VALUE: HIDDEN; format:  adult,child,infant  -->
@@ -88,7 +92,7 @@
                                     <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(2, this.value)" />
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
 
                 </div>

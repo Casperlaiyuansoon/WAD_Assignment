@@ -47,6 +47,18 @@ namespace Tarfly.page
                     txtTripType.Text = selectedOption;
                 }
             }
+
+
+            //Passeger Number
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["passegerOption"] != null)
+                {
+                    string selectedOption = Request.QueryString["passegerOption"];
+
+                    txtPasseger.Text = selectedOption;
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
