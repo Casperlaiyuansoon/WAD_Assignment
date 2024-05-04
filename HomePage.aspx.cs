@@ -14,10 +14,14 @@ namespace WAD_Assignment
         {
             if (!IsPostBack)
             {
+                //startDate
                 txtstartdate.Text = DateTime.Now.ToString("yyyy-MM-dd");
                 txtstartdate.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
+
+                //returnDate
                 DateTime tomorrow = DateTime.Today.AddDays(1);
                 txtReturnDate.Text = tomorrow.ToString("yyyy-MM-dd");
+                txtReturnDate.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 
