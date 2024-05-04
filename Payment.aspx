@@ -22,7 +22,6 @@
                         <td><strong>SECURE CHECKOUT</strong></td>
                         <td>
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <asp:Timer ID="countdownTimer" runat="server" Interval="1000" OnTick="CountdownTimer_Tick"></asp:Timer>
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                                     <span id="CodeAsk"></span><br />
@@ -32,6 +31,7 @@
                                     <asp:AsyncPostBackTrigger ControlID="countdownTimer" EventName="Tick" />
                                 </Triggers>
                             </asp:UpdatePanel>
+                            <asp:Timer ID="countdownTimer" runat="server" Interval="1000" OnTick="CountdownTimer_Tick"></asp:Timer>
                         </td>
                     </tr>
                 </table>
