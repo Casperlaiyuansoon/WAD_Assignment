@@ -34,13 +34,70 @@ namespace WAD_Assignment.admin
                         Session["flightAvailable"] = true;
                         flight_repeater.DataSource = flight;
                         flight_repeater.DataBind();
-                    }
-                    
+                    }   
                 }
+            }
 
-                //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Invalid Credential, please try again');", true);
+            if (Request.QueryString["modifying"] != null)
+            {
+                int flightIdToModify = int.Parse(Request.QueryString["modifying"]);
+                //Response.Redirect("admin_login.aspx");
+                string getSpecificFlight = "SELECT * FROM Flight WHERE flight_id = @flightId";
+
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
+                using (SqlCommand command = new SqlCommand(getSpecificFlight, connection))
+                {
+                    command.Parameters.AddWithValue("@flightId", flightIdToModify); // Setup parameter
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string flight_id_edit = reader["flight_id"].ToString();
+                            string plane_id_edit = reader["plane_id"].ToString();
+                            string departure_time_edit = reader["departure_date_time"].ToString();
+                            string departure_city_edit = reader["departure_city"].ToString();
+                            string destination_city_edit = reader["destination_city"].ToString();
+                            string duration_edit = reader["duration"].ToString();
+                            string eco_price_edit = reader["economy_price"].ToString();
+                            string prem_eco_price_edit = reader["premium_economy_price"].ToString();
+                            string business_price_edit = reader["business_price"].ToString();
+                            string fclass_price_edit = reader["first_class_price"].ToString();
+
+                            Response.Redirect("admin_manage_flight.aspx?fId=" + flight_id_edit +
+                                "&pId=" + plane_id_edit + "&dTime=" + departure_time_edit +
+                                "&depCity=" + departure_city_edit + "&desCity=" + destination_city_edit +
+                                "&duration=" + duration_edit + "&ecoP=" + eco_price_edit + 
+                                "&premEcoP=" + prem_eco_price_edit + "&busP=" + business_price_edit +
+                                "&fclassP=" + fclass_price_edit);
+                        }
+                    }
+                }
+            }
+
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["fId"] != null)
+                {
+                    flight_id_modify.Text = Request.QueryString["fId"].ToString();
+                    plane_id_modify.Text = Request.QueryString["pId"].ToString();
+                    departure_time_modify.Text = Request.QueryString["dTime"].ToString();
+                    departure_city_modify.Text = Request.QueryString["depCity"].ToString();
+                    destination_city_modify.Text = Request.QueryString["desCity"].ToString();
+                    duration_modify.Text = Request.QueryString["duration"].ToString();
+                    economy_price_modify.Text = Request.QueryString["ecoP"].ToString();
+                    premium_economy_price_modify.Text = Request.QueryString["premEcoP"].ToString();
+                    business_price_modify.Text = Request.QueryString["busP"].ToString();
+                    fclass_price_modify.Text = Request.QueryString["fclassP"].ToString();
+                }
             }
         }
+
+
+
+
 
         protected void add_flight_submit_Click(object sender, EventArgs e)
         {
@@ -113,6 +170,11 @@ namespace WAD_Assignment.admin
             }
         }
 
+
+
+
+
+        // DELETE ICON CLICKED
         protected void flight_remove_button_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -139,12 +201,84 @@ namespace WAD_Assignment.admin
                     ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Something wrong, maybe the record already deleted');", true);
                 }
             }
-
         }
+        // END DELETE ICON CLICKED
+        
 
+
+
+
+        // UPDATE FLIGHT PROCESS
+        protected void save_modify_btn_Click(object sender, EventArgs e)
+        {
+            string updateFlightQuery = "UPDATE Flight SET plane_id = @planeId, departure_date_time = @departureDateTime, departure_city = @departureCity, destination_city = @destinationCity, duration = @duration, economy_price = @economyPrice, premium_economy_price = @premiumEconomyPrice, business_price = @businessPrice, first_class_price = @firstClassPrice WHERE flight_id = @flightId";
+
+            Session["flightModifyStatus"] = false;
+
+            int pId = int.Parse(plane_id_modify.Text);
+            DateTime ddt = DateTime.Parse(departure_time_modify.Text);
+            string depCity = departure_city_modify.Text;
+            string desCity = destination_city_modify.Text;
+            string duration = duration_modify.Text;
+            int ecoPrice = int.Parse(economy_price_modify.Text);
+            int premEcoPrice = int.Parse(premium_economy_price_modify.Text);
+            int busPrice = int.Parse(business_price_modify.Text);
+            int fclassPrice = int.Parse(fclass_price_modify.Text);
+            int fId = int.Parse(flight_id_modify.Text);
+
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
+            using (SqlCommand command = new SqlCommand(updateFlightQuery, connection))
+            {
+                command.Parameters.AddWithValue("@planeId", pId);
+                command.Parameters.AddWithValue("@departureDateTime", ddt);
+                command.Parameters.AddWithValue("@departureCity", depCity);
+                command.Parameters.AddWithValue("@destinationCity", desCity);
+                command.Parameters.AddWithValue("@duration", duration);
+                command.Parameters.AddWithValue("@economyPrice", ecoPrice);
+                command.Parameters.AddWithValue("@premiumEconomyPrice", premEcoPrice);
+                command.Parameters.AddWithValue("@businessPrice", busPrice);
+                command.Parameters.AddWithValue("@firstClassPrice", fclassPrice);
+                command.Parameters.AddWithValue("@flightId", fId);
+
+                connection.Open();
+                int modifyRowsAffected = command.ExecuteNonQuery();
+
+                if (modifyRowsAffected > 0) // Update successful
+                {
+                    Session["flightModified"] = true;
+                    Response.Redirect("admin_manage_flight.aspx");
+                }
+                else // Update unsuccessful
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Something wrong, try again later');", true);
+                }
+            }
+        }
+        // END UPDATE FLIGHT PROCESS
+
+
+
+
+
+        // MODIFY BUTTON CLICKED
         protected void flight_modify_button_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            string flightId = btn.CommandArgument;
+            string url = "admin_manage_flight.aspx?modifying=" + flightId;
+            Response.Redirect(url);
+        }
+        // END MODIFY BUTTON CLICKED
+
+
+
+
+
+        // SEARCH BUTTON CLICKED
+        protected void search_flight_btn_Click(object sender, EventArgs e)
         {
 
         }
+        // END SEARCH BUTTON CLICKED
     }
 }
