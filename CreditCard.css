@@ -9,11 +9,16 @@
     border: none;
     text-decoration: none;
     text-transform: uppercase;
+
+}
+
+html {
+    background-image: url("Image/plane.jpg");
+    background-size: cover;
 }
 
 .container {
     min-height: 100vh;
-    background: #eee;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +27,6 @@
 }
 
     .container form {
-        background: #fff;
         border-radius: 5px;
         box-shadow: 0 10px 15px rgba(0,0,0,.1);
         padding: 20px;

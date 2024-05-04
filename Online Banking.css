@@ -43,6 +43,10 @@
     padding: 10px;
 }
 
+#lblError{
+    font:
+}
+
 #lnkConfirm, #lnkCancel {
     background-color: #FFBB40;
     color: white;
