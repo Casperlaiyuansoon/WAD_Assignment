@@ -10,17 +10,17 @@
 <body>
     <form id="form1" runat="server">
 
-        <!-- FLIGHT SEARCH -->
+        <!-- FLIGHT SEARCH jeremy  -->
         <div id="flight_search">
             <div>
                 <!-- first row of flight search: trip type, guest, promo code. -->
                 <div id="top">
 
-                    
+
                     <div id="trip_type">
                         <div>
-                        <!-- trip type textbox -->
-                        <asp:TextBox ID="txtTripType" runat="server" ReadOnly="true"></asp:TextBox>
+                            <!-- trip type textbox -->
+                            <asp:TextBox ID="txtTripType" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
 
                         <!-- trip type drop down (old one change to txetbox already)-->
@@ -31,7 +31,7 @@
                             <asp:HiddenField ID="selected_trip" runat="server" Value="Round-trip" />
                         </div>--%>
 
-                        <!-- trip type selection/options list (old one change to txetbox already)-->  
+                        <!-- trip type selection/options list (old one change to txetbox already)-->
                         <%--<div id="tripDropDownList" class="ddlist" style="display: none">
                             <div class="option" id="round_trip" onclick="selectTrip(0)">Round-trip</div>
                             <div class="option" id="one_way" onclick="selectTrip(1)">One-way</div>
@@ -41,6 +41,10 @@
                     <!-- guest drop down -->
                     <div id="guest">
                         <div>
+                            <!-- Passeger textbox -->
+                            <asp:TextBox ID="txtPasseger" runat="server" ReadOnly="true"></asp:TextBox>
+                        </div>
+                        <%-- <div>
                             <input type="button" name="btn_guest" id="btn_guest" value="1 Guest" onclick="triggerDropDownList('guestDropDownList')" />
                             <img src="../icon/downward-arrow.png" alt="Down arrow" />
                             <!-- GUEST NUMBER VALUE: HIDDEN; format:  adult,child,infant  -->
@@ -88,7 +92,7 @@
                                     <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(2, this.value)" />
                                 </div>
                             </div>
-                        </div>
+                        </div>--%>
                     </div>
 
                 </div>
@@ -101,7 +105,7 @@
                         <img src="../icon/pin.png" alt="flyfrom" />
                         <div>
                             <p>Flying from</p>
-                            <asp:TextBox CssClass="textBox" ID="txtFlightFrom" runat="server" placeholder="Flying from" ReadOnly="true"/>
+                            <asp:TextBox CssClass="textBox" ID="txtFlightFrom" runat="server" placeholder="Flying from" ReadOnly="true" />
                         </div>
                     </div>
 
@@ -110,7 +114,7 @@
                         <img src="../icon/pin.png" alt="flyto" />
                         <div>
                             <p>Going to</p>
-                            <asp:TextBox CssClass="textBox" ID="txtFlightTo" runat="server" placeholder="Flying to" ReadOnly="true"/>
+                            <asp:TextBox CssClass="textBox" ID="txtFlightTo" runat="server" placeholder="Flying to" ReadOnly="true" />
                         </div>
                     </div>
 
@@ -126,7 +130,7 @@
                                 <asp:TextBox CssClass="textBox" ID="txtDepart" runat="server" TextMode="Date" ReadOnly="true" />
 
                                 <!-- return date : activate when trip type = round-trip -->
-                                <asp:TextBox CssClass="textBox" ID="txtReturn" runat="server" TextMode="Date" ReadOnly="true"/>
+                                <asp:TextBox CssClass="textBox" ID="txtReturn" runat="server" TextMode="Date" ReadOnly="true" />
                             </div>
                         </div>
                     </div>
@@ -149,16 +153,16 @@
                     <asp:Button ID="clearAll" Text="Clear all" runat="server" />
                 </div>
 
-      
+
 
                 <!-- cabin class radio button list -->
                 <div>
                     <p>Cabin class</p>
                     <asp:RadioButtonList ID="cabinClass" runat="server">
-                        <asp:ListItem Text="Economy" Value="1"/>
-                        <asp:ListItem Text="Premium Economy" Value="2"/>
-                        <asp:ListItem Text="Business" Value="3"/>
-                        <asp:ListItem Text="First Class" Value="4"/>
+                        <asp:ListItem Text="Economy" Value="1" />
+                        <asp:ListItem Text="Premium Economy" Value="2" />
+                        <asp:ListItem Text="Business" Value="3" />
+                        <asp:ListItem Text="First Class" Value="4" />
                     </asp:RadioButtonList>
                 </div>
             </div>
@@ -226,112 +230,49 @@
 
                 <!-- AVAILABLE FLIGHTS -->
                 <!-- start of this flight -->
-                <div class="flight_record">
-                    <div class="r1">
-                        <p>Economy</p>
-                        <p class="price">RM <span>999.99</span></p>
-                    </div>
-                    <p class="r2">for 1 guest</p>
-                    <div class="r3">
-                        <div>
-                            <span>
-                                <p>01:45</p>
-                                <p>KUL</p>
-                            </span>
-                            <span class="horizontalLine">
-                                <img src="../icon/aircraft.png" alt="fly to" />
-                            </span>
-                            <span>
-                                <p>10:00</p>
-                                <p>NOP</p>
-                            </span>
-                            <span>37h 15m (+1)</span>
-                            <span>2 stops (9h 15m at Dubai, 14h 5m at Istanbul)</span>
+                <asp:Repeater ID="rptFlight" runat="server" DataSourceID="SqlDataSource1">
+                    <ItemTemplate>
+                        <div class="flight_record">
+                            <div class="r1">
+                                <p>Economy</p>
+                                <!-- get from search -->
+                                <p class="price">RM <span>999.99</span></p>
+                                <!-- need to calculate based on pax-->
+                            </div>
+                            <p class="r2">for 1 guest guest</p>
+                            <!-- get from search -->
+                            <div class="r3">
+                                <div>
+                                    <span>
+                                        <p><%# Eval("departure_date_time", "{0:hh:mm tt}") %></p>
+                                        <p><%# Eval("departure_city") %></p>
+                                    </span>
+                                    <span class="horizontalLine">
+                                        <img src="../icon/aircraft.png" alt="fly to" />
+                                    </span>
+                                    <span>
+                                        <p><%# CalculateArrivalTime((DateTime)Eval("departure_date_time"), Eval("duration").ToString()) %></p>
+                                        <p><%# Eval("destination_city") %></p>
+                                    </span>
+                                    <span><%# FormatDuration(Eval("duration").ToString()) %></span>
+                                </div>
+                                <asp:Button CssClass="btn_select" ID='Button2' Text="Select" runat="server" PostBackUrl="~/flightBooking.aspx" />
+                            </div>
+                            <div class="r4">
+                                <div>
+                                    <p>View details</p>
+                                    <img src="../icon/down.png" alt="viewDetails" />
+                                </div>
+                            </div>
+                            <div class="r5">
+                                <p>30 kg<span>per guest</span></p>
+                            </div>
                         </div>
-                        <asp:Button CssClass="btn_select" ID="btn_select_1" Text="Select" runat="server" PostBackUrl="~/flightBooking.aspx"/>
-                    </div>
-                    <div class="r4">
-                        <div>
-                            <p>View details</p>
-                            <img src="../icon/down.png" alt="viewDetails" />
-                        </div>
-                    </div>
-                    <div class="r5">
-                        <p>30 kg <span>per guest</span></p>
-                    </div>
-                </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TarFly_Database %>"
+                    SelectCommand="SELECT * FROM Flight"></asp:SqlDataSource>
                 <!-- end of this flight -->
-
-                <div class="flight_record">
-                    <div class="r1">
-                        <p>Economy</p>
-                        <p class="price">RM <span>999.99</span></p>
-                    </div>
-                    <p class="r2">for 1 guest</p>
-                    <div class="r3">
-                        <div>
-                            <span>
-                                <p>01:45</p>
-                                <p>KUL</p>
-                            </span>
-                            <span class="horizontalLine">
-                                <img src="../icon/aircraft.png" alt="fly to" />
-                            </span>
-                            <span>
-                                <p>10:00</p>
-                                <p>NOP</p>
-                            </span>
-                            <span>37h 15m (+1)</span>
-                            <span>2 stops (9h 15m at Dubai, 14h 5m at Istanbul)</span>
-                        </div>
-                        <!-- select button -->
-                        <asp:Button CssClass="btn_select" ID="Button1" Text="Select" runat="server" PostBackUrl="~/flightBooking.aspx" />
-                    </div>
-                    <div class="r4">
-                        <div>
-                            <p>View details</p>
-                            <img src="../icon/down.png" alt="viewDetails" />
-                        </div>
-                    </div>
-                    <div class="r5">
-                        <p>30 kg <span>per guest</span></p>
-                    </div>
-                </div>
-
-                <div class="flight_record">
-                    <div class="r1">
-                        <p>Economy</p>
-                        <p class="price">RM <span>999.99</span></p>
-                    </div>
-                    <p class="r2">for 1 guest</p>
-                    <div class="r3">
-                        <div>
-                            <span>
-                                <p>01:45</p>
-                                <p>KUL</p>
-                            </span>
-                            <span class="horizontalLine">
-                                <img src="../icon/aircraft.png" alt="fly to" />
-                            </span>
-                            <span>
-                                <p>10:00</p>
-                                <p>NOP</p>
-                            </span>
-                            <span>37h 15m (+1)</span>
-                            <span>2 stops (9h 15m at Dubai, 14h 5m at Istanbul)</span>
-                        </div>
-                        <asp:Button CssClass="btn_select" ID="Button2" Text="Select" runat="server" PostBackUrl="~/flightBooking.aspx" />
-                    </div>
-                    <div class="r4">
-                        <div>
-                            <p>View details</p>
-                            <img src="../icon/down.png" alt="viewDetails" />
-                        </div>
-                    </div>
-                    <div class="r5">
-                        <p>30 kg <span>per guest</span></p>
-                    </div>
-                </div>
                 <!-- end of all available flights -->
 
             </div>

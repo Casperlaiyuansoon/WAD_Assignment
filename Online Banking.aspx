@@ -5,16 +5,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" runat="server" media="all" href="/Online Banking.css" />
-    <script>
-        function myFunction() {
-            var x = document.getElementById("txtPassword");
-            if (x.type === "password") {
-                x.type = "text";
-            } else {
-                x.type = "password";
-            }
-        }
-    </script>
     <title></title>
 </head>
 <body>
@@ -31,13 +21,30 @@
                     </tr>
                     <tr>
                         <td>
-                             <asp:TextBox ID="txtPassword" runat="server" placeholder="Password" /><br>
-                             <asp:RadioButton ID="passwordChecking" runat="server"  onclick="myFunction()"/><strong >Show Password</strong></td>
-                          
+                            <asp:TextBox ID="txtPassword" TextMode="Password" runat="server" placeholder="Password" /><br>
+                            <script>
+                                function togglePasswordVisibility(RadioButton) {
+                                    var passwordInput = document.getElementById("txtPassword");
+                                    var toggleButton = document.getElementById("passwordChecking");
+
+                                    if (passwordInput.type === "password") {
+                                        passwordInput.type = "text";
+                                        toggleButton.textContent = "Hide";
+                                    } else {
+                                        passwordInput.type = "password";
+                                        toggleButton.textContent = "Show";
+                                    }
+                                }
+                            </script>
+                            
+                            <asp:CheckBox ID="passwordChecking" runat="server" onclick="togglePasswordVisibility(this)"/><strong >Show Passwor</strong>d<br />
+                            <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+                            </td>
+
                     </tr>
                     <tr>
                         <td>
-                            <asp:LinkButton ID="lnkConfirm" runat="server" PostBackUrl="~/PaymentSuccess.aspx">Confirm</asp:LinkButton>
+                            <asp:LinkButton ID="lnkConfirm" runat="server" OnClick="lnkConfirm_Click">Confirm</asp:LinkButton>
                         </td>
                     </tr>
                     <tr>

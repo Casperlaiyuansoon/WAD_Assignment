@@ -47,21 +47,42 @@ namespace Tarfly.page
                     txtTripType.Text = selectedOption;
                 }
             }
+
+
+            //Passeger Number
+            if (!IsPostBack)
+            {
+                if (Request.QueryString["passegerOption"] != null)
+                {
+                    string selectedOption = Request.QueryString["passegerOption"];
+
+                    txtPasseger.Text = selectedOption;
+                }
+            }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected string CalculateArrivalTime(DateTime departureDateTime, string duration)
         {
+            // Convert duration to hours and minutes
+            int hours = int.Parse(duration.Substring(0, 2)); //from index 0 and the length of 2
+            int minutes = int.Parse(duration.Substring(2)); // start from index 2 until the end
 
+            // Add duration to departureDateTime
+            DateTime arrivalTime = departureDateTime.AddHours(hours).AddMinutes(minutes);
+
+            // Return formatted arrival time
+            return arrivalTime.ToString("hh:mm tt");
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected string FormatDuration(string duration)
         {
+            // Convert duration to hours and minutes
+            int hours = int.Parse(duration.Substring(0, 2));
+            int minutes = int.Parse(duration.Substring(2));
 
+            // Return formatted duration
+            return $"{hours} hours {minutes} minutes";
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

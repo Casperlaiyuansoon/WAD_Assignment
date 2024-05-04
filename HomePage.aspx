@@ -26,88 +26,46 @@
     <section class="section__container booking__container">
         
         <%--Cabin Class--%>
-        <div>
-            <asp:DropDownList ID="cabinClass" runat="server">
-                <asp:ListItem Text="Economy" Value="1" />
-                <asp:ListItem Text="Premium Economy" Value="2" />
-                <asp:ListItem Text="Business Class" Value="3" />
-                <asp:ListItem Text="First Class" Value="4" />
-            </asp:DropDownList>
-        
+        <div class="dropdown-container">
+            <div>
+                <asp:DropDownList ID="cabinClass" runat="server">
+                    <asp:ListItem Text="Economy" Value="1" />
+                    <asp:ListItem Text="Premium Economy" Value="2" />
+                    <asp:ListItem Text="Business Class" Value="3" />
+                    <asp:ListItem Text="First Class" Value="4" />
+                </asp:DropDownList>
 
-        <%--Trip Type--%>
-            <asp:DropDownList ID="tripType" runat="server">
-                <asp:ListItem Text="One Way" Value="One Way" />
-                <asp:ListItem Text="Round Trip" Value="Round Trip" />
-            </asp:DropDownList>
 
-         <%--Guest--%>
-            <div id="guest">
-                <div>
-                    <input type="button" name="btn_guest" id="btn_guest" value="1 Guest" onclick="triggerDropDownList('guestDropDownList')" />
-                    <img src="../icon/downward-arrow.png" alt="Down arrow" />
-                    <!-- GUEST NUMBER VALUE: HIDDEN; format:  adult,child,infant  -->
-                    <asp:HiddenField ID="guest_number" runat="server" Value="1,0,0" />
-                </div>
-                <!-- guest number add/minus  -->
-                <div id="guestDropDownList" class="ddlist guestList" style="display: none">
-                    <!-- adult number  -->
-                    <div id="adult_guest">
-                        <div>
-                            <p class="guestType">Adult</p>
-                            <p class="description">Above 12 years</p>
-                        </div>
-                        <!-- add/minus buttons  -->
-                        <div>
-                            <input type="button" class="btn_minus" value="-" onclick="updateGuestNumber(0, this.value)" />
-                            <p class="number">1</p>
-                            <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(0, this.value)" />
-                        </div>
-                    </div>
-                    <!-- child number -->
-                    <div id="child_guest">
-                        <div>
-                            <p class="guestType">Child</p>
-                            <p class="description">2 - 11 years on travel date</p>
-                        </div>
-                        <!-- add/minus buttons -->
-                        <div>
-                            <input type="button" class="btn_minus" value="-" onclick="updateGuestNumber(1, this.value)" />
-                            <p class="number">0</p>
-                            <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(1, this.value)" />
-                        </div>
-                    </div>
-                    <!-- infant number -->
-                    <div id="infant_guest">
-                        <div>
-                            <p class="guestType">Infant</p>
-                            <p class="description">Below 2 year on travel date.</p>
-                            <p class="description">Seated on lap</p>
-                        </div>
-                        <!-- add/minus buttons -->
-                        <div>
-                            <input type="button" class="btn_minus" value="-" onclick="updateGuestNumber(2, this.value)" />
-                            <p class="number">0</p>
-                            <input type="button" class="btn_add" value="+" onclick="updateGuestNumber(2, this.value)" />
-                        </div>
-                    </div>
-                </div>
+                <%--Trip Type--%>
+                <asp:DropDownList ID="tripType" runat="server" OnSelectedIndexChanged="tripType_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Text="One Way" Value="OneWay" />
+                    <asp:ListItem Text="Round Trip" Value="RoundTrip" />
+                </asp:DropDownList>
+
+              
+
+                <%--Guest--%>
+                <asp:DropDownList ID="passeger" runat="server">
+                    <asp:ListItem Text="1 Passenger" Value="1 Passenger" />
+                    <asp:ListItem Text="2 Passenger" Value="2 Passenger" />
+                    <asp:ListItem Text="3 Passenger" Value="3 Passenger" />
+                    <asp:ListItem Text="4 Passenger" Value="4 Passenger" />
+                    <asp:ListItem Text="5 Passenger" Value="5 Passenger" />
+                    <asp:ListItem Text="6 Passenger" Value="6 Passenger" />
+                </asp:DropDownList>
+
             </div>
-
-
         </div>
 
-
-
-
-         <%--Destination Location--%>
+        
         <form>
+             <%--Destination Location--%>
             <div class="form__group">
                 <span><i class="ri-map-pin-line"></i></span>
                 <div class="input__content">
                     <div class="input__group">
                          <p>From</p>
-                        <asp:TextBox ID="txtLocation" runat="server" placeholder="Frying from"></asp:TextBox>
+                        <asp:TextBox ID="txtLocation" runat="server" placeholder="Frying from" required="required" ></asp:TextBox>
                         <asp:Label ID="lbLocation" runat="server"></asp:Label>
                     </div>
                 </div>
@@ -119,13 +77,13 @@
                 <div class="input__content">
                     <div class="input__group">
                         <p>To</p>
-                        <asp:TextBox ID="txtDestination" runat="server" placeholder="Frying to"></asp:TextBox>
+                        <asp:TextBox ID="txtDestination" runat="server" placeholder="Frying to" required="required" ></asp:TextBox>
                         <asp:Label ID="lbdestination" runat="server"></asp:Label>
                     </div>
                 </div>
             </div>
             
-            <%--Return Date--%>
+            <%--Start Date--%>
             <div class="form__group">
                 <span><i class="ri-calendar-line"></i></span>
                 <div class="input__content">
@@ -137,18 +95,21 @@
                 </div>
             </div>
 
-            <%--Search button --%>
-            <div class="form__group">
-                <span><i class="ri-calendar-line"></i></span>
-                <div class="input__content">
-                    <div class="input__group">
-                        <p>Detination</p>
-                        <asp:TextBox ID="txtReturnDate" runat="server" TextMode="Date"></asp:TextBox>
-                        <asp:Label ID="lbReturnDate" runat="server"></asp:Label>
+            <%--Return Date --%>    
+            <asp:Panel ID="returnDatePanel" runat="server" Visible="false">
+                <div class="form__group">
+                    <span><i class="ri-calendar-line"></i></span>
+                    <div class="input__content">
+                        <div class="input__group">
+                            <p>Detination</>                 
+                            <asp:TextBox ID="txtReturnDate" runat="server" TextMode="Date"></asp:TextBox>
+                            <asp:Label ID="lbReturnDate" runat="server"></asp:Label>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </asp:Panel>
 
+           
             <%--Search button --%>
             <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" OnClick="btnSearch_Click"></asp:Button>
                
