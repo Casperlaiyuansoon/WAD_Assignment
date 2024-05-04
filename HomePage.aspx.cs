@@ -14,8 +14,10 @@ namespace WAD_Assignment
         {
             if (!IsPostBack)
             {
-                txtstartdate.Text = DateTime.Now.ToString("MM/dd/yyyy");
-                txtReturnDate.Text = DateTime.Today.ToString();
+                txtstartdate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+                txtstartdate.Attributes["min"] = DateTime.Now.ToString("yyyy-MM-dd");
+                DateTime tomorrow = DateTime.Today.AddDays(1);
+                txtReturnDate.Text = tomorrow.ToString("yyyy-MM-dd");
             }
         }
 
@@ -46,5 +48,6 @@ namespace WAD_Assignment
             Response.Redirect($"flightDetails.aspx?{queryString}");
         }
 
+       
     }
 }

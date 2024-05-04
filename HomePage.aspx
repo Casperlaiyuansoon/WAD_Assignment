@@ -26,6 +26,7 @@
     <section class="section__container booking__container">
         
         <%--Cabin Class--%>
+        <div class="dropdown-container">
         <div>
             <asp:DropDownList ID="cabinClass" runat="server">
                 <asp:ListItem Text="Economy" Value="1" />
@@ -43,16 +44,16 @@
 
             <%--Guest--%>
             <asp:DropDownList ID="passeger" runat="server">
-                <asp:ListItem Text="Number of Passeger" Value="0" />
-                <asp:ListItem Text="1" Value="1 Passenger" />
-                <asp:ListItem Text="2" Value="2 Passenger" />
-                <asp:ListItem Text="3" Value="3 Passenger" />
-                <asp:ListItem Text="4" Value="4 Passenger" />
-                <asp:ListItem Text="5" Value="5 Passenger" />
-                <asp:ListItem Text="6" Value="6 Passenger" />
+                <asp:ListItem Text="1 Passenger" Value="1 Passenger" />
+                <asp:ListItem Text="2 Passenger" Value="2 Passenger" />
+                <asp:ListItem Text="3 Passenger" Value="3 Passenger" />
+                <asp:ListItem Text="4 Passenger" Value="4 Passenger" />
+                <asp:ListItem Text="5 Passenger" Value="5 Passenger" />
+                <asp:ListItem Text="6 Passenger" Value="6 Passenger" />
             </asp:DropDownList>
 
         </div>
+       </div>
 
         
         <form>

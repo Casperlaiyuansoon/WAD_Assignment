@@ -42,6 +42,34 @@
     transition: 0.3s;
 }
 
+.dropdown-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    padding-left: 2em;
+}
+
+    .dropdown-container select {
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+/* Style for the cabin class dropdown */
+#cabinClass {
+    background-color: #f2f2f2;
+}
+
+/* Style for the trip type dropdown */
+#tripType {
+    background-color: #f2f2f2;
+}
+
+/* Style for the passenger dropdown */
+#passeger {
+    background-color: #f2f2f2;
+}
 
 
     .btn:hover {
