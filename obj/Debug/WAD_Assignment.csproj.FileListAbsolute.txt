@@ -470,3 +470,13 @@ C:\Users\franc\Source\Repos\WAD_Assignment\obj\Debug\WAD_Assignment.csproj.CoreC
 C:\Users\franc\Source\Repos\WAD_Assignment\obj\Debug\WAD_Assi.1A819B5E.Up2Date
 C:\Users\franc\Source\Repos\WAD_Assignment\obj\Debug\WAD_Assignment.dll
 C:\Users\franc\Source\Repos\WAD_Assignment\obj\Debug\WAD_Assignment.pdb
+C:\Users\JD\Desktop\git\bin\WAD_Assignment.dll.config
+C:\Users\JD\Desktop\git\bin\WAD_Assignment.dll
+C:\Users\JD\Desktop\git\bin\WAD_Assignment.pdb
+C:\Users\JD\Desktop\git\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\JD\Desktop\git\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\JD\Desktop\git\obj\Debug\WAD_Assignment.csproj.AssemblyReference.cache
+C:\Users\JD\Desktop\git\obj\Debug\WAD_Assignment.csproj.CoreCompileInputs.cache
+C:\Users\JD\Desktop\git\obj\Debug\WAD_Assi.1A819B5E.Up2Date
+C:\Users\JD\Desktop\git\obj\Debug\WAD_Assignment.dll
+C:\Users\JD\Desktop\git\obj\Debug\WAD_Assignment.pdb

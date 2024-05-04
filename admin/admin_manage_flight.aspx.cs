@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -98,7 +99,7 @@ namespace WAD_Assignment.admin
 
 
 
-
+        // ADD NEW FLIGHT
         protected void add_flight_submit_Click(object sender, EventArgs e)
         {
             int planeId = int.Parse(airplane_id.Text);
@@ -169,6 +170,7 @@ namespace WAD_Assignment.admin
                 Response.Redirect("admin_manage_flight.aspx");
             }
         }
+        // END ADD NEW FLIGHT
 
 
 
@@ -263,10 +265,13 @@ namespace WAD_Assignment.admin
         // MODIFY BUTTON CLICKED
         protected void flight_modify_button_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-            string flightId = btn.CommandArgument;
-            string url = "admin_manage_flight.aspx?modifying=" + flightId;
-            Response.Redirect(url);
+            if (IsPostBack)
+            {
+                Button btn = (Button)sender;
+                string flightId = btn.CommandArgument;
+                string url = "admin_manage_flight.aspx?modifying=" + flightId;
+                Response.Redirect(url);
+            }
         }
         // END MODIFY BUTTON CLICKED
 
@@ -277,7 +282,41 @@ namespace WAD_Assignment.admin
         // SEARCH BUTTON CLICKED
         protected void search_flight_btn_Click(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(search_flight.Text))
+            {
 
+                int search = int.Parse(search_flight.Text);
+                string searchFlightQuery = "SELECT * FROM Flight WHERE flight_id = @flightId";
+                Session["searchFlightAvailable"] = false;
+
+                using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
+                using (SqlCommand command = new SqlCommand(searchFlightQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@flightId", search); // Setup parameter
+
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.HasRows) // If record found
+                    {
+                        search_flight_repeater.DataSource = reader;
+                        search_flight_repeater.DataBind();
+                        Session["searchFlightAvailable"] = true;
+                    }
+                    else // If no record found
+                    {
+                        search_flight_repeater.DataSource = null;
+                        search_flight_repeater.DataBind();
+                        ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('No Record Found');", true);
+                    }
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Enter something to search');", true);
+            }
         }
         // END SEARCH BUTTON CLICKED
     }

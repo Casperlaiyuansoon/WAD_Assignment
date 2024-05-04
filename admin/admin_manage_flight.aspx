@@ -42,7 +42,7 @@
             Session["flightDeleted"] = null;
         }
 
-        if (Session["flightModified"] != null && (bool)Session["flightModified"])
+        if (Session["flightModified"] != null && (bool)Session["flightModified"]) // Modified flight
         {
             %>
                 <script>alert("Flight successfully modified");</script>
@@ -125,7 +125,9 @@
                 </div>
             <%
         }
-    %>
+
+
+%>
     <div class="container">
 
         <h1 style="color:white;">FLIGHT MANAGEMENT</h1>
@@ -312,10 +314,12 @@
 
                 <!-- SEARCH FUNCTION -->
                 <div class="search-section">
-                    <asp:TextBox ID="search_flight" runat="server" class="search_user_field" placeholder="Enter a flight..."></asp:TextBox>
+                    <asp:TextBox ID="search_flight" runat="server" class="search_user_field" placeholder="Enter a flight..." TextMode="Number" ></asp:TextBox>
                     <asp:Button ID="search_flight_btn" runat="server" class="search_user_button fa" Text="&#xf002;" OnClick="search_flight_btn_Click" />
                 </div>
                 <!-- END SEARCH FUNCTION -->
+
+
 
                 <br />
 
@@ -336,10 +340,10 @@
                     </tr>
                     <!-- END HEAD -->
                     <%
-                        if (Session["flightAvailable"] != null && (bool)Session["flightAvailable"]) // If there is record available
+                        if (Session["searchFlightAvailable"] != null && (bool)Session["searchFlightAvailable"]) // If searched record is avaibale
                         {
                             %>
-                                <asp:Repeater ID="flight_repeater" runat="server">
+                                <asp:Repeater ID="search_flight_repeater" runat="server">
                                     <ItemTemplate>
                                         <tr class="data_row">
                                             <td><asp:Label ID="flight_id_value" runat="server" Text='<%# Eval("flight_id") %>'></asp:Label></td>
@@ -357,8 +361,7 @@
                                                 <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" CommandArgument='<%# Eval("flight_id") %>' OnClick="flight_remove_button_Click" />
 
                                                 <script>
-                                                    function confirmDelete()
-                                                    {
+                                                    function confirmDelete() {
                                                         return confirm("Are you sure you want to delete this flight?");
                                                     }
                                                 </script>
@@ -367,14 +370,49 @@
                                     </ItemTemplate>
                                 </asp:Repeater>
                             <%
+                                Session["searchFlightAvailable"] = null;
                         }
-                        else // If there is no record available
+                        else
                         {
-                            %>
-                                <tr class="data_row">
-                                    <td colspan="12" style="text-align:center;">No Record Available</td>
-                                </tr>
-                            <%
+                            if (Session["flightAvailable"] != null && (bool)Session["flightAvailable"]) // If there is record available
+                            {
+                                %>
+                                    <asp:Repeater ID="flight_repeater" runat="server">
+                                        <ItemTemplate>
+                                            <tr class="data_row">
+                                                <td><asp:Label ID="flight_id_value" runat="server" Text='<%# Eval("flight_id") %>'></asp:Label></td>
+                                                <td><asp:Label ID="airplane_id_value" runat="server" Text='<%# Eval("plane_id") %>'></asp:Label></td>
+                                                <td><asp:Label ID="departure_time_value" runat="server" Text='<%# Eval("departure_date_time") %>'></asp:Label></td>
+                                                <td><asp:Label ID="departure_city_value" runat="server" Text='<%# Eval("departure_city") %>'></asp:Label></td>
+                                                <td><asp:Label ID="destination_city_value" runat="server" Text='<%# Eval("destination_city") %>'></asp:Label></td>
+                                                <td><asp:Label ID="duration_value" runat="server" Text='<%# Eval("duration") %>'></asp:Label></td>
+                                                <td><asp:Label ID="economy_price_value" runat="server" Text='<%# Eval("economy_price") %>'></asp:Label></td>
+                                                <td><asp:Label ID="premium_economy_price_value" runat="server" Text='<%# Eval("premium_economy_price") %>'></asp:Label></td>
+                                                <td><asp:Label ID="business_price_value" runat="server" Text='<%# Eval("business_price") %>'></asp:Label></td>
+                                                <td><asp:Label ID="first_class_price_value" runat="server" Text='<%# Eval("first_class_price") %>'></asp:Label></td>
+                                                <td class="btn_section">
+                                                    <asp:Button ID="flight_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" CommandArgument='<%# Eval("flight_id") %>' OnClick="flight_modify_button_Click" />
+                                                    <asp:Button ID="flight_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" CommandArgument='<%# Eval("flight_id") %>' OnClick="flight_remove_button_Click" />
+
+                                                    <script>
+                                                        function confirmDelete() {
+                                                            return confirm("Are you sure you want to delete this flight?");
+                                                        }
+                                                    </script>
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                <%
+                            }
+                            else // If there is no record available
+                            {
+                                %>
+                                    <tr class="data_row">
+                                        <td colspan="12" style="text-align:center;">No Record Available</td>
+                                    </tr>
+                                <%
+                            }
                         }
                     %>
                 </table>  
