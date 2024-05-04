@@ -215,7 +215,7 @@ namespace WAD_Assignment.admin
         {
             string updateFlightQuery = "UPDATE Flight SET plane_id = @planeId, departure_date_time = @departureDateTime, departure_city = @departureCity, destination_city = @destinationCity, duration = @duration, economy_price = @economyPrice, premium_economy_price = @premiumEconomyPrice, business_price = @businessPrice, first_class_price = @firstClassPrice WHERE flight_id = @flightId";
 
-            Session["flightModifyStatus"] = false;
+            Session["flightModified"] = false;
 
             int pId = int.Parse(plane_id_modify.Text);
             DateTime ddt = DateTime.Parse(departure_time_modify.Text);
