@@ -22,15 +22,16 @@
                         <td><strong>SECURE CHECKOUT</strong></td>
                         <td>
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                            <asp:Timer ID="countdownTimer" runat="server" Interval="10000" OnTick="CountdownTimer_Tick"></asp:Timer>
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
-                                     <asp:Label ID="countdownLabel" runat="server"></asp:Label>
+                                    <span id="CodeAsk"></span><br />
+                                     <asp:Label ID="countdownLabel" runat="server" Text="15"></asp:Label>
                                 </ContentTemplate>
                                 <Triggers>
                                     <asp:AsyncPostBackTrigger ControlID="countdownTimer" EventName="Tick" />
                                 </Triggers>
                             </asp:UpdatePanel>
+                            <asp:Timer ID="countdownTimer" runat="server" Interval="1000" OnTick="CountdownTimer_Tick"></asp:Timer>
                         </td>
                     </tr>
                 </table>

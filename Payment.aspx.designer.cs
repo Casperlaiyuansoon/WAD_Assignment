@@ -33,15 +33,6 @@ namespace Assignment
         protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
-        /// countdownTimer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.Timer countdownTimer;
-
-        /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +49,15 @@ namespace Assignment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label countdownLabel;
+
+        /// <summary>
+        /// countdownTimer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer countdownTimer;
 
         /// <summary>
         /// RadioButtonList1 control.
