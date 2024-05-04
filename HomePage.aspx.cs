@@ -43,10 +43,10 @@ namespace WAD_Assignment
             string from = txtLocation.Text;
             string to = txtDestination.Text;
             string departureDate = txtstartdate.Text;
-            string detinationDate = txtReturnDate.Text;
+            string destinationDate = txtReturnDate.Text;
 
             
-            string queryString = $"cabinClassOption={cabinClassOption}&tripTypeOption={tripTypeOption}&passegerOption={passegerOption}&From={from}&To={to}&DepartureDate={departureDate}&DetinationDate={detinationDate}";
+            string queryString = $"cabinClassOption={cabinClassOption}&tripTypeOption={tripTypeOption}&passegerOption={passegerOption}&From={from}&To={to}&DepartureDate={departureDate}&DetinationDate={destinationDate}";
 
 
             Response.Redirect($"flightDetails.aspx?{queryString}");

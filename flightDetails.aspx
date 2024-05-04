@@ -158,7 +158,7 @@
                 <!-- cabin class radio button list -->
                 <div>
                     <p>Cabin class</p>
-                    <asp:RadioButtonList ID="cabinClass" runat="server">
+                    <asp:RadioButtonList ID="cabinClass" runat="server" OnSelectedIndexChanged="cabinClass_SelectedIndexChanged" AutoPostBack="True">
                         <asp:ListItem Text="Economy" Value="1" />
                         <asp:ListItem Text="Premium Economy" Value="2" />
                         <asp:ListItem Text="Business" Value="3" />
@@ -234,12 +234,12 @@
                     <ItemTemplate>
                         <div class="flight_record">
                             <div class="r1">
-                                <p>Economy</p>
+                                <p><%# GetSelectedCabinClassText(cabinClass.SelectedValue) %></p>
                                 <!-- get from search -->
-                                <p class="price">RM <span>999.99</span></p>
+                                <p class="price">RM <span><%# CalculatePrice(cabinClass.SelectedValue, Convert.ToDecimal(Eval("economy_price")), Convert.ToDecimal(Eval("premium_economy_price")), Convert.ToDecimal(Eval("business_price")), Convert.ToDecimal(Eval("first_class_price")))%></p>
                                 <!-- need to calculate based on pax-->
                             </div>
-                            <p class="r2">for 1 guest guest</p>
+                            <p class="r2">for <%# Request.QueryString["passegerOption"].Split()[0] %> guest(s)</p>
                             <!-- get from search -->
                             <div class="r3">
                                 <div>
@@ -256,7 +256,7 @@
                                     </span>
                                     <span><%# FormatDuration(Eval("duration").ToString()) %></span>
                                 </div>
-                                <asp:Button CssClass="btn_select" ID='Button2' Text="Select" runat="server" PostBackUrl="~/flightBooking.aspx" />
+                                <asp:Button CssClass="btn_select" ID='Button2' Text="Select" runat="server" PostBackUrl="~/flightBooking.aspx" style="cursor: pointer;"/>
                             </div>
                             <div class="r4">
                                 <div>
@@ -269,9 +269,21 @@
                             </div>
                         </div>
                     </ItemTemplate>
+                    <FooterTemplate>
+                        <% if (rptFlight.Items.Count == 0)
+                            { %>
+                        <div style="text-align: center; padding: 20px; font-size: 24px">No flights available</div>
+                        <% } %>
+                    </FooterTemplate>
                 </asp:Repeater>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TarFly_Database %>"
-                    SelectCommand="SELECT * FROM Flight"></asp:SqlDataSource>
+                    SelectCommand="SELECT * FROM Flight WHERE departure_city = @departureCity AND destination_city = @destinationCity AND CAST(departure_date_time AS DATE) = @departureDate">
+                    <SelectParameters>
+                        <asp:QueryStringParameter Name="departureCity" QueryStringField="From" Type="String" />
+                        <asp:QueryStringParameter Name="destinationCity" QueryStringField="To" Type="String" />
+                        <asp:QueryStringParameter Name="departureDate" QueryStringField="DepartureDate" Type="DateTime" />
+                    </SelectParameters>
+                </asp:SqlDataSource>
                 <!-- end of this flight -->
                 <!-- end of all available flights -->
 
