@@ -28,11 +28,6 @@ namespace Assignment
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            if(RadioButtonList1 == null)
-            {
-                lblError.Text = "Please Select A Payment Type!";
-                return;
-            }
 
             if(RadioButtonList1.SelectedItem.Text == "💳Credit/Debit Card")
             {  
@@ -64,6 +59,10 @@ namespace Assignment
             /*result = result - TimeSpan.FromSeconds(1);*/
             string fromTimeString = result.ToString(@"hh\:mm\:ss");
             countdownLabel.Text = fromTimeString;
+
+            if(result.TotalSeconds == 0) {
+                Response.Redirect("~/flightBooking.aspx");
+            }
         }
     }
 }

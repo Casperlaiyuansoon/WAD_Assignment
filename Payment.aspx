@@ -25,7 +25,7 @@
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                                     <span id="CodeAsk"></span><br />
-                                     <asp:Label ID="countdownLabel" runat="server" Text="15"></asp:Label>
+                                     <asp:Label ID="countdownLabel" runat="server" Text="1"></asp:Label>
                                 </ContentTemplate>
                                 <Triggers>
                                     <asp:AsyncPostBackTrigger ControlID="countdownTimer" EventName="Tick" />
@@ -65,6 +65,8 @@
                         <br />
                         <br />
                         <asp:Label ID="lblError" runat="server"></asp:Label>
+                    <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="RadioButtonList1" ErrorMessage="Please Select A Payment Type!" ForeColor="Red"></asp:RequiredFieldValidator>
                     </strong>
                 </div>
             </div>
