@@ -13,9 +13,9 @@ namespace Assignment
         protected void Page_Load(object sender, EventArgs e)
         {
             lblError.Text = "";
-            if (!IsPostBack)
+            if (!Page.IsPostBack)
             {
-                TimeSpan time = TimeSpan.FromMilliseconds(countdownTimer.Interval);
+                TimeSpan time = TimeSpan.FromSeconds(Convert.ToInt32(countdownLabel.Text) * 60);
                 string str = time.ToString(@"hh\:mm\:ss");
                 countdownLabel.Text = str;
             }
@@ -60,8 +60,7 @@ namespace Assignment
 
         protected void CountdownTimer_Tick(object sender, EventArgs e)
         {
-            TimeSpan result = TimeSpan.FromMilliseconds((countdownTimer.Interval));
-            result = result.Subtract(TimeSpan.FromSeconds(1));
+            TimeSpan result = TimeSpan.FromSeconds(TimeSpan.Parse(countdownLabel.Text).TotalSeconds - 1);
             /*result = result - TimeSpan.FromSeconds(1);*/
             string fromTimeString = result.ToString(@"hh\:mm\:ss");
             countdownLabel.Text = fromTimeString;
