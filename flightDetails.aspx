@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
 
-        <!-- FLIGHT SEARCH try here -->
+        <!-- FLIGHT SEARCH  -->
         <div id="flight_search">
             <div>
                 <!-- first row of flight search: trip type, guest, promo code. -->
