@@ -27,33 +27,35 @@
         
         <%--Cabin Class--%>
         <div class="dropdown-container">
-        <div>
-            <asp:DropDownList ID="cabinClass" runat="server">
-                <asp:ListItem Text="Economy" Value="1" />
-                <asp:ListItem Text="Premium Economy" Value="2" />
-                <asp:ListItem Text="Business Class" Value="3" />
-                <asp:ListItem Text="First Class" Value="4" />
-            </asp:DropDownList>
+            <div>
+                <asp:DropDownList ID="cabinClass" runat="server">
+                    <asp:ListItem Text="Economy" Value="1" />
+                    <asp:ListItem Text="Premium Economy" Value="2" />
+                    <asp:ListItem Text="Business Class" Value="3" />
+                    <asp:ListItem Text="First Class" Value="4" />
+                </asp:DropDownList>
 
 
-            <%--Trip Type--%>
-            <asp:DropDownList ID="tripType" runat="server">
-                <asp:ListItem Text="One Way" Value="One Way" />
-                <asp:ListItem Text="Round Trip" Value="Round Trip" />
-            </asp:DropDownList>
+                <%--Trip Type--%>
+                <asp:DropDownList ID="tripType" runat="server" OnSelectedIndexChanged="tripType_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Text="One Way" Value="OneWay" />
+                    <asp:ListItem Text="Round Trip" Value="RoundTrip" />
+                </asp:DropDownList>
 
-            <%--Guest--%>
-            <asp:DropDownList ID="passeger" runat="server">
-                <asp:ListItem Text="1 Passenger" Value="1 Passenger" />
-                <asp:ListItem Text="2 Passenger" Value="2 Passenger" />
-                <asp:ListItem Text="3 Passenger" Value="3 Passenger" />
-                <asp:ListItem Text="4 Passenger" Value="4 Passenger" />
-                <asp:ListItem Text="5 Passenger" Value="5 Passenger" />
-                <asp:ListItem Text="6 Passenger" Value="6 Passenger" />
-            </asp:DropDownList>
+              
 
+                <%--Guest--%>
+                <asp:DropDownList ID="passeger" runat="server">
+                    <asp:ListItem Text="1 Passenger" Value="1 Passenger" />
+                    <asp:ListItem Text="2 Passenger" Value="2 Passenger" />
+                    <asp:ListItem Text="3 Passenger" Value="3 Passenger" />
+                    <asp:ListItem Text="4 Passenger" Value="4 Passenger" />
+                    <asp:ListItem Text="5 Passenger" Value="5 Passenger" />
+                    <asp:ListItem Text="6 Passenger" Value="6 Passenger" />
+                </asp:DropDownList>
+
+            </div>
         </div>
-       </div>
 
         
         <form>
@@ -93,18 +95,21 @@
                 </div>
             </div>
 
-            <%--Return Date --%>
-            <div class="form__group">
-                <span><i class="ri-calendar-line"></i></span>
-                <div class="input__content">
-                    <div class="input__group">
-                        <p>Detination</p>
-                        <asp:TextBox ID="txtReturnDate" runat="server" TextMode="Date"></asp:TextBox>
-                        <asp:Label ID="lbReturnDate" runat="server"></asp:Label>
+            <%--Return Date --%>    
+            <asp:Panel ID="returnDatePanel" runat="server" Visible="false">
+                <div class="form__group">
+                    <span><i class="ri-calendar-line"></i></span>
+                    <div class="input__content">
+                        <div class="input__group">
+                            <p>Detination</>                 
+                            <asp:TextBox ID="txtReturnDate" runat="server" TextMode="Date"></asp:TextBox>
+                            <asp:Label ID="lbReturnDate" runat="server"></asp:Label>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </asp:Panel>
 
+           
             <%--Search button --%>
             <asp:Button ID="btnSearch" CssClass="btn" runat="server" Text="Search" OnClick="btnSearch_Click"></asp:Button>
                

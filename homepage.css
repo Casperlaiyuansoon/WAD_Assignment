@@ -165,12 +165,13 @@ nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr) auto;
     gap: 1rem;
+    
 }
 
 
 
 .booking__container .input__content {
-    width: 100%;
+    width: 80%;
 }
 
 
@@ -179,6 +180,7 @@ nav {
     align-items: center;
     gap: 0rem;
 }
+
 
     .booking__container .form__group span {
         margin-top: 3rem;

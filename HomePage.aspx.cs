@@ -48,6 +48,16 @@ namespace WAD_Assignment
             Response.Redirect($"flightDetails.aspx?{queryString}");
         }
 
-       
+        protected void tripType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tripType.SelectedValue == "RoundTrip")
+            {
+                returnDatePanel.Visible = true;
+            }
+            else 
+            {
+                returnDatePanel.Visible = false;
+            }
+        }
     }
 }
