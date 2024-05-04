@@ -12,54 +12,101 @@ namespace Tarfly.page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //From
-            txtFlightFrom.Text = Request.QueryString["From"];
-            //To
-            txtFlightTo.Text = Request.QueryString["To"];
-            //DepartureDate
-            txtDepart.Text = Request.QueryString["DepartureDate"];
-            //DetinationDate
-            txtReturn.Text = Request.QueryString["DetinationDate"];
-
 
             //Cabin Class
             if (!IsPostBack)
             {
+
+                //From
+                txtFlightFrom.Text = Request.QueryString["From"];
+                //To
+                txtFlightTo.Text = Request.QueryString["To"];
+                //DepartureDate
+                txtDepart.Text = Request.QueryString["DepartureDate"];
+                //DetinationDate
+                txtReturn.Text = Request.QueryString["DestinationDate"];
+
                 if (Request.QueryString["cabinClassOption"] != null)
                 {
-                    string selectedOption = Request.QueryString["cabinClassOption"];
-                    ListItem selectedItem = cabinClass.Items.FindByValue(selectedOption);
+                    string cabinClassOption = Request.QueryString["cabinClassOption"];
+                    ListItem selectedItem = cabinClass.Items.FindByValue(cabinClassOption);
 
                     if (selectedItem != null)
                     {
                         selectedItem.Selected = true;
                     }
                 }
-            }
 
-            //Trip Type
-            if (!IsPostBack)
-            {
+                //Trip Type
                 if (Request.QueryString["tripTypeOption"] != null)
                 {
                     string selectedOption = Request.QueryString["tripTypeOption"];
 
                     txtTripType.Text = selectedOption;
                 }
-            }
 
-
-            //Passeger Number
-            if (!IsPostBack)
-            {
+                //Passenger Number
                 if (Request.QueryString["passegerOption"] != null)
                 {
                     string selectedOption = Request.QueryString["passegerOption"];
 
                     txtPasseger.Text = selectedOption;
                 }
+                
             }
         }
+
+        protected string GetSelectedCabinClassText(string cabinClassOption)
+        {
+            //string cabinClassOption = Request.QueryString["cabinClassOption"];
+
+            // Map the selected value to the corresponding text
+            switch (cabinClassOption)
+            {
+                case "1":
+                    return "Economy";
+                case "2":
+                    return "Premium Economy";
+                case "3":
+                    return "Business";
+                case "4":
+                    return "First Class";
+                default:
+                    return "Unknown";
+            }
+        }
+
+        protected string CalculatePrice(string cabinClassOption, decimal economyPrice, decimal premiumEconomyPrice, decimal businessPrice, decimal firstClassPrice)
+        {
+            string guestOption = Request.QueryString["passegerOption"];
+            //string cabinClassOption = Request.QueryString["cabinClassOption"];
+            int numberOfGuests = int.Parse(guestOption.Split()[0]); // Extract the number of guests from "X Passenger"
+            decimal totalPrice;
+
+            switch (cabinClassOption)
+            {
+                case "1": // Economy
+                    totalPrice = numberOfGuests * economyPrice;
+                    return totalPrice.ToString("0.00");
+                case "2": // Premium Economy
+                    totalPrice = numberOfGuests * premiumEconomyPrice;
+                    return totalPrice.ToString("0.00");
+                case "3": // Business Class
+                    totalPrice = numberOfGuests * businessPrice;
+                    return totalPrice.ToString("0.00");
+                case "4": // First Class
+                    totalPrice = numberOfGuests * firstClassPrice;
+                    return totalPrice.ToString("0.00");
+                default:
+                    return "999.99";
+            }
+        }
+
+        protected void cabinClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rptFlight.DataBind();
+        }
+
 
         protected string CalculateArrivalTime(DateTime departureDateTime, string duration)
         {

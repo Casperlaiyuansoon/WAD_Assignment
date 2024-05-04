@@ -31,7 +31,7 @@
                 <asp:DropDownList ID="cabinClass" runat="server">
                     <asp:ListItem Text="Economy" Value="1" />
                     <asp:ListItem Text="Premium Economy" Value="2" />
-                    <asp:ListItem Text="Business Class" Value="3" />
+                    <asp:ListItem Text="Business" Value="3" />
                     <asp:ListItem Text="First Class" Value="4" />
                 </asp:DropDownList>
 
@@ -47,11 +47,11 @@
                 <%--Guest--%>
                 <asp:DropDownList ID="passeger" runat="server">
                     <asp:ListItem Text="1 Passenger" Value="1 Passenger" />
-                    <asp:ListItem Text="2 Passenger" Value="2 Passenger" />
-                    <asp:ListItem Text="3 Passenger" Value="3 Passenger" />
-                    <asp:ListItem Text="4 Passenger" Value="4 Passenger" />
-                    <asp:ListItem Text="5 Passenger" Value="5 Passenger" />
-                    <asp:ListItem Text="6 Passenger" Value="6 Passenger" />
+                    <asp:ListItem Text="2 Passenger" Value="2 Passengers" />
+                    <asp:ListItem Text="3 Passenger" Value="3 Passengers" />
+                    <asp:ListItem Text="4 Passenger" Value="4 Passengers" />
+                    <asp:ListItem Text="5 Passenger" Value="5 Passengers" />
+                    <asp:ListItem Text="6 Passenger" Value="6 Passengers" />
                 </asp:DropDownList>
 
             </div>
