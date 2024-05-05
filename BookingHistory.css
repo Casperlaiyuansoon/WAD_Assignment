@@ -7,9 +7,9 @@
 .booking_history {
     font-size: 1.4rem;
     font-weight: 600;
-    line-height: 5rem;
+    line-height: 3rem;
     color: var(--text-dark);
-    padding-left: 39em;
+    padding-left: 41em;
 }
 
 .table-box {

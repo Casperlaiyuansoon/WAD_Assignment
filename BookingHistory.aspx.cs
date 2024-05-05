@@ -16,6 +16,7 @@ namespace WAD_Assignment
 
         }
 
+
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlConnection con;
@@ -48,5 +49,6 @@ namespace WAD_Assignment
             }
 
         }
+
     }
 }

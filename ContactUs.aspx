@@ -34,10 +34,10 @@
                     <h2 class="auto-style2">Contact Us</h2>
                     <asp:TextBox ID="txtName" CssClass="field" runat="server" Placeholder="Enter your name"></asp:TextBox>
                     <asp:TextBox ID="txtEmail" CssClass="field" runat="server" Placeholder="Enter your email"></asp:TextBox>
-                    <asp:TextBox ID="txtSubject" CssClass="field" runat="server" Placeholder="Enter your subject"></asp:TextBox>
-                    <asp:textBox ID="txtMessage" CssClass="field" runat="server"  Placeholder="Enter your Message" TextMode="Multiline" Rows="4" ></asp:TextBox>
-          
+                    <asp:TextBox ID="txtPhone" CssClass="field" runat="server" Placeholder="Enter your phone"></asp:TextBox>
+                    <textarea id="txtaMessage" cssclass="field" cols="90" name="S1" rows="15"></textarea>
                     <asp:Button ID="btnSend" CssClass="button" runat="server" Text="Send" />
+
                 </div>
             </div>
         </div>
