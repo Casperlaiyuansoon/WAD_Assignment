@@ -170,6 +170,7 @@
                                     </ItemTemplate>
                                 </asp:Repeater>
                             <%
+                                Session["searchFoodAvailable"] = null;
                         }
                         else
                         {
