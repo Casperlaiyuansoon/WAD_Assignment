@@ -29,10 +29,10 @@
                     <h4 class="card-des">Total Admin(s)</h4>
                 </div>
 
-                <div class="item-card dash-food">
-                    <h2><asp:Label class="card-info" ID="total_food_order" runat="server" Text='0'></asp:Label></h2>
-                    <h4 class="card-des">Most Ordered Food</h4>
-                </div> <!-- get from food -->
+                <div class="item-card dash-ticket">
+                    <h2><asp:Label class="card-info" ID="total_booking" runat="server" Text='0'></asp:Label></h2>
+                    <h4 class="card-des">Total Booking(s)</h4>
+                </div> <!-- get from booking -->
 
                 <div class="item-card dash-pay">
                     <h2>RM<asp:Label class="card-info" ID="total_earning" runat="server" Text=' 0'></asp:Label></h2>
@@ -49,11 +49,10 @@
                     <h4 class="card-des">Total Idle Airplane(s)</h4>
                 </div> <!-- get from flight -->
 
-                <div class="item-card dash-ticket">
-                    <h2><asp:Label class="card-info" ID="total_booking" runat="server" Text='0'></asp:Label></h2>
-                    <h4 class="card-des">Total Booking(s)</h4>
-                </div> <!-- get from booking -->
-
+                <div class="item-card dash-food">
+                    <h2><asp:Label class="card-info" ID="total_food_order" runat="server" Text='0'></asp:Label></h2>
+                    <h4 class="card-des">Most Ordered Food</h4>
+                </div> <!-- get from food -->
             </div>
 
             <div class="graph">

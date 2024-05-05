@@ -33,13 +33,13 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.Label admin_number;
 
         /// <summary>
-        /// total_food_order control.
+        /// total_booking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label total_food_order;
+        protected global::System.Web.UI.WebControls.Label total_booking;
 
         /// <summary>
         /// total_earning control.
@@ -69,12 +69,12 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.Label total_idle_plane;
 
         /// <summary>
-        /// total_booking control.
+        /// total_food_order control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label total_booking;
+        protected global::System.Web.UI.WebControls.Label total_food_order;
     }
 }
