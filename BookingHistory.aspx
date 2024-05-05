@@ -27,15 +27,10 @@
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="flight_id" HeaderText="flight_id" InsertVisible="False" ReadOnly="True" SortExpression="flight_id" />
-                        <asp:BoundField DataField="plane_id" HeaderText="plane_id" SortExpression="plane_id" />
                         <asp:BoundField DataField="departure_date_time" HeaderText="departure_date_time" SortExpression="departure_date_time" />
                         <asp:BoundField DataField="departure_city" HeaderText="departure_city" SortExpression="departure_city" />
-                        <asp:BoundField DataField="first_class_price" HeaderText="first_class_price" SortExpression="first_class_price" />
                         <asp:BoundField DataField="destination_city" HeaderText="destination_city" SortExpression="destination_city" />
                         <asp:BoundField DataField="duration" HeaderText="duration" SortExpression="duration" />
-                        <asp:BoundField DataField="economy_price" HeaderText="economy_price" SortExpression="economy_price" />
-                        <asp:BoundField DataField="premium_economy_price" HeaderText="premium_economy_price" SortExpression="premium_economy_price" />
-                        <asp:BoundField DataField="business_price" HeaderText="business_price" SortExpression="business_price" />
                     </Columns>
 
                     <EditRowStyle BackColor="#2461BF" />
