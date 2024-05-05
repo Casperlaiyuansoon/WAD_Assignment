@@ -65,7 +65,7 @@
                 <div class="input__content">
                     <div class="input__group">
                          <p>From</p>
-                        <asp:TextBox ID="txtLocation" runat="server" placeholder="Flying from" required="required" ></asp:TextBox>
+                        <asp:TextBox ID="txtLocation" runat="server" placeholder="Flying from" ></asp:TextBox>
                         <asp:Label ID="lbLocation" runat="server"></asp:Label>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="input__content">
                     <div class="input__group">
                         <p>To</p>
-                        <asp:TextBox ID="txtDestination" runat="server" placeholder="Flying to" required="required" ></asp:TextBox>
+                        <asp:TextBox ID="txtDestination" runat="server" placeholder="Flying to"  ></asp:TextBox>
                         <asp:Label ID="lbdestination" runat="server"></asp:Label>
                     </div>
                 </div>
