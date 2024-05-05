@@ -125,9 +125,8 @@
                 </div>
             <%
         }
+    %>
 
-
-%>
     <div class="container">
 
         <h1 style="color:white;">FLIGHT MANAGEMENT</h1>

@@ -99,6 +99,7 @@ namespace WAD_Assignment.admin
 
 
 
+
         // ADD NEW FLIGHT
         protected void add_flight_submit_Click(object sender, EventArgs e)
         {
@@ -146,7 +147,7 @@ namespace WAD_Assignment.admin
                 string newUserInsertQuery = "INSERT INTO Flight (plane_id, departure_date_time, departure_city, destination_city, duration, economy_price, premium_economy_price, business_price, first_class_price) " +
                     "VALUES (@plane_id, @departure_date_time, @departure_city, " +
                     "@destination_city, @duration, @economy_price, @premium_economy_price, " +
-                    "@business_price, @first_class_price)"; // Insert the new user
+                    "@business_price, @first_class_price)"; // Insert the new flight
 
                 using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
                 using (SqlCommand command = new SqlCommand(newUserInsertQuery, connection))
