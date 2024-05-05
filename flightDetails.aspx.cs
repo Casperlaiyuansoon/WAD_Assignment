@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -24,7 +25,8 @@ namespace Tarfly.page
                 //DepartureDate
                 txtDepart.Text = Request.QueryString["DepartureDate"];
                 //DetinationDate
-                txtReturn.Text = Request.QueryString["DestinationDate"];
+                if (Request.QueryString["tripTypeOption"] == "RoundTrip")
+                    txtReturn.Text = Request.QueryString["DestinationDate"];
 
                 if (Request.QueryString["cabinClassOption"] != null)
                 {
@@ -46,13 +48,13 @@ namespace Tarfly.page
                 }
 
                 //Passenger Number
-                if (Request.QueryString["passegerOption"] != null)
+                if (Request.QueryString["passengerOption"] != null)
                 {
-                    string selectedOption = Request.QueryString["passegerOption"];
+                    string selectedOption = Request.QueryString["passengerOption"];
 
-                    txtPasseger.Text = selectedOption;
+                    txtPassenger.Text = selectedOption;
                 }
-                
+
             }
         }
 
@@ -78,7 +80,7 @@ namespace Tarfly.page
 
         protected string CalculatePrice(string cabinClassOption, decimal economyPrice, decimal premiumEconomyPrice, decimal businessPrice, decimal firstClassPrice)
         {
-            string guestOption = Request.QueryString["passegerOption"];
+            string guestOption = Request.QueryString["passengerOption"];
             //string cabinClassOption = Request.QueryString["cabinClassOption"];
             int numberOfGuests = int.Parse(guestOption.Split()[0]); // Extract the number of guests from "X Passenger"
             decimal totalPrice;
@@ -129,6 +131,69 @@ namespace Tarfly.page
 
             // Return formatted duration
             return $"{hours} hours {minutes} minutes";
+        }
+
+        protected void btnSelect_Click(object sender, EventArgs e)
+        {
+            string cabinClassOption = cabinClass.SelectedValue;
+            string passengerOption = Request.QueryString["passengerOption"];
+            int numberOfGuests = int.Parse(passengerOption.Split()[0]);
+            string tripTypeOption = Request.QueryString["tripTypeOption"];
+
+            Button btn = (Button)sender;
+            string[] args = btn.CommandArgument.Split('|');
+
+            string flightID = args[0];
+            string planeID = args[1];
+            string departureDateTime = args[2];
+            string departureDate = Request.QueryString["DepartureDate"];
+            string returnDate = Request.QueryString["DestinationDate"];
+            string departureCity = args[3];
+            string destinationCity = args[4];
+            string departureDuration = args[5];
+            decimal departurePrice;
+            decimal economyPrice = Convert.ToDecimal(args[6]);
+            decimal premiumEconomyPrice = Convert.ToDecimal(args[7]);
+            decimal businessPrice = Convert.ToDecimal(args[8]);
+            decimal firstClassPrice = Convert.ToDecimal(args[9]);
+
+            switch (cabinClassOption)
+            {
+                case "1": // Economy
+                    departurePrice = numberOfGuests * economyPrice;
+                    departurePrice.ToString("0.00");
+                    break;
+                case "2": // Premium Economy
+                    departurePrice = numberOfGuests * premiumEconomyPrice;
+                    departurePrice.ToString("0.00");
+                    break;
+                case "3": // Business Class
+                    departurePrice = numberOfGuests * businessPrice;
+                    departurePrice.ToString("0.00");
+                    break;
+                case "4": // First Class
+                    departurePrice = numberOfGuests * firstClassPrice;
+                    departurePrice.ToString("0.00");
+                    break;
+                default:
+                    departurePrice = 999.99m;
+                    departurePrice.ToString("0.00");
+                    break;
+            }
+
+            string queryString = $"cabinClassOption={cabinClassOption}&passengerOption={passengerOption}&tripTypeOption={tripTypeOption}&flightID={flightID}&planeID={planeID}&departureDateTime={departureDateTime}&departureDate={departureDate}&returnDate={returnDate}&departureCity={departureCity}&destinationCity={destinationCity}&departureDuration={departureDuration}&departurePrice={departurePrice}";
+
+            switch (tripTypeOption)
+            {
+                case "OneWay":
+                    Response.Redirect($"flightBooking.aspx?{queryString}");
+                    break;
+                case "RoundTrip":
+                    Response.Redirect($"flightDetails2.aspx?{queryString}");
+                    break;
+            }
+
+
         }
 
     }

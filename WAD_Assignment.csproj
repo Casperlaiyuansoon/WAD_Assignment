@@ -68,8 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.css" />
-    <Content Include="admin\admin_dashboard.aspx" />
-    <Content Include="admin\admin_dashboard.css" />
     <Content Include="admin\admin_login.aspx" />
     <Content Include="admin\admin_login.css" />
     <Content Include="admin\admin_manage_flight.aspx" />
@@ -102,6 +100,8 @@
     <Content Include="flightBooking.css" />
     <Content Include="flightDetails.aspx" />
     <Content Include="flightDetails.css" />
+    <Content Include="flightDetails2.aspx" />
+    <Content Include="flightDetails2.css" />
     <Content Include="Homepage.css" />
     <Content Include="icon\aircraft.png" />
     <Content Include="icon\calendar.png" />
@@ -175,13 +175,6 @@
     </Compile>
     <Compile Include="admin\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
-    </Compile>
-    <Compile Include="admin\admin_dashboard.aspx.cs">
-      <DependentUpon>admin_dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\admin_dashboard.aspx.designer.cs">
-      <DependentUpon>admin_dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\admin_login.aspx.cs">
       <DependentUpon>admin_login.aspx</DependentUpon>
@@ -273,6 +266,13 @@
     </Compile>
     <Compile Include="flightDetails.aspx.designer.cs">
       <DependentUpon>flightDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="flightDetails2.aspx.cs">
+      <DependentUpon>flightDetails2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="flightDetails2.aspx.designer.cs">
+      <DependentUpon>flightDetails2.aspx</DependentUpon>
     </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

@@ -20,107 +20,6 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%
-        if (Session["userAdded"] != null && (bool)Session["userAdded"]) // Added user
-        {
-            %>
-                <script>alert("New user added successfully");</script>
-            <%
-            Session["userAdded"] = null;
-        }
-
-        if (Session["userDeleted"] != null && (bool)Session["userDeleted"]) // Deleted user
-        {
-            %>
-                <script>alert("User successfully deleted");</script>
-            <%
-            Session["userDeleted"] = null;
-        }
-
-        if (Session["userModified"] != null && (bool)Session["userModified"]) // Modified user
-        {
-            %>
-                <script>alert("User successfully modified");</script>
-            <%
-            Session["userModified"] = null;
-        }
-
-        if (Request.QueryString["uId"] != null) // If data if found and appear in the address bar
-        {
-            %>
-                <div class="show-user-info">
-                    <div class="inner-user-info">
-
-                        <div style="text-align:right;">
-                            <button type="button" class="fa fa-close" style="color:red" onClick="window.location.href='admin_manage_user.aspx'"></button><br />
-                        </div>
-
-                        <!-- Customer ID -->
-                        <asp:Label ID="Label1" runat="server" Text="Customer ID"></asp:Label>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_id_modify" Text="" ReadOnly="true"></asp:TextBox><br><br />
-
-                        <!-- Customer Name -->
-                        <asp:Label ID="Label2" runat="server" Text="Name"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_name_required" runat="server" ErrorMessage="Name is required" Text="*" ForeColor="Red" ControlToValidate="customer_name_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_name_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- Customer Email -->
-                        <asp:Label ID="Label3" runat="server" Text="Email"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_email_required" runat="server" ErrorMessage="Email is required" Text="*" ForeColor="Red" ControlToValidate="customer_email_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_email_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- Password -->
-                        <asp:Label ID="Label4" runat="server" Text="Password"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_password_required" runat="server" ErrorMessage="Password is required" Text="*" ForeColor="Red" ControlToValidate="customer_password_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_password_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- Phone -->
-                        <asp:Label ID="Label5" runat="server" Text="Phone No"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_phone_required" runat="server" ErrorMessage="Phone is required" Text="*" ForeColor="Red" ControlToValidate="customer_phone_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_phone_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- Address 1 -->
-                        <asp:Label ID="Label6" runat="server" Text="Address 1"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_address1_required" runat="server" ErrorMessage="Address 1 is required" Text="*" ForeColor="Red" ControlToValidate="customer_address1_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_address1_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- Address 2 -->
-                        <asp:Label ID="Label7" runat="server" Text="Adress 2"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_address2_required" runat="server" ErrorMessage="Address 2 is required" Text="*" ForeColor="Red" ControlToValidate="customer_address2_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_address2_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- City -->
-                        <asp:Label ID="Label8" runat="server" Text="City"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_city_required" runat="server" ErrorMessage="City is required" Text="*" ForeColor="Red" ControlToValidate="customer_city_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_city_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- State -->
-                        <asp:Label ID="Label9" runat="server" Text="State"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_state_required" runat="server" ErrorMessage="State is required" Text="*" ForeColor="Red" ControlToValidate="customer_state_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_state_modify" Text=""></asp:TextBox><br><br />
-
-                        <!-- Country -->
-                        <asp:Label ID="Label10" runat="server" Text="Country"></asp:Label>
-                        <asp:RequiredFieldValidator ID="customer_country_required" runat="server" ErrorMessage="Country is required" Text="*" ForeColor="Red" ControlToValidate="customer_country_modify" ValidationGroup="customer_modify_validation"></asp:RequiredFieldValidator>
-                        <br />
-                        <asp:TextBox runat="server" ID="customer_country_modify" Text=""></asp:TextBox><br><br />
-
-                        <asp:Button ID="save_modify_btn" class="save_btn" runat="server" Text="Save" OnClick="save_modify_btn_Click" ValidationGroup="customer_modify_validation" />
-
-                    </div>
-                </div>
-            <%
-        }    
-    %>
     <div class="container">
 
         <h1 style="color:white;">USER MANAGEMENT</h1>
@@ -129,6 +28,7 @@
         <br />
 
         <div class="inner-container">
+            <form>
 
                 <h2 class="section">Add User</h2>
 
@@ -145,10 +45,7 @@
                             <!-- FIRST ROW -->
                             <div class="inner-flex-form">
                                 <div class="inner-flex-content">
-                                    <span>Name :
-                                        <asp:RequiredFieldValidator ID="name_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Name is required" ControlToValidate="register_name" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="name_regex_validate" runat="server" ErrorMessage="Name can't contain numeric value" ForeColor="Red" Text="*" ControlToValidate="register_name" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="add_user_validation"></asp:RegularExpressionValidator>
-                                    </span> <!-- register name --> <br />
+                                    <span>Name :</span> <!-- register name --> <br />
                                     <div class="inputField">
                                         <asp:TextBox ID="register_name" class="textField" runat="server" placeholder="contain only alphabet"></asp:TextBox><br />
                                     </div>
@@ -157,10 +54,7 @@
                                     <br />
 
                                 <div class="inner-flex-content">
-                                    <span>Email :
-                                        <asp:RequiredFieldValidator ID="email_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Email is required" ControlToValidate="register_email" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="email_regex_validate" runat="server" ErrorMessage="Invalid email format" ForeColor="Red" Text="*" ControlToValidate="register_email" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" ValidationGroup="add_user_validation"></asp:RegularExpressionValidator>
-                                    </span> <!-- register email --> <br />
+                                    <span>Email :</span> <!-- register email --> <br />
                                     <div class="inputField">
                                         <asp:TextBox ID="register_email" class="textField" runat="server" placeholder="e.g. user@hotmail.com"></asp:TextBox><br />
                                     </div>
@@ -172,10 +66,7 @@
                             <div class="inner-flex-form">
 
                                 <div class="inner-flex-content">
-                                    <span>Phone No. :
-                                        <asp:RequiredFieldValidator ID="phone_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Phone is required" ControlToValidate="register_phone" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="phone_regex_validate" runat="server" ErrorMessage="Invalid phone format" ForeColor="Red" Text="*" ControlToValidate="register_phone" ValidationExpression="^01[0-9]-\d{7}$" ValidationGroup="add_user_validation"></asp:RegularExpressionValidator>
-                                    </span> <!-- register email --> <br />
+                                    <span>Phone No. :</span> <!-- register email --> <br />
                                     <div class="inputField">
                                         <asp:TextBox ID="register_phone" class="textField" runat="server" placeholder="e.g. 012-3456789"></asp:TextBox><br />
                                     </div>
@@ -184,10 +75,7 @@
                                 <br />
 
                                 <div class="inner-flex-content">
-                                    <span>Password :
-                                        <asp:RequiredFieldValidator ID="password_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Password is required" ControlToValidate="register_password" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="password_regex_validate" runat="server" ErrorMessage="Password at least 8 characters long and contain an uppercase" ForeColor="Red" Text="*" ControlToValidate="register_password" ValidationExpression="^(?=.*[A-Z]).{8,}$" ValidationGroup="add_user_validation"></asp:RegularExpressionValidator>
-                                    </span> <!-- register password --> <br />
+                                    <span>Password :</span> <!-- register password --> <br />
                                     <div class="inputField">
                                         <asp:TextBox ID="register_password" class="textField" runat="server" placeholder="8 characters and an Uppercase" TextMode="Password"></asp:TextBox><br />
                                     </div>
@@ -205,51 +93,41 @@
 
                         <!-- ADDRESS SECTION -->
                         <div class="address">
-                            <span>Address Line 1 :
-                                <asp:RequiredFieldValidator ID="address_one_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Address 1 is required" ControlToValidate="register_address1" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                            </span> <!-- address line 1 --> <br />
+                            <span>Address Line 1 :</span> <!-- address line 1 --> <br />
                             <div class="inputField">
-                                <asp:TextBox ID="register_address1" class="textField" runat="server" placeholder="e.g. No 123, Jalan Bahagia 5"></asp:TextBox><br />
+                                <asp:TextBox ID="address1" class="textField" runat="server" placeholder="e.g. No 123, Jalan Bahagia 5"></asp:TextBox><br />
                             </div>
 
                             <br />
 
-                            <span>Address Line 2 :
-                                <asp:RequiredFieldValidator ID="address_two_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Address 2 is required" ControlToValidate="register_address2" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                            </span> <!-- address line 2 --> <br />
+                            <span>Address Line 2 :</span> <!-- address line 2 --> <br />
                             <div class="inputField">
-                                <asp:TextBox ID="register_address2" class="textField" runat="server" placeholder="e.g. Taman Bahagia"></asp:TextBox><br />
+                                <asp:TextBox ID="address2" class="textField" runat="server" placeholder="e.g. Taman Bahagia"></asp:TextBox><br />
                             </div>
 
                             <br />
 
-                            <span>City :
-                                <asp:RequiredFieldValidator ID="city_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="City is required" ControlToValidate="register_city" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                            </span> <!-- city --> <br />
+                            <span>City :</span> <!-- city --> <br />
                             <div class="inputField">
-                                <asp:TextBox ID="register_city" class="textField" runat="server" placeholder="e.g. Kepong"></asp:TextBox><br />
+                                <asp:TextBox ID="city" class="textField" runat="server" placeholder="e.g. Kepong"></asp:TextBox><br />
                             </div>
 
                             <br />
 
                             <div class="inner-flex-form">
                                 <div class="inner-flex-content">
-                                    <span>State :
-                                        <asp:RequiredFieldValidator ID="state_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="State is required" ControlToValidate="register_state" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                                    </span> <!-- city --> <br />
+                                    <span>State :</span> <!-- city --> <br />
                                     <div class="inputField">
-                                        <asp:TextBox ID="register_state" class="textField" runat="server" placeholder="e.g. Kuala Lumpur"></asp:TextBox><br />
+                                        <asp:TextBox ID="state" class="textField" runat="server" placeholder="e.g. Kuala Lumpur"></asp:TextBox><br />
                                     </div>
                                 </div>
         
                                 <br />
 
                                 <div class="inner-flex-content">
-                                    <span>Country :
-                                        <asp:RequiredFieldValidator ID="country_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Country is required" ControlToValidate="register_country" ValidationGroup="add_user_validation"></asp:RequiredFieldValidator>
-                                    </span> <!-- city --> <br />
+                                    <span>Country :</span> <!-- city --> <br />
                                     <div class="inputField">
-                                        <asp:TextBox ID="register_country" class="textField" runat="server" placeholder="e.g. Malaysia"></asp:TextBox><br />
+                                        <asp:TextBox ID="country" class="textField" runat="server" placeholder="e.g. Malaysia"></asp:TextBox><br />
                                     </div>
                                 </div>
                             </div>
@@ -258,7 +136,7 @@
                     </div>
 
                     <div class="inputField">
-                        <asp:Button ID="add_user_submit" class="register_submit" runat="server" Text="Add" OnClick="add_user_submit_Click" ValidationGroup="add_user_validation"/>
+                        <asp:Button ID="add_user_submit" class="register_submit" runat="server" Text="Add" />
                     </div>
                 </div>
 
@@ -267,7 +145,7 @@
 
                     <div class="search-section">
                         <asp:TextBox ID="search_user" runat="server" class="search_user_field" placeholder="Enter a username..."></asp:TextBox>
-                        <asp:Button ID="search_user_btn" runat="server" class="search_user_button fa" Text="&#xf002;" Onclick="search_user_btn_Click"/>
+                        <asp:Button ID="search_user_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
                     </div>
                 <br />
 
@@ -277,84 +155,136 @@
                         <th>ID</th>
                         <th>Username</th>
                         <th>E-mail</th>
-                        <th>Password</th>
                         <th>Phone No.</th>
-                        <th>Address 1</th>
-                        <th>Address 2</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Country</th>
+                        <th>Address</th>
+                        <th>Password</th>
                         <th>Action</th>
                     </tr>
                     <!-- END HEAD -->
 
-                    <%
-                        if (Session["searchUserAvailable"] != null && (bool)Session["searchUserAvailable"]) // If searched record is avaibale
-                        {
-                            %>
-                                <asp:Repeater ID="search_user_repeater" runat="server">
-                                    <ItemTemplate>
-                                        <tr class="data_row">
-                                            <td><asp:Label ID="user_id_value" runat="server" Text='<%# Eval("customer_id") %>'></asp:Label></td>
-                                            <td><asp:Label ID="username_value" runat="server" Text='<%# Eval("name") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_email_value" runat="server" Text='<%# Eval("email") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_password_value" runat="server" Text='<%# Eval("password") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_phone_value" runat="server" Text='<%# Eval("phone_number") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_address1_value" runat="server" Text='<%# Eval("address_line_1") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_address2_value" runat="server" Text='<%# Eval("address_line_2") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_city_value" runat="server" Text='<%# Eval("city") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_state_value" runat="server" Text='<%# Eval("state") %>'></asp:Label></td>
-                                            <td><asp:Label ID="user_country_value" runat="server" Text='<%# Eval("country") %>'></asp:Label></td>
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="user_id_value" runat="server" Text="1"></asp:Label></td>
+                        <td><asp:Label ID="username_value" runat="server" Text="User001"></asp:Label></td>
+                        <td><asp:Label ID="user_email_value" runat="server" Text="user001@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="user_phone_value" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td><asp:Label ID="user_address_value" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label></td>
+                        <td><asp:Label ID="user_password_value" runat="server" Text="uSeR)0!"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="user_modify1" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="user_delete1" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
+
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="Label1" runat="server" Text="2"></asp:Label></td>
+                        <td><asp:Label ID="Label2" runat="server" Text="User002"></asp:Label></td>
+                        <td><asp:Label ID="Label3" runat="server" Text="user002@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="Label16" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td><asp:Label ID="Label4" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label></td>
+                        <td><asp:Label ID="Label5" runat="server" Text="UsEr0)2"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="Button1" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="Button2" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
+
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="Label6" runat="server" Text="3"></asp:Label></td>
+                        <td><asp:Label ID="Label7" runat="server" Text="User003"></asp:Label></td>
+                        <td><asp:Label ID="Label8" runat="server" Text="user003@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="Label17" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td class="address">
+                            <asp:Label ID="Label9" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label>
+                        </td>
+                        <td><asp:Label ID="Label10" runat="server" Text="uSeR)0#"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="Button3" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="Button4" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
+
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="Label11" runat="server" Text="4"></asp:Label></td>
+                        <td><asp:Label ID="Label12" runat="server" Text="Marcus"></asp:Label></td>
+                        <td><asp:Label ID="Label13" runat="server" Text="marcus123@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="Label18" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td><asp:Label ID="Label14" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label></td>
+                        <td><asp:Label ID="Label15" runat="server" Text="mArCuS!2#"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="Button5" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="Button6" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
+
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="Label19" runat="server" Text="5"></asp:Label></td>
+                        <td><asp:Label ID="Label20" runat="server" Text="User004"></asp:Label></td>
+                        <td><asp:Label ID="Label21" runat="server" Text="user004@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="Label22" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td><asp:Label ID="Label23" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label></td>
+                        <td><asp:Label ID="Label24" runat="server" Text="UsEr0)4"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="Button7" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="Button8" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
+
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="Label25" runat="server" Text="6"></asp:Label></td>
+                        <td><asp:Label ID="Label26" runat="server" Text="User005"></asp:Label></td>
+                        <td><asp:Label ID="Label27" runat="server" Text="user005@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="Label28" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td><asp:Label ID="Label29" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label></td>
+                        <td><asp:Label ID="Label30" runat="server" Text="uSeR)0%"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="Button9" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="Button10" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
+
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="Label31" runat="server" Text="7"></asp:Label></td>
+                        <td><asp:Label ID="Label32" runat="server" Text="User006"></asp:Label></td>
+                        <td><asp:Label ID="Label33" runat="server" Text="user006@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="Label34" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td><asp:Label ID="Label35" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label></td>
+                        <td><asp:Label ID="Label36" runat="server" Text="UsEr0)6"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="Button11" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="Button12" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
                     
-                                            <td class="btn_section">
-                                                <asp:Button ID="user_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" CommandArgument='<%# Eval("customer_id") %>' OnClick="user_modify_button_Click" />
-                                                <asp:Button ID="user_delete_button" class="btn delete fa" runat="server" Text="&#xf014;" CommandArgument='<%# Eval("customer_id") %>' OnClick="user_remove_button_Click" />
-                                            </td>
-                                        </tr>
-                                    </ItemTemplate>
-                                </asp:Repeater>
-                            <%
-                                Session["searchUserAvailable"] = null;
-                        }
-                        else
-                        {
-                            if (Session["userAvailable"] != null && (bool)Session["userAvailable"]) // If there is record available
-                            {
-                                %>
-                                    <asp:Repeater ID="user_repeater" runat="server">
-                                        <ItemTemplate>
-                                            <tr class="data_row">
-                                                <td><asp:Label ID="user_id_value" runat="server" Text='<%# Eval("customer_id") %>'></asp:Label></td>
-                                                <td><asp:Label ID="username_value" runat="server" Text='<%# Eval("name") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_email_value" runat="server" Text='<%# Eval("email") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_password_value" runat="server" Text='<%# Eval("password") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_phone_value" runat="server" Text='<%# Eval("phone_number") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_address1_value" runat="server" Text='<%# Eval("address_line_1") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_address2_value" runat="server" Text='<%# Eval("address_line_2") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_city_value" runat="server" Text='<%# Eval("city") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_state_value" runat="server" Text='<%# Eval("state") %>'></asp:Label></td>
-                                                <td><asp:Label ID="user_country_value" runat="server" Text='<%# Eval("country") %>'></asp:Label></td>
-                    
-                                                <td class="btn_section">
-                                                    <asp:Button ID="user_modify_button" class="btn modify fa" runat="server" Text="&#xf013;" CommandArgument='<%# Eval("customer_id") %>' OnClick="user_modify_button_Click" />
-                                                    <asp:Button ID="user_delete_button" class="btn delete fa" runat="server" Text="&#xf014;" CommandArgument='<%# Eval("customer_id") %>' OnClick="user_remove_button_Click" />
-                                                </td>
-                                            </tr>
-                                        </ItemTemplate>
-                                    </asp:Repeater>
-                                <%
-                            }
-                            else // If there is no record available
-                            {
-                                %>
-                                    <tr class="data_row">
-                                        <td colspan="12" style="text-align:center;">No Record Available</td>
-                                    </tr>
-                                <%
-                            } 
-                        }
-                    %>
+                    <!-- DATA FIELD -->
+                    <tr class="data_row">
+                        <td><asp:Label ID="Label37" runat="server" Text="8"></asp:Label></td>
+                        <td><asp:Label ID="Label38" runat="server" Text="User007"></asp:Label></td>
+                        <td><asp:Label ID="Label39" runat="server" Text="user007@gmail.com"></asp:Label></td>
+                        <td><asp:Label ID="Label40" runat="server" Text="012-3456789"></asp:Label></td>
+                        <td><asp:Label ID="Label41" runat="server" Text="No 123, Taman Bahagia, 47000 Sungai Buloh, Selangor, Malaysia"></asp:Label></td>
+                        <td><asp:Label ID="Label42" runat="server" Text="uSeR)0&"></asp:Label></td>
+                        <td class="btn_section">
+                            <asp:Button ID="Button13" class="btn modify fa" runat="server" Text="&#xf013;" />
+                            <asp:Button ID="Button14" class="btn delete fa" runat="server" Text="&#xf014;" />
+                        </td>
+                    </tr>
+                    <!-- END DATA FIELD -->
                 </table>
+            </form>
         </div>
     </div>
 </asp:Content>

@@ -39,14 +39,14 @@ namespace WAD_Assignment
         {
             string cabinClassOption = cabinClass.SelectedValue;
             string tripTypeOption = tripType.SelectedValue;
-            string passegerOption = passeger.SelectedValue;
+            string passengerOption = passenger.SelectedValue;
             string from = txtLocation.Text;
             string to = txtDestination.Text;
             string departureDate = txtstartdate.Text;
             string destinationDate = txtReturnDate.Text;
 
             
-            string queryString = $"cabinClassOption={cabinClassOption}&tripTypeOption={tripTypeOption}&passegerOption={passegerOption}&From={from}&To={to}&DepartureDate={departureDate}&DetinationDate={destinationDate}";
+            string queryString = $"cabinClassOption={cabinClassOption}&tripTypeOption={tripTypeOption}&passengerOption={passengerOption}&From={from}&To={to}&DepartureDate={departureDate}&DestinationDate={destinationDate}";
 
 
             Response.Redirect($"flightDetails.aspx?{queryString}");
