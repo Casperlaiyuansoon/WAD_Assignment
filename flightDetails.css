@@ -150,7 +150,7 @@ div#down > div {
 }
 
 div#btn_search {
-    width: 17%;
+    width: 10%;
 }
 
 div#btn_search .searchButton  {
@@ -202,6 +202,9 @@ div#dateDepart > div > div > .textBox:nth-of-type(2) {
     padding-left: 2%;
 }
 
+div#dateDepart {
+    width: 30% !important;
+}
 
 /*      FLIGHT RESULT       */
 div#result {

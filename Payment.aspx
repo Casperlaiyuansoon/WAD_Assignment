@@ -34,21 +34,21 @@
                 <table class="locationTime">
                     <tr>
                         <td class="auto-style7">
-                            <asp:Label ID="lblDepart" runat="server" Text="Kuala Lumpur - London"></asp:Label>
+                            <asp:Label ID="lblDepart" runat="server"></asp:Label>
                         </td>
                         <td class="auto-style2">
                             <img alt="plane Logo" src="Image/logo.jpg" /></td>
                         <td class="auto-style12">
-                            <asp:Label ID="lblArrive" runat="server" Text="London - Kuala Lumpur"></asp:Label>
+                            <asp:Label ID="lblArrive" runat="server" ></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style7">
-                            <asp:Label ID="lblDepartDate" runat="server" Text="Fri, 29 Mar | 06:00 - 17:15 | 1 stops"></asp:Label>
+                            <asp:Label ID="lblDepartDate" runat="server" ></asp:Label>
                         </td>
                         <td class="auto-style2">&nbsp;</td>
                         <td class="auto-style12">
-                            <asp:Label ID="lblArriveDate" runat="server" Text="Fri, 06 Apr | 10:55 - 21:10 | 1 stops"></asp:Label>
+                            <asp:Label ID="lblArriveDate" runat="server" ></asp:Label>
                         </td>
                     </tr>
                 </table>
@@ -79,20 +79,20 @@
                     <div>
                         <div>
                             <p>Base fare</p>
-                            <asp:Label ID="Label16" Text="RM 999.99" runat="server" />
+                            <asp:Label ID="Label16" runat="server" />
                         </div>
                         <div>
                             <p>Taxes, fees & surcharges</p>
-                            <asp:Label ID="Label17" Text="RM 999.99" runat="server" />
+                            <asp:Label ID="Label17" runat="server" />
                         </div>
                         <div>
                             <p>Add-ons</p>
-                            <asp:Label ID="Label18" Text="RM 999.99" runat="server" />
+                            <asp:Label ID="Label18" runat="server" />
                         </div>
                     </div>
                     <div id="totalAmount">
                         <p>Total amount</p>
-                        <asp:Label ID="Label19" Text="RM 999.99" runat="server" />
+                        <asp:Label ID="Label19" runat="server" />
                     </div>
                 </div>
                 <br />
