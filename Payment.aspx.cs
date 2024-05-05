@@ -12,12 +12,51 @@ namespace Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string cabinClassOption = Request.QueryString["cabinClassOption"];
+            string passengerOption = Request.QueryString["passengerOption"];
+            string tripTypeOption = Request.QueryString["tripTypeOption"];
+            string flightID = Request.QueryString["flightID"];
+            string planeID = Request.QueryString["planeID"];
+            string departureDateTime = Request.QueryString["departureDateTime"];
+            string departureDate = Request.QueryString["departureDate"];
+            string returnDate = Request.QueryString["returnDate"];
+            string departureCity = Request.QueryString["departureCity"];
+            string destinationCity = Request.QueryString["destinationCity"];
+            string departureDuration = Request.QueryString["departureDuration"];
+            string returnCabinClassOption = Request.QueryString["returnCabinClassOption"];
+            string returnFlightID = Request.QueryString["returnFlightID"];
+            string returnPlaneID = Request.QueryString["returnPlaneID"];
+            string returnDepartureDateTime = Request.QueryString["returnDepartureDateTime"];
+            string returnDuration = Request.QueryString["returnDuration"];
+            string baseFare = Request.QueryString["baseFare"];
+            string taxes = Request.QueryString["taxes"];
+            string addOn = Request.QueryString["addOn"];
+            string total = Request.QueryString["total"];
+
+
             lblError.Text = "";
             if (!Page.IsPostBack)
             {
                 TimeSpan time = TimeSpan.FromSeconds(Convert.ToInt32(countdownLabel.Text) * 60);
                 string str = time.ToString(@"hh\:mm\:ss");
                 countdownLabel.Text = str;
+            }
+
+            if (!IsPostBack)
+            {
+                lblDepart.Text = departureCity + " - " + destinationCity;
+                lblDepartDate.Text = departureDate + " | " + departureDateTime + " | " + flightID;
+
+                if (tripTypeOption == "RoundTrip")
+                {
+                    lblArrive.Text = destinationCity + " - " + departureCity;
+                    lblArriveDate.Text = returnDate+ " | " + returnDepartureDateTime + " | " + returnFlightID;
+                }
+
+                Label16.Text = baseFare;
+                Label17.Text = taxes;
+                Label18.Text = addOn;
+                Label19.Text = total;
             }
         }
 

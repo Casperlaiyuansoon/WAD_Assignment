@@ -161,6 +161,21 @@ namespace WAD_Assignment
             return $"{hours} hours {minutes} minutes";
         }
 
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string departureCity = Request.QueryString["departureCity"];
+            string destinationCity = Request.QueryString["destinationCity"];
+            string departureDate = Request.QueryString["departureDate"];
+            string returnDate = Request.QueryString["returnDate"];
+            string tripTypeOption = Request.QueryString["tripTypeOption"];
+            string cabinClassOption = Request.QueryString["cabinClassOption"];
+            string passengerOption = Request.QueryString["passengerOption"];
+
+            string queryString = $"From={departureCity}&To={destinationCity}&DepartureDate={departureDate}&DestinationDate={returnDate}&tripTypeOption={tripTypeOption}&cabinClassOption={cabinClassOption}&passengerOption={passengerOption}";
+
+            Response.Redirect($"flightDetails.aspx?{queryString}");
+        }
+
         protected void btnSelect_Click(object sender, EventArgs e)
         {
             string cabinClassOption = Request.QueryString["cabinClassOption"];
@@ -196,7 +211,7 @@ namespace WAD_Assignment
             decimal returnFirstClassPrice = Convert.ToDecimal(args[7]);
             decimal totalPrice;
 
-            switch (cabinClassOption)
+            switch (returnCabinClassOption)
             {
                 case "1": // Economy
                     returnDeparturePrice = numberOfGuests * returnEconomyPrice;
