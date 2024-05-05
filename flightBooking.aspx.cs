@@ -79,7 +79,7 @@ namespace Tarfly.page
                 dt.Columns.Add("PassportExpiryDate", typeof(DateTime));
                 dt.Columns.Add("Gender");
 
-                for (int i = 1; i < numberOfGuests; i++)
+                for (int i = 0; i < numberOfGuests; i++)
                 {
                     DataRow dr = dt.NewRow();
                     // Set default values or fetch from your data source
