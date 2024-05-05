@@ -49,13 +49,13 @@ namespace Assignment
                     connection.Open();
 
                     string insertQuery = "INSERT INTO Booking (customer_id, departure_flight, return_flight, departure_cabin_class, return_cabin_class) " +
-                                         "VALUES (@customer_id, @flightID, @returnFlightID, @cabinClassOption, @returnCabinClassOption)";
+                                         "VALUES (@customer_id, @flightID, @flightID, @cabinClassOption, @returnCabinClassOption)";
 
                     using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
                     {
                         insertCommand.Parameters.AddWithValue("@customer_id", userid);
                         insertCommand.Parameters.AddWithValue("@flightID", flightID);
-                        insertCommand.Parameters.AddWithValue("@returnFlightID", returnFlightID);
+                        insertCommand.Parameters.AddWithValue("@returnFlightID", flightID);
                         insertCommand.Parameters.AddWithValue("@cabinClassOption", cabinClassOption);
                         insertCommand.Parameters.AddWithValue("@returnCabinClassOption", returnCabinClassOption);
 
@@ -69,7 +69,7 @@ namespace Assignment
                 Console.WriteLine("Error: " + ex.Message);
             }
 
-            /*Response.Redirect("Homepage.aspx");*/
+            Response.Redirect("Homepage.aspx");
         }
     }
 }
