@@ -191,7 +191,7 @@
                             </span>
                             <span><%= DisplayDuration() %></span>
                         </div>
-                        <asp:Button CssClass="btn_cancel" ID="Button3" Text="Cancel" runat="server" Style="cursor: pointer;" />
+                        <asp:Button CssClass="btn_cancel" ID="Button3" Text="Cancel" runat="server" Style="cursor: pointer;" OnClientClick="javascript:history.back(); return false;"/>
                     </div>
                     <div class="r4">
                         <div>

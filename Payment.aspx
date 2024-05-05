@@ -34,21 +34,21 @@
                 <table class="locationTime">
                     <tr>
                         <td class="auto-style7">
-                            <asp:Label ID="lblDepart" runat="server" Text="Kuala Lumpur - London"></asp:Label>
+                            <asp:Label ID="lblDepart" runat="server"></asp:Label>
                         </td>
                         <td class="auto-style2">
                             <img alt="plane Logo" src="Image/logo.jpg" /></td>
                         <td class="auto-style12">
-                            <asp:Label ID="lblArrive" runat="server" Text="London - Kuala Lumpur"></asp:Label>
+                            <asp:Label ID="lblArrive" runat="server" ></asp:Label>
                         </td>
                     </tr>
                     <tr>
                         <td class="auto-style7">
-                            <asp:Label ID="lblDepartDate" runat="server" Text="Fri, 29 Mar | 06:00 - 17:15 | 1 stops"></asp:Label>
+                            <asp:Label ID="lblDepartDate" runat="server" ></asp:Label>
                         </td>
                         <td class="auto-style2">&nbsp;</td>
                         <td class="auto-style12">
-                            <asp:Label ID="lblArriveDate" runat="server" Text="Fri, 06 Apr | 10:55 - 21:10 | 1 stops"></asp:Label>
+                            <asp:Label ID="lblArriveDate" runat="server" ></asp:Label>
                         </td>
                     </tr>
                 </table>

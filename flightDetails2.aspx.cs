@@ -161,6 +161,8 @@ namespace WAD_Assignment
             return $"{hours} hours {minutes} minutes";
         }
 
+        
+
         protected void btnSelect_Click(object sender, EventArgs e)
         {
             string cabinClassOption = Request.QueryString["cabinClassOption"];
@@ -196,7 +198,7 @@ namespace WAD_Assignment
             decimal returnFirstClassPrice = Convert.ToDecimal(args[7]);
             decimal totalPrice;
 
-            switch (cabinClassOption)
+            switch (returnCabinClassOption)
             {
                 case "1": // Economy
                     returnDeparturePrice = numberOfGuests * returnEconomyPrice;

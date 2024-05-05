@@ -169,19 +169,23 @@
 
             <!-- contact details -->
             <div id="contact_details">
-                <p>Contact details</p
+                <p>Contact details</p>
                 <asp:Label ID="Label9" runat="server" Text="Please add contact person"></asp:Label>
                 <div>
                     <div class="expiryDate inputC">
                         <div>
                             <p>Email Address</p>
-                            <asp:TextBox ID="TextBox7" runat="server" TextMode="Email" placeholder="Email address" ></asp:TextBox>
+                            <asp:TextBox ID="TextBox7" runat="server" TextMode="Email" placeholder="Email address"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox7" ErrorMessage="Email address is required" ForeColor="Red" Display="Dynamic" CssClass="error" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox7" ErrorMessage="Invalid email address format" ForeColor="Red" Display="Dynamic" CssClass="error" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
                         </div>
                     </div>
                     <div class="expiryDate inputC">
                         <div>
                             <p>Phone Number</p>
                             <asp:TextBox ID="TextBox8" runat="server" TextMode="Phone" placeholder="Phone number"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="TextBox8" ErrorMessage="Phone number is required" ForeColor="Red" Display="Dynamic" CssClass="error" />
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="TextBox8" ErrorMessage="Invalid phone number format" ForeColor="Red" Display="Dynamic" CssClass="error" ValidationExpression="\d{10,11}" />
                         </div>
                     </div>
                 </div>
@@ -259,15 +263,17 @@
                     <div>
                         <p>Add-ons</p>
                         <asp:Label ID="Label18" runat="server" />
+                        <asp:HiddenField ID="HiddenAddon" runat="server" />
                     </div>
                 </div>
                 <div id="totalAmount">
                     <p>Total amount</p>
                     <asp:Label ID="Label19" runat="server" />
+                    <asp:HiddenField ID="HiddenTotal" runat="server" />
                 </div>
             </div>
             <!-- Continue button -->
-            <asp:Button ID="continueCheckout" Text="Continue" runat="server" OnClick="continueCheckout_Click" style="cursor: pointer;"/>
+            <asp:Button ID="continueCheckout" Text="Continue" runat="server" OnClick="continueCheckout_Click" Style="cursor: pointer;" />
         </div>
     </form>
 
@@ -307,10 +313,14 @@
 
             // Update Label18 with the total addon cost
             document.getElementById('Label18').innerText = "RM " + totalAddonCost.toFixed(2);
+            document.getElementById('<%= HiddenAddon.ClientID %>').value = totalAddonCost.toFixed(2);
 
             let totalAmount = baseFare + taxes + totalAddonCost;
             document.getElementById('Label19').innerText = "RM " + totalAmount.toFixed(2);
+            document.getElementById('<%= HiddenTotal.ClientID %>').value = totalAmount.toFixed(2);
+
             console.log(addonQtyRaw.value);
+
         }
 
 
