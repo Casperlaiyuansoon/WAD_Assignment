@@ -49,7 +49,7 @@
                         <asp:RequiredFieldValidator ID="admin_password_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Password is required" ControlToValidate="admin_login_password"></asp:RequiredFieldValidator>
                     </span> <!-- register password --> <br />
                     <div class="inputField">
-                        <asp:TextBox ID="admin_login_password" class="textField" runat="server" placeholder="your password"></asp:TextBox><br />
+                        <asp:TextBox ID="admin_login_password" class="textField" TextMode="Password" runat="server" placeholder="your password"></asp:TextBox><br />
                     </div>
 
                     <br />

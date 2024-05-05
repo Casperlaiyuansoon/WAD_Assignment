@@ -71,7 +71,7 @@
                                     <asp:RegularExpressionValidator ID="admin_email_regex_validate" runat="server" ErrorMessage="Invalid email format" ForeColor="Red" Text="*" ControlToValidate="admin_register_email" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"></asp:RegularExpressionValidator>
                                 </span> <!-- register email --> <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="admin_register_email" class="textField" runat="server" placeholder="user@hotmail.com"></asp:TextBox><br />
+                                    <asp:TextBox ID="admin_register_email" class="textField" runat="server" TextMode="Password" placeholder="user@hotmail.com"></asp:TextBox><br />
                                 </div>
 
                                 <br />
@@ -81,7 +81,7 @@
                                     <asp:CompareValidator ID="admin_password_compare" runat="server" ForeColor="Red" Text="*" ErrorMessage="Password do not match" ControlToValidate="admin_register_c_password" ControlToCompare="admin_register_password"></asp:CompareValidator>
                                 </span> <!-- register confirm password --> <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="admin_register_c_password" class="textField" runat="server" placeholder="enter password again"></asp:TextBox><br />
+                                    <asp:TextBox ID="admin_register_c_password" class="textField" runat="server" TextMode="Password" placeholder="enter password again"></asp:TextBox><br />
                                 </div>
                             </div>
                             <!-- END SECOND ROW -->
