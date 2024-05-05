@@ -140,8 +140,8 @@ namespace Tarfly.page
             string returnDuration = Label15.Text;
             string baseFare = Label16.Text;
             string taxes = Label17.Text;
-            string addOn = "RM " + HiddenAddon.Value;
-            string total = "RM " + HiddenTotal.Value;
+            string addOn =  HiddenAddon.Value;
+            string total =  HiddenTotal.Value;
 
             string queryString = $"?cabinClassOption={cabinClassOption}&passengerOption={passengerOption}&tripTypeOption={tripTypeOption}&flightID={flightID}&planeID={planeID}&departureDateTime={departureDateTime}&departureDate={departureDate}&returnDate={returnDate}&departureCity={departureCity}&destinationCity={destinationCity}&departureDuration={departureDuration}&returnCabinClassOption={returnCabinClassOption}&returnFlightID={returnFlightID}&returnPlaneID={returnPlaneID}&returnDepartureDateTime={returnDepartureDateTime}&returnDuration={returnDuration}&baseFare={baseFare}&taxes={taxes}&addOn={addOn}&total={total}";
 

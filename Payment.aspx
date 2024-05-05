@@ -79,20 +79,20 @@
                     <div>
                         <div>
                             <p>Base fare</p>
-                            <asp:Label ID="Label16" Text="RM 999.99" runat="server" />
+                            <asp:Label ID="Label16" runat="server" />
                         </div>
                         <div>
                             <p>Taxes, fees & surcharges</p>
-                            <asp:Label ID="Label17" Text="RM 999.99" runat="server" />
+                            <asp:Label ID="Label17" runat="server" />
                         </div>
                         <div>
                             <p>Add-ons</p>
-                            <asp:Label ID="Label18" Text="RM 999.99" runat="server" />
+                            <asp:Label ID="Label18" runat="server" />
                         </div>
                     </div>
                     <div id="totalAmount">
                         <p>Total amount</p>
-                        <asp:Label ID="Label19" Text="RM 999.99" runat="server" />
+                        <asp:Label ID="Label19" runat="server" />
                     </div>
                 </div>
                 <br />

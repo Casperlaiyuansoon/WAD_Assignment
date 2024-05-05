@@ -18,6 +18,26 @@ namespace Assignment
 
         protected void lnkConfirm_Click(object sender, EventArgs e)
         {
+            string cabinClassOption = Request.QueryString["cabinClassOption"];
+            string passengerOption = Request.QueryString["passengerOption"];
+            string tripTypeOption = Request.QueryString["tripTypeOption"];
+            string flightID = Request.QueryString["flightID"];
+            string planeID = Request.QueryString["planeID"];
+            string departureDateTime = Request.QueryString["departureDateTime"];
+            string departureDate = Request.QueryString["departureDate"];
+            string returnDate = Request.QueryString["returnDate"];
+            string departureCity = Request.QueryString["departureCity"];
+            string destinationCity = Request.QueryString["destinationCity"];
+            string departureDuration = Request.QueryString["departureDuration"];
+            string returnCabinClassOption = Request.QueryString["returnCabinClassOption"];
+            string returnFlightID = Request.QueryString["returnFlightID"];
+            string returnPlaneID = Request.QueryString["returnPlaneID"];
+            string returnDepartureDateTime = Request.QueryString["returnDepartureDateTime"];
+            string returnDuration = Request.QueryString["returnDuration"];
+            string baseFare = Request.QueryString["baseFare"];
+            string taxes = Request.QueryString["taxes"];
+            string addOn = Request.QueryString["addOn"];
+            string total = Request.QueryString["total"];
             string loginID = txtLoginID.Text.Trim();
             string Password = txtPassword.Text.Trim();
             /* string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=TarFly_Database;Integrated Security=True";*/
@@ -37,7 +57,8 @@ namespace Assignment
                 if (a > 0)
                 {
                     lblError.Text = "";
-                    Response.Redirect("~/PaymentSuccess.aspx");
+                    string queryString = $"?cabinClassOption={cabinClassOption}&passengerOption={passengerOption}&tripTypeOption={tripTypeOption}&flightID={flightID}&planeID={planeID}&departureDateTime={departureDateTime}&departureDate={departureDate}&returnDate={returnDate}&departureCity={departureCity}&destinationCity={destinationCity}&departureDuration={departureDuration}&returnCabinClassOption={returnCabinClassOption}&returnFlightID={returnFlightID}&returnPlaneID={returnPlaneID}&returnDepartureDateTime={returnDepartureDateTime}&returnDuration={returnDuration}&baseFare={baseFare}&taxes={taxes}&addOn={addOn}&total={total}";
+                    Response.Redirect("~/PaymentSuccess.aspx" + queryString);
                 }
                 else
                 {
