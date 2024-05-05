@@ -11,7 +11,7 @@ namespace WAD_Assignment.admin
 {
 
 
-    public partial class admin_dashboard
+    public partial class dashboard
     {
 
         /// <summary>
