@@ -26,6 +26,11 @@
                         <asp:HyperLink ID="navTicket" runat="server" NavigateUrl="~/admin/admin_manage_ticket.aspx" class="fa master_button">&#xf145; <p> &nbsp;&nbsp;Manage Ticket</p></asp:HyperLink>
                         <asp:HyperLink ID="navFood" runat="server" NavigateUrl="~/admin/admin_manage_food.aspx" class="fa master_button">&#xf0f5; <p> &nbsp;&nbsp;Manage Food</p></asp:HyperLink>
                         <asp:HyperLink ID="navPlane" runat="server" NavigateUrl="~/admin/admin_manage_plane.aspx" class="fa master_button">&#xf072; <p> &nbsp;&nbsp;Manage Plane</p></asp:HyperLink>
+
+                        <div class="logout-btn-div">
+                            <asp:Button ID="admin_logout_btn" class="admin_logout_btn" runat="server" Text="LOGOUT" OnClick="admin_logout_btn_Click"/>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

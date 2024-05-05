@@ -13,5 +13,15 @@ namespace WAD_Assignment.admin
 		{
 
 		}
-	}
+
+		protected void admin_logout_btn_Click(object sender, EventArgs e)
+		{
+            Session["adminId"] = null;
+            Session["admin_name"] = null;
+			Session["admin_email"] = null;
+
+			Response.Redirect("admin_login.aspx");
+        }
+
+    }
 }

@@ -14,6 +14,13 @@ namespace WAD_Assignment.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["adminId"] == null)
+            {
+                Session["adminAuth"] = true;
+                Response.Redirect("admin_login.aspx");
+            }
+
             Session["ticketAvailable"] = false;
             string getTicket = "SELECT * FROM Booking";
 

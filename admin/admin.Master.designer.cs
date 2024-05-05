@@ -87,6 +87,15 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.HyperLink navPlane;
 
         /// <summary>
+        /// admin_logout_btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button admin_logout_btn;
+
+        /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
         /// <remarks>

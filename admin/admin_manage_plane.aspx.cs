@@ -14,6 +14,13 @@ namespace WAD_Assignment.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["adminId"] == null)
+            {
+                Session["adminAuth"] = true;
+                Response.Redirect("admin_login.aspx");
+            }
+
             Session["planeAvailable"] = false;
             string getFlight = "SELECT * FROM Plane"; // Check if the user already exist
 

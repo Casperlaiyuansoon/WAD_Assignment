@@ -21,6 +21,13 @@
                 </script>
             <%
         }
+        if (Session["adminAuth"] != null && (bool)Session["adminAuth"])
+        {
+            %>
+                <script>alert("You must login first");</script>
+            <%
+            Session["adminAuth"] = null;
+        }
     %>
     <div class="container">
 

@@ -57,7 +57,7 @@
                                     <asp:RegularExpressionValidator ID="admin_password_regex_validate" runat="server" ErrorMessage="Password at least 8 characters long and contain an uppercase" ForeColor="Red" Text="*" ControlToValidate="admin_register_password" ValidationExpression="^(?=.*[A-Z]).{8,}$"></asp:RegularExpressionValidator>
                                 </span> <!-- register password --> <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="admin_register_password" class="textField" runat="server" placeholder="8 characters and an Uppercase"></asp:TextBox><br />
+                                    <asp:TextBox ID="admin_register_password" class="textField" runat="server" TextMode="Password" placeholder="8 characters and an Uppercase"></asp:TextBox><br />
                                 </div>
                             </div>
                             <!-- END FIRST ROW -->
@@ -71,7 +71,7 @@
                                     <asp:RegularExpressionValidator ID="admin_email_regex_validate" runat="server" ErrorMessage="Invalid email format" ForeColor="Red" Text="*" ControlToValidate="admin_register_email" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"></asp:RegularExpressionValidator>
                                 </span> <!-- register email --> <br />
                                 <div class="inputField">
-                                    <asp:TextBox ID="admin_register_email" class="textField" runat="server" TextMode="Password" placeholder="user@hotmail.com"></asp:TextBox><br />
+                                    <asp:TextBox ID="admin_register_email" class="textField" runat="server" placeholder="user@hotmail.com"></asp:TextBox><br />
                                 </div>
 
                                 <br />
