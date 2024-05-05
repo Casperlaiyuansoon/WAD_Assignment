@@ -53,6 +53,40 @@ namespace Assignment
 
                     using (SqlCommand insertCommand = new SqlCommand(insertQuery, connection))
                     {
+                        switch (cabinClassOption)
+                        {
+                            case "1": // Economy
+                                cabinClassOption = "Economy";
+                                break;
+                            case "2": // Premium Economy
+                                cabinClassOption = "Premium";
+                                break;
+                            case "3": // Business Class
+                                cabinClassOption = "Business Class";
+                                break;
+                            case "4": // First Class
+                                cabinClassOption = "First Class";
+                                break;
+                            default:
+                                break;
+                        }
+                        switch (returnCabinClassOption)
+                        {
+                            case "1": // Economy
+                                returnCabinClassOption = "Economy";
+                                break;
+                            case "2": // Premium Economy
+                                returnCabinClassOption = "Premium";
+                                break;
+                            case "3": // Business Class
+                                returnCabinClassOption = "Business Class";
+                                break;
+                            case "4": // First Class
+                                returnCabinClassOption = "First Class";
+                                break;
+                            default:
+                                break;
+                        }
                         insertCommand.Parameters.AddWithValue("@customer_id", userid);
                         insertCommand.Parameters.AddWithValue("@flightID", flightID);
                         insertCommand.Parameters.AddWithValue("@returnFlightID", flightID);
