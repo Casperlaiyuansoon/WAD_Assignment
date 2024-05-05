@@ -68,6 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.css" />
+    <Content Include="admin\admin_dashboard.aspx" />
+    <Content Include="admin\admin_dashboard.css" />
     <Content Include="admin\admin_login.aspx" />
     <Content Include="admin\admin_login.css" />
     <Content Include="admin\admin_manage_flight.aspx" />
@@ -82,8 +84,6 @@
     <Content Include="admin\admin_manage_user.css" />
     <Content Include="admin\admin_register.aspx" />
     <Content Include="admin\admin_register.css" />
-    <Content Include="admin\dashboard.aspx" />
-    <Content Include="admin\dashboard.css" />
     <Content Include="admin\master_admin.css" />
     <Content Include="App_Data\TarFly_Database.mdf" />
     <Content Include="App_Data\TarFly_Database_log.ldf">
@@ -178,6 +178,13 @@
     <Compile Include="admin\admin.Master.designer.cs">
       <DependentUpon>admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="admin\admin_dashboard.aspx.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\admin_dashboard.aspx.designer.cs">
+      <DependentUpon>admin_dashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\admin_login.aspx.cs">
       <DependentUpon>admin_login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,13 +233,6 @@
     </Compile>
     <Compile Include="admin\admin_register.aspx.designer.cs">
       <DependentUpon>admin_register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\dashboard.aspx.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\dashboard.aspx.designer.cs">
-      <DependentUpon>dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="BookingHistory.aspx.cs">
       <DependentUpon>BookingHistory.aspx</DependentUpon>
