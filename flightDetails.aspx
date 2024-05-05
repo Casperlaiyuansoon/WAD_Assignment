@@ -42,7 +42,7 @@
                     <div id="guest">
                         <div>
                             <!-- Passeger textbox -->
-                            <asp:TextBox ID="txtPasseger" runat="server" ReadOnly="true"></asp:TextBox>
+                            <asp:TextBox ID="txtPassenger" runat="server" ReadOnly="true"></asp:TextBox>
                         </div>
                         <%-- <div>
                             <input type="button" name="btn_guest" id="btn_guest" value="1 Guest" onclick="triggerDropDownList('guestDropDownList')" />
@@ -135,9 +135,9 @@
                         </div>
                     </div>
 
-                    <!-- search button -->
+                   
                     <div id="btn_search">
-                        <asp:Button CssClass="searchButton" Text="Search" runat="server" />
+                        
                     </div>
                 </div>
             </div>
@@ -170,43 +170,6 @@
             <!-- DISPLAY FLIGHT RESULT -->
             <div id="flight_result">
 
-                <!-- SELECTED DEPARTURE FLIGHT : SHOW AFTER SELECTED A DEPARTURE FLIGHT && IS ROUND-TRIP -->
-                <div class="flight_record" id="selected_depart_flight" style="display: none">
-                    <div class="r1">
-                        <p>Economy</p>
-                        <p>Selected</p>
-                        <p class="price">RM <span>999.99</span></p>
-                    </div>
-                    <p class="r2">for 1 guest</p>
-                    <div class="r3">
-                        <div>
-                            <span>
-                                <p>01:45</p>
-                                <p>KUL</p>
-                            </span>
-                            <span class="horizontalLine">
-                                <img src="../icon/aircraft.png" alt="fly to" />
-                            </span>
-                            <span>
-                                <p>10:00</p>
-                                <p>NOP</p>
-                            </span>
-                            <span>37h 15m (+1)</span>
-                            <span>2 stops (9h 15m at Dubai, 14h 5m at Istanbul)</span>
-                        </div>
-                        <asp:Button CssClass="btn_cancel" ID="Button3" Text="Cancel" runat="server" />
-                    </div>
-                    <div class="r4">
-                        <div>
-                            <p>View details</p>
-                            <img src="../icon/down.png" alt="viewDetails" />
-                        </div>
-                    </div>
-                    <div class="r5">
-                        <p>30 kg <span>per guest</span></p>
-                    </div>
-                </div>
-
                 <!-- FLIGHT RESULT HEADER -->
                 <div id="result_header">
                     <h3>Departing flights</h3>
@@ -234,12 +197,12 @@
                     <ItemTemplate>
                         <div class="flight_record">
                             <div class="r1">
-                                <p><%# GetSelectedCabinClassText(cabinClass.SelectedValue) %></p>
+                                <p><%= GetSelectedCabinClassText(cabinClass.SelectedValue) %></p>
                                 <!-- get from search -->
                                 <p class="price">RM <span><%# CalculatePrice(cabinClass.SelectedValue, Convert.ToDecimal(Eval("economy_price")), Convert.ToDecimal(Eval("premium_economy_price")), Convert.ToDecimal(Eval("business_price")), Convert.ToDecimal(Eval("first_class_price")))%></p>
                                 <!-- need to calculate based on pax-->
                             </div>
-                            <p class="r2">for <%# Request.QueryString["passegerOption"].Split()[0] %> guest(s)</p>
+                            <p class="r2">for <%= Request.QueryString["passengerOption"].Split()[0] %> guest(s)</p>
                             <!-- get from search -->
                             <div class="r3">
                                 <div>
@@ -256,7 +219,7 @@
                                     </span>
                                     <span><%# FormatDuration(Eval("duration").ToString()) %></span>
                                 </div>
-                                <asp:Button CssClass="btn_select" ID='Button2' Text="Select" runat="server" PostBackUrl="~/flightBooking.aspx" style="cursor: pointer;"/>
+                                <asp:Button CssClass="btn_select" ID='Button2' Text="Select" runat="server" CommandName="SelectFlight" CommandArgument='<%# Eval("flight_id") + "|" + Eval("plane_id")+ "|" + Eval("departure_date_time") + "|" + Eval("departure_city") + "|" + Eval("destination_city") + "|" + Eval("duration") + "|" + Eval("economy_price") + "|" + Eval("premium_economy_price") + "|" + Eval("business_price") + "|" + Eval("first_class_price")%>' OnClick="btnSelect_Click" style="cursor: pointer;"/>
                             </div>
                             <div class="r4">
                                 <div>

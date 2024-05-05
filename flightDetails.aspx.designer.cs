@@ -33,13 +33,13 @@ namespace Tarfly.page
         protected global::System.Web.UI.WebControls.TextBox txtTripType;
 
         /// <summary>
-        /// txtPasseger control.
+        /// txtPassenger control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPasseger;
+        protected global::System.Web.UI.WebControls.TextBox txtPassenger;
 
         /// <summary>
         /// txtFlightFrom control.
@@ -94,15 +94,6 @@ namespace Tarfly.page
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList cabinClass;
-
-        /// <summary>
-        /// Button3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
 
         /// <summary>
         /// SortBy control.
