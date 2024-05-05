@@ -56,8 +56,8 @@ namespace Assignment
 
                 Label16.Text = baseFare;
                 Label17.Text = taxes;
-                Label18.Text = addOn;
-                Label19.Text = total;
+                Label18.Text = "RM " + addOn;
+                Label19.Text = "RM " + total;
             }
         }
 
