@@ -20,6 +20,7 @@
                         <hr class="master_hr"/>
                     </div>
                     <div class="master_sidebar_content">
+                        <asp:HyperLink ID="navDashboard" runat="server" NavigateUrl="~/admin/admin_dashboard.aspx" class="fa master_button">&#xf0e4; <p> &nbsp;&nbsp;Dashboard</p></asp:HyperLink><br />
                         <asp:HyperLink ID="navUser" runat="server" NavigateUrl="~/admin/admin_manage_user.aspx" class="fa master_button">&#xf007; <p> &nbsp;&nbsp;Manage User</p></asp:HyperLink><br />
                         <asp:HyperLink ID="navFlight" runat="server" NavigateUrl="~/admin/admin_manage_flight.aspx" class="fa master_button">&#xf072; <p> &nbsp;&nbsp;Manage Flight</p></asp:HyperLink><br />
                         <asp:HyperLink ID="navTicket" runat="server" NavigateUrl="~/admin/admin_manage_ticket.aspx" class="fa master_button">&#xf145; <p> &nbsp;&nbsp;Manage Ticket</p></asp:HyperLink>
