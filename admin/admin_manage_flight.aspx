@@ -313,7 +313,7 @@
 
                 <!-- SEARCH FUNCTION -->
                 <div class="search-section">
-                    <asp:TextBox ID="search_flight" runat="server" class="search_user_field" placeholder="Enter a flight..." TextMode="Number" ></asp:TextBox>
+                    <asp:TextBox ID="search_flight" runat="server" class="search_user_field" placeholder="Enter a flight ID..." TextMode="Number" ></asp:TextBox>
                     <asp:Button ID="search_flight_btn" runat="server" class="search_user_button fa" Text="&#xf002;" OnClick="search_flight_btn_Click" />
                 </div>
                 <!-- END SEARCH FUNCTION -->

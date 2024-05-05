@@ -137,7 +137,7 @@
                 <h2 class="section">Existing Food</h2>
 
                 <div class="search-section">
-                    <asp:TextBox ID="search_food" runat="server" class="search_user_field" placeholder="Enter a food..."></asp:TextBox>
+                    <asp:TextBox ID="search_food" runat="server" class="search_user_field" placeholder="Enter a food name..."></asp:TextBox>
                     <asp:Button ID="search_food_btn" runat="server" class="search_user_button fa" Text="&#xf002;" OnClick="search_food_btn_Click" />
                 </div>
                 <br />
