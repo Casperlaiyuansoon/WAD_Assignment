@@ -17,7 +17,7 @@
                     <%
                         Session["adminLoginStatus"] = null;
                     %>
-                    window.location.href = "admin_manage_user.aspx";
+                    window.location.href = "admin_dashboard.aspx";
                 </script>
             <%
         }

@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 
 namespace WAD_Assignment.admin
 {
-    public partial class dashboard : System.Web.UI.Page
+    public partial class admin_dashboard : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -64,7 +64,7 @@ namespace WAD_Assignment.admin
 
             total_booking.Text = bookingCount.ToString();
             // END TOTAL BOOKING
-            
+
 
 
 
@@ -82,9 +82,10 @@ namespace WAD_Assignment.admin
 
                 while (reader.Read())
                 {
-                    if (reader.HasRows) {
+                    if (reader.HasRows)
+                    {
                         totalEarning += decimal.Parse(reader["total_amount"].ToString());
-                    } 
+                    }
                 }
 
                 string trimmedString = " " + totalEarning.ToString();

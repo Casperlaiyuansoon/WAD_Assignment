@@ -483,6 +483,15 @@ namespace WAD_Assignment.admin
         protected global::System.Web.UI.WebControls.Button search_flight_btn;
 
         /// <summary>
+        /// search_flight_repeater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater search_flight_repeater;
+
+        /// <summary>
         /// flight_repeater control.
         /// </summary>
         /// <remarks>

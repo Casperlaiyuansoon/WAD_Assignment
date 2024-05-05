@@ -6,6 +6,16 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <%
+        if (Session["ticketDeleted"] != null && (bool)Session["ticketDeleted"]) // Deleted ticket
+        {
+            %>
+                <script>alert("Ticket successfully deleted");</script>
+            <%
+            Session["ticketDeleted"] = null;
+        }
+    %>
+
     <div class="container">
 
         <h1 style="color: white;">BOOKED FLIGHT MANAGEMENT</h1>
@@ -14,147 +24,89 @@
         <br />
 
         <div class="inner-container">
-            <form>
 
                 <h2 class="section">Existing Booking</h2>
 
                 <div class="search-section">
-                    <asp:TextBox ID="search_ticket" runat="server" class="search_user_field" placeholder="Enter a username..."></asp:TextBox>
-                    <asp:Button ID="search_ticket_btn" runat="server" class="search_user_button fa" Text="&#xf002;" />
+                    <asp:TextBox ID="search_ticket" runat="server" class="search_user_field" placeholder="Enter a ticket ID..." TextMode="Number"></asp:TextBox>
+                    <asp:Button ID="search_ticket_btn" runat="server" class="search_user_button fa" Text="&#xf002;" OnClick="search_ticket_btn_Click" />
                 </div>
                     
                 <br />
 
                 <table>
 
-                    <!-- TITLE -->
-                    <%--<tr class="data_section">
-                        <th style="visibility: hidden"></th>
-                        <th colspan="2">Customer</th>
-                        <th colspan="5">Flight</th>
-                    </tr>--%>
-                    <!-- END TITLE -->
-
                     <!-- HEAD -->
                     <tr class="data_header">
                         <th>Booking ID</th>
                         <th>Customer ID</th>
-                        <th>Customer Name</th>
                         <th>Departure Flight</th>
-                        <th>Departure Date Time</th>
-                        <th>Departure City</th>
-                        <th>Cabin Class Price</th>
                         <th>Return Flight</th>
-                        <th>Cabin Class</th>
+                        <th>Departure Cabin Class</th>
+                        <th>Return Cabin Class</th>
                         <th>Action</th>
                     </tr>
                     <!-- END HEAD -->
 
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td>
-                            <asp:Label ID="booked_id_value" runat="server" Text="1"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="user_id_value" runat="server" Text="2"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="user_name_value" runat="server" Text="Marcus"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="departure_flight_id_value" runat="server" Text="3"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="departure_date_time_value" runat="server" Text="3/4/2034 08:00:00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="departure_city_value" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="cabin_class_price_value" runat="server" Text="RM 200.00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="return_flight_id_value" runat="server" Text="4"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="cabin_class_value" runat="server" Text="Business"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="user_delete1" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td>
-                            <asp:Label ID="Label1" runat="server" Text="2"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label2" runat="server" Text="3"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label3" runat="server" Text="Casper"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label4" runat="server" Text="5"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label13" runat="server" Text="5/4/2034 14:00:00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label14" runat="server" Text="Tokyo"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label15" runat="server" Text="RM 100.00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label16" runat="server" Text="6"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label17" runat="server" Text="Premium Economy"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button1" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td>
-                            <asp:Label ID="Label5" runat="server" Text="3"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label6" runat="server" Text="5"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label7" runat="server" Text="Adam"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label8" runat="server" Text="7"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label18" runat="server" Text="10/4/2034 09:00:00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label19" runat="server" Text="Bangkok"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label20" runat="server" Text="RM 70.00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label21" runat="server" Text="8"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label22" runat="server" Text="Economy"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button2" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
-
-                    <!-- DATA FIELD -->
-                    <tr class="data_row">
-                        <td>
-                            <asp:Label ID="Label9" runat="server" Text="4"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label10" runat="server" Text="6"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label11" runat="server" Text="Abu"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label12" runat="server" Text="9"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label23" runat="server" Text="10/4/2034 09:30:00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label24" runat="server" Text="Kuala Lumpur"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label25" runat="server" Text="RM 250.00"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label26" runat="server" Text="10"></asp:Label></td>
-                        <td>
-                            <asp:Label ID="Label27" runat="server" Text="First Class"></asp:Label></td>
-                        <td class="btn_section">
-                            <asp:Button ID="Button3" class="btn delete fa" runat="server" Text="&#xf014;" />
-                        </td>
-                    </tr>
-                    <!-- END DATA FIELD -->
+                    <%
+                        if (Session["searchTicketAvailable"] != null && (bool)Session["searchTicketAvailable"]) // If searched record is avaibale
+                        {
+                            %>
+                                <asp:Repeater ID="search_ticket_repeater" runat="server">
+                                    <ItemTemplate>
+                                        <!-- DATA FIELD -->
+                                        <tr class="data_row">
+                                            <td><asp:Label ID="booked_id_value" runat="server" Text='<%# Eval("booking_id") %>'></asp:Label></td>
+                                            <td><asp:Label ID="user_id_value" runat="server" Text='<%# Eval("customer_id") %>'></asp:Label></td>
+                                            <td><asp:Label ID="departure_flight_value" runat="server" Text='<%# Eval("departure_flight") %>'></asp:Label></td>
+                                            <td><asp:Label ID="return_flight_value" runat="server" Text='<%# Eval("return_flight") %>'></asp:Label></td>
+                                            <td><asp:Label ID="departure_cabin_class_value" runat="server" Text='<%# Eval("departure_cabin_class") %>'></asp:Label></td>
+                                            <td><asp:Label ID="return_cabin_class_value" runat="server" Text='<%# Eval("return_cabin_class") %>'></asp:Label></td>
+                                            <td class="btn_section">
+                                                <asp:Button ID="ticket_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" CommandArgument='<%# Eval("booking_id") %>' OnClick="ticket_remove_button_Click" />
+                                            </td>
+                                        </tr>
+                                        <!-- END DATA FIELD -->
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            <%
+                                Session["searchTicketAvailable"] = null;
+                        }
+                        else
+                        {
+                            if (Session["ticketAvailable"] != null && (bool)Session["ticketAvailable"]) // If there is record available
+                            {
+                                %>
+                                    <asp:Repeater ID="ticket_repeater" runat="server">
+                                        <ItemTemplate>
+                                            <!-- DATA FIELD -->
+                                            <tr class="data_row">
+                                                <td><asp:Label ID="booked_id_value" runat="server" Text='<%# Eval("booking_id") %>'></asp:Label></td>
+                                                <td><asp:Label ID="user_id_value" runat="server" Text='<%# Eval("customer_id") %>'></asp:Label></td>
+                                                <td><asp:Label ID="departure_flight_value" runat="server" Text='<%# Eval("departure_flight") %>'></asp:Label></td>
+                                                <td><asp:Label ID="return_flight_value" runat="server" Text='<%# Eval("return_flight") %>'></asp:Label></td>
+                                                <td><asp:Label ID="departure_cabin_class_value" runat="server" Text='<%# Eval("departure_cabin_class") %>'></asp:Label></td>
+                                                <td><asp:Label ID="return_cabin_class_value" runat="server" Text='<%# Eval("return_cabin_class") %>'></asp:Label></td>
+                                                <td class="btn_section">
+                                                    <asp:Button ID="ticket_remove_button" class="btn delete fa" runat="server" Text="&#xf014;" CommandArgument='<%# Eval("booking_id") %>' OnClick="ticket_remove_button_Click" />
+                                                </td>
+                                            </tr>
+                                            <!-- END DATA FIELD -->
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                <%
+                            }
+                            else // If there is no record available
+                            {
+                                %>
+                                    <tr class="data_row">
+                                        <td colspan="12" style="text-align:center;">No Record Available</td>
+                                    </tr>
+                                <%
+                            }
+                        }
+                    %>
                 </table>
-            </form>
         </div>
     </div>
 </asp:Content>
