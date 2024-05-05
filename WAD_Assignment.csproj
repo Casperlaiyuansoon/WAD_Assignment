@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AboutUs.css" />
     <Content Include="admin\admin_dashboard.aspx" />
+    <Content Include="admin\admin_dashboard.css" />
     <Content Include="admin\admin_login.aspx" />
     <Content Include="admin\admin_login.css" />
     <Content Include="admin\admin_manage_flight.aspx" />
