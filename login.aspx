@@ -56,10 +56,6 @@
                 <br />
                 <br />
 
-                <asp:CheckBox ID="rememberMe" runat="server" Text="Remember Me" />
-
-                <br />
-
                 <div class="inputField">
                     <asp:Button ID="login_submit" runat="server" Text="Login" OnClick="login_submit_Click" />
                 </div>
