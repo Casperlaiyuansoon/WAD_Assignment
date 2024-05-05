@@ -61,7 +61,7 @@ namespace Assignment
             countdownLabel.Text = fromTimeString;
 
             if(result.TotalSeconds == 0) {
-                Response.Redirect("~/flightBooking.aspx");
+                Response.Redirect("~/Homepage.aspx");
             }
         }
 
