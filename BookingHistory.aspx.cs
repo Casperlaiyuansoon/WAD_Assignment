@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace WAD_Assignment
 {
@@ -15,6 +13,7 @@ namespace WAD_Assignment
         {
 
         }
+<<<<<<< HEAD
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -48,5 +47,7 @@ namespace WAD_Assignment
             }
 
         }
+=======
+>>>>>>> fa69ca7183cc471032e37b450e70ae2134a73994
     }
 }

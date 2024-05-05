@@ -45,7 +45,7 @@
               
 
                 <%--Guest--%>
-                <asp:DropDownList ID="passeger" runat="server">
+                <asp:DropDownList ID="passenger" runat="server">
                     <asp:ListItem Text="1 Passenger" Value="1 Passenger" />
                     <asp:ListItem Text="2 Passenger" Value="2 Passengers" />
                     <asp:ListItem Text="3 Passenger" Value="3 Passengers" />
@@ -65,7 +65,7 @@
                 <div class="input__content">
                     <div class="input__group">
                          <p>From</p>
-                        <asp:TextBox ID="txtLocation" runat="server" placeholder="Frying from" required="required" ></asp:TextBox>
+                        <asp:TextBox ID="txtLocation" runat="server" placeholder="Flying from" required="required" ></asp:TextBox>
                         <asp:Label ID="lbLocation" runat="server"></asp:Label>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="input__content">
                     <div class="input__group">
                         <p>To</p>
-                        <asp:TextBox ID="txtDestination" runat="server" placeholder="Frying to" required="required" ></asp:TextBox>
+                        <asp:TextBox ID="txtDestination" runat="server" placeholder="Flying to" required="required" ></asp:TextBox>
                         <asp:Label ID="lbdestination" runat="server"></asp:Label>
                     </div>
                 </div>

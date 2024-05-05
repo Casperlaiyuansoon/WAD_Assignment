@@ -9,9 +9,9 @@ form#form1 {
     font-family: Arial;
 }
 
-    form#form1 > div {
-        margin-top: 3%;
-    }
+form#form1 > div {
+    margin-top: 3%;
+}
 
 div#left {
     width: 50%;
@@ -47,13 +47,15 @@ div#booking_details {
     display: flex;
 }
 
+div#booking_details > div {
+    width: 50%;
+}
+
 div#depart {
     margin-right: 10%;
 }
 
-div#return {
-    visibility: visible;
-}
+
 
 div#depart_date img, div#return_date img {
     width: 19px;

@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="BookingHistory.css" />
     </head>
 
+<<<<<<< HEAD
     <style>
         .gridview{
             margin-left:auto;
@@ -18,12 +19,15 @@
       
   </style>
 
+=======
+>>>>>>> fa69ca7183cc471032e37b450e70ae2134a73994
 </asp:Content>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
         
+<<<<<<< HEAD
     <form id="form2">
 
         
@@ -34,6 +38,13 @@
                 <hr>
                 <br>
                 <%--   <div class="table-row table-head">
+=======
+  <body>
+     
+<div class="table-box">
+    <h2 class="booking_history">Booking History</h2><hr>
+    <div class="table-row table-head">
+>>>>>>> fa69ca7183cc471032e37b450e70ae2134a73994
         <div class="table-cell first-cell">
             <p>No.</p>
         </div>
@@ -83,6 +94,7 @@
     </div>--%>
             
 
+<<<<<<< HEAD
             <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="flight_id" DataSourceID="SqlDataSource1" Height="352px" Width="1241px" CssClass="gridview">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
@@ -119,10 +131,142 @@
 
 
         </body>
+=======
+
+    
+    <div class="table-row">
+        <div class="table-cell first-cell">
+            <p>2.</p>
+        </div>
+        <div class="table-cell">
+            <p>Fri, 25 Mar 2024</p>
+        </div>
+        <div class="table-cell">
+            <p>08.30am</p>
+        </div>
+        <div class="table-cell">
+            <p>Langkawi</p>
+        </div>
+        <div class="table-cell">
+            <p>01.20pm</p>
+        </div>
+        <div class="table-cell">
+            <p>Vietnam</p>
+        </div>
+        <div class="table-cell last-cell">
+            <p>PSNQHQ02</p>
+        </div>
+    </div>
 
 
-     
-    </form>
+    
+    <div class="table-row">
+        <div class="table-cell first-cell">
+            <p>3.</p>
+        </div>
+        <div class="table-cell">
+            <p>Mon, 26 April 2025</p>
+        </div>
+        <div class="table-cell">
+            <p>09.30am</p>
+        </div>
+        <div class="table-cell">
+            <p>Singapore</p>
+        </div>
+        <div class="table-cell">
+            <p>10.40am</p>
+        </div>
+        <div class="table-cell">
+            <p>Japan</p>
+        </div>
+        <div class="table-cell last-cell">
+            <p>PSNQHQ33</p>
+        </div>
+    </div>
+
+
+    
+    <div class="table-row">
+        <div class="table-cell first-cell">
+            <p>4.</p>
+        </div>
+        <div class="table-cell">
+            <p>Sun, 24 May 2023</p>
+        </div>
+        <div class="table-cell">
+            <p>04.30pm</p>
+        </div>
+        <div class="table-cell">
+            <p>Thaidland</p>
+        </div>
+        <div class="table-cell">
+            <p>07.10pm</p>
+        </div>
+        <div class="table-cell">
+            <p>Kuala Lumpur</p>
+        </div>
+        <div class="table-cell last-cell">
+            <p>PSNQHQ56</p>
+        </div>
+    </div>
+
+
+    
+    <div class="table-row">
+        <div class="table-cell first-cell">
+            <p>5.</p>
+        </div>
+        <div class="table-cell">
+            <p>Tue, 24 Jan 2022</p>
+        </div>
+        <div class="table-cell">
+            <p>09.00am</p>
+        </div>
+        <div class="table-cell">
+            <p>Puala Pinang</p>
+        </div>
+        <div class="table-cell">
+            <p>11.00am</p>
+        </div>
+        <div class="table-cell">
+            <p>Kuala Lumpur</p>
+        </div>
+        <div class="table-cell last-cell">
+            <p>PSNQHQ87</p>
+        </div>
+    </div>
+
+
+    
+    <div class="table-row">
+        <div class="table-cell first-cell">
+            <p>6.</p>
+        </div>
+        <div class="table-cell">
+            <p>Fri, 24 Mar 2023</p>
+        </div>
+        <div class="table-cell">
+            <p>09.30am</p>
+        </div>
+        <div class="table-cell">
+            <p>Langkawi</p>
+        </div>
+        <div class="table-cell">
+            <p>10.40am</p>
+        </div>
+        <div class="table-cell">
+            <p>Indonesia</p>
+        </div>
+        <div class="table-cell last-cell">
+            <p>PSNQHQ22</p>
+        </div>
+    </div>
+
+
+
+</div>   
+</body>
+>>>>>>> fa69ca7183cc471032e37b450e70ae2134a73994
 
 
      
