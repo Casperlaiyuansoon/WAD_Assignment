@@ -44,9 +44,8 @@ namespace WAD_Assignment
             }
             else
             {
-                GridView1.EmptyDataText = "";
+                GridView1.EmptyDataText = "No data found";
             }
-
 
         }
     }
