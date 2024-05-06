@@ -125,12 +125,14 @@ namespace WAD_Assignment.admin
             string country = customer_country_modify.Text;
             int id = int.Parse(customer_id_modify.Text);
 
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
             using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
             using (SqlCommand command = new SqlCommand(updateFlightQuery, connection))
             {
                 command.Parameters.AddWithValue("@custName", name);
                 command.Parameters.AddWithValue("@custEmail", email);
-                command.Parameters.AddWithValue("@custPassword", password);
+                command.Parameters.AddWithValue("@custPassword", hashedPassword);
                 command.Parameters.AddWithValue("@custPhone", phone);
                 command.Parameters.AddWithValue("@custAddress1", address1);
                 command.Parameters.AddWithValue("@custAddress2", address2);
