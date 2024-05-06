@@ -12,23 +12,26 @@
             margin-left:auto;
             margin-right: auto;
         }
+        .auto-style1 {
+            margin-left: 71;
+        }
     </style>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <form id="form2">
+    <form id="form2" class="auto-style1">
         <body>
             <div class="table-box">
                 <h2 class="booking_history">Booking History</h2>
                 <hr>
                 <br>
-                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="flight_id" DataSourceID="SqlDataSource1" Height="352px" Width="1241px" CssClass="gridview">
+                <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="flight_id" DataSourceID="SqlDataSource1" Height="352px" Width="1460px" CssClass="gridview">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="flight_id" HeaderText="Flight No" InsertVisible="False" ReadOnly="True" SortExpression="flight_id" />
-                        <asp:BoundField DataField="departure_date_time" HeaderText="departure_date_time" SortExpression="departure_date_time" />
+                        <asp:BoundField DataField="departure_date_time" HeaderText="Date And Time" SortExpression="departure_date_time" />
                         <asp:BoundField DataField="departure_city" HeaderText="Departure City" SortExpression="departure_city" />
                         <asp:BoundField DataField="destination_city" HeaderText="Destination City" SortExpression="destination_city" />
                         <asp:BoundField DataField="duration" HeaderText="Duration" SortExpression="duration" />
@@ -49,12 +52,14 @@
 
 
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TarFly_Database %>" SelectCommand="SELECT * FROM [Flight]"></asp:SqlDataSource> 
-
-
 </body>
-
-
-
-     
     </form>
+     <br>
+     <br>
+     <br> 
+     <br>
+     <br>
+
+
+   
 </asp:Content>

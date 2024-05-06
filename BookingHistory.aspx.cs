@@ -13,7 +13,7 @@ namespace WAD_Assignment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            GridView1.RowStyle.HorizontalAlign = HorizontalAlign.Center;
         }
 
 
