@@ -26,6 +26,9 @@ namespace tarfly
                 string email = admin_register_email.Text;
                 string password = admin_register_password.Text;
 
+                //Hasdhed the password before storing in the database
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
                 int count = 0;
                 Session["adminRegisterStatus"] = false;
 
@@ -52,7 +55,7 @@ namespace tarfly
                     {
                         command.Parameters.AddWithValue("@name", name); // Setup parameter
                         command.Parameters.AddWithValue("@email", email);
-                        command.Parameters.AddWithValue("@password", password);
+                        command.Parameters.AddWithValue("@password", hashedPassword);
 
                         connection.Open();
                         command.ExecuteNonQuery();

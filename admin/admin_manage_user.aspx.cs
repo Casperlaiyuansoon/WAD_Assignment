@@ -215,6 +215,9 @@ namespace WAD_Assignment.admin
             string state = register_state.Text;
             string country = register_country.Text;
 
+            //Hasdhed the password before storing in the database
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
             //Check if the flight already existed
             string flightExistCheckQuery = "SELECT COUNT(*) FROM Customer WHERE email = @email";
 
@@ -245,7 +248,7 @@ namespace WAD_Assignment.admin
                 {
                     command.Parameters.AddWithValue("@name", name); // Setup parameter
                     command.Parameters.AddWithValue("@email", email);
-                    command.Parameters.AddWithValue("@password", password);
+                    command.Parameters.AddWithValue("@password", hashedPassword);
                     command.Parameters.AddWithValue("@phone", phone);
                     command.Parameters.AddWithValue("@address1", address1);
                     command.Parameters.AddWithValue("@address2", address2);
