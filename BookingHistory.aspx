@@ -23,14 +23,15 @@
             <div class="table-box">
                 <h2 class="booking_history">Booking History</h2>
                 <hr>
+                <br>
                 <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="flight_id" DataSourceID="SqlDataSource1" Height="352px" Width="1241px" CssClass="gridview">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:BoundField DataField="flight_id" HeaderText="flight_id" InsertVisible="False" ReadOnly="True" SortExpression="flight_id" />
+                        <asp:BoundField DataField="flight_id" HeaderText="Flight No" InsertVisible="False" ReadOnly="True" SortExpression="flight_id" />
                         <asp:BoundField DataField="departure_date_time" HeaderText="departure_date_time" SortExpression="departure_date_time" />
-                        <asp:BoundField DataField="departure_city" HeaderText="departure_city" SortExpression="departure_city" />
-                        <asp:BoundField DataField="destination_city" HeaderText="destination_city" SortExpression="destination_city" />
-                        <asp:BoundField DataField="duration" HeaderText="duration" SortExpression="duration" />
+                        <asp:BoundField DataField="departure_city" HeaderText="Departure City" SortExpression="departure_city" />
+                        <asp:BoundField DataField="destination_city" HeaderText="Destination City" SortExpression="destination_city" />
+                        <asp:BoundField DataField="duration" HeaderText="Duration" SortExpression="duration" />
                     </Columns>
 
                     <EditRowStyle BackColor="#2461BF" />
