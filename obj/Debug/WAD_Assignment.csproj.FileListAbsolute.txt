@@ -706,3 +706,13 @@ C:\Users\marcu\Dropbox\PC\Desktop\newgit\obj\Debug\WAD_Assignment.csproj.CoreCom
 C:\Users\marcu\Dropbox\PC\Desktop\newgit\obj\Debug\WAD_Assi.1A819B5E.Up2Date
 C:\Users\marcu\Dropbox\PC\Desktop\newgit\obj\Debug\WAD_Assignment.dll
 C:\Users\marcu\Dropbox\PC\Desktop\newgit\obj\Debug\WAD_Assignment.pdb
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\BCrypt.Net-Next.dll
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Buffers.dll
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Memory.dll
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Numerics.Vectors.dll
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\BCrypt.Net-Next.xml
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Buffers.xml
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Memory.xml
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Numerics.Vectors.xml
+C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Runtime.CompilerServices.Unsafe.xml

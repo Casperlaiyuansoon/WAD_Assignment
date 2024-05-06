@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using BCrypt.Net;
 
 namespace tarfly
 {
@@ -32,6 +33,9 @@ namespace tarfly
                 string city = register_city.Text;
                 string state = register_state.Text;
                 string country = register_country.Text;
+
+                //Hadhed the password before storing in the database
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
                 int count = 0;
                 Session["registerStatus"] = false;
@@ -60,7 +64,7 @@ namespace tarfly
                     {
                         command.Parameters.AddWithValue("@name", name); // Setup parameter
                         command.Parameters.AddWithValue("@email", email);
-                        command.Parameters.AddWithValue("@password", password);
+                        command.Parameters.AddWithValue("@password", hashedPassword);
                         command.Parameters.AddWithValue("@phone_number", phone);
                         command.Parameters.AddWithValue("@address_line_1", address1);
                         command.Parameters.AddWithValue("@address_line_2", address2);
