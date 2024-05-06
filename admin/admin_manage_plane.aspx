@@ -85,6 +85,8 @@
                         <br />
                         <asp:TextBox runat="server" ID="fclass_seat_qty_modify" TextMode="Number" Text=""></asp:TextBox><br><br />
 
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="plane_modify_validation"/>
+
                         <asp:Button ID="save_modify_btn" class="save_btn" runat="server" Text="Save" OnClick="save_modify_btn_Click" ValidationGroup="plane_modify_validation" />
 
                     </div>
@@ -166,6 +168,8 @@
                         <!-- END SECOND ROW -->
 
                     </div>
+
+                    <asp:ValidationSummary ID="ValidationSummary2" runat="server" ForeColor="Red" ValidationGroup="add_plane_validation" />
 
                     <div class="inputField">
                         <asp:Button ID="add_plane_submit" class="register_submit" runat="server" Text="Add" OnClick="add_plane_submit_Click" ValidationGroup="add_plane_validation"/>

@@ -60,7 +60,7 @@
                                     <div class="inner-flex-content">
                                         <span>Email :
                                             <asp:RequiredFieldValidator ID="email_required" runat="server" ForeColor="Red" Text="*" ErrorMessage="Email is required" ControlToValidate="register_email"></asp:RequiredFieldValidator>
-                                            <asp:RegularExpressionValidator ID="email_regex_validate" runat="server" ErrorMessage="Invalid email format" ForeColor="Red" Text="*" ControlToValidate="register_email" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"></asp:RegularExpressionValidator>
+                                            <asp:RegularExpressionValidator ID="email_regex_validate" runat="server" ErrorMessage="Invalid email format" ForeColor="Red" Text="*" ControlToValidate="register_email" ValidationExpression="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" ></asp:RegularExpressionValidator>
                                         </span> <!-- register email --> <br />
                                         <div class="inputField">
                                             <asp:TextBox ID="register_email" class="textField" runat="server" placeholder="e.g. user@hotmail.com"></asp:TextBox><br />
@@ -169,6 +169,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/>
                             </div>
                             <!-- END ADDRESS SECTION -->
                             

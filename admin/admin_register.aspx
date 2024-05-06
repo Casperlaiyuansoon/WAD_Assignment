@@ -87,6 +87,8 @@
                             <!-- END SECOND ROW -->
                         </div>
 
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/>
+
                         <br />
                         <div class="inputField">
                             <asp:Button ID="admin_register_submit" runat="server" Text="Register" OnClick="admin_register_submit_Click" />

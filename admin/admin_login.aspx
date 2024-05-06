@@ -65,6 +65,8 @@
                         <asp:Button ID="admin_login_submit" runat="server" Text="Login" OnClick="admin_login_submit_Click" />
                     </div>
 
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red"/>
+
                 </div>
 
                 <div class="redirect"> <!-- redirect to login -->

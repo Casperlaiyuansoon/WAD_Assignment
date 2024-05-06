@@ -119,6 +119,8 @@
                         <br />
                         <asp:TextBox runat="server" ID="fclass_price_modify" TextMode="Number" Text=""></asp:TextBox><br><br />
 
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="flight_modify_validation"/>
+
                         <asp:Button ID="save_modify_btn" class="save_btn" runat="server" Text="Save" OnClick="save_modify_btn_Click" ValidationGroup="flight_modify_validation" />
 
                     </div>
@@ -300,6 +302,8 @@
                         <!-- END THIRD ROW -->
 
                     </div>
+
+                    <asp:ValidationSummary ID="ValidationSummary2" runat="server" ForeColor="Red" ValidationGroup="add_flight_validation" style="text-align:left"/>
 
                     <div class="inputField">
                         <asp:Button ID="add_flight_submit" class="register_submit" runat="server" Text="Add" OnClick="add_flight_submit_Click" ValidationGroup="add_flight_validation" />

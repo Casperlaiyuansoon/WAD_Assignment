@@ -114,6 +114,8 @@
                         <br />
                         <asp:TextBox runat="server" ID="customer_country_modify" Text=""></asp:TextBox><br><br />
 
+                        <asp:ValidationSummary ID="ValidationSummary2" runat="server" ForeColor="Red" ValidationGroup="customer_modify_validation"/>
+
                         <asp:Button ID="save_modify_btn" class="save_btn" runat="server" Text="Save" OnClick="save_modify_btn_Click" ValidationGroup="customer_modify_validation" />
 
                     </div>
@@ -256,6 +258,8 @@
                         </div>
                         <!-- END ADDRESS SECTION -->
                     </div>
+
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" ValidationGroup="add_user_validation" style="text-align:left"/>
 
                     <div class="inputField">
                         <asp:Button ID="add_user_submit" class="register_submit" runat="server" Text="Add" OnClick="add_user_submit_Click" ValidationGroup="add_user_validation"/>

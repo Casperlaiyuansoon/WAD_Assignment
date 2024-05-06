@@ -716,3 +716,13 @@ C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.
 C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Memory.xml
 C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Numerics.Vectors.xml
 C:\Users\yuansoon\Documents\GitHub\WAD_Assignment_new\WAD_Assignment\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\BCrypt.Net-Next.dll
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Buffers.dll
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Memory.dll
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Numerics.Vectors.dll
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\BCrypt.Net-Next.xml
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Buffers.xml
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Memory.xml
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Numerics.Vectors.xml
+C:\Users\marcu\Dropbox\PC\Desktop\newgit\bin\System.Runtime.CompilerServices.Unsafe.xml
