@@ -27,25 +27,33 @@ namespace tarfly
 
                 Session["loginStatus"] = false;
 
-                string userCredentialCheckQuery = "SELECT * FROM Customer WHERE email = @email AND password = @password"; // Check if the user already exist
+                string userCredentialCheckQuery = "SELECT * FROM Customer WHERE email = @email"; // Check if the user already exists
 
                 using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["TarFly_Database"].ConnectionString))
                 using (SqlCommand command = new SqlCommand(userCredentialCheckQuery, connection))
                 {
                     command.Parameters.AddWithValue("@email", email); // Setup parameter
-                    command.Parameters.AddWithValue("@password", password);
                     connection.Open();
 
                     SqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.Read()) // If the record exist
+                    if (reader.Read()) // If the record exists
                     {
-                        Session["userId"] = reader["customer_id"].ToString();
-                        Session["username"] = reader["name"].ToString();
-                        Session["email"] = reader["email"].ToString();
-                        Session["loginStatus"] = true;
+                        string hashedPasswordFromDB = reader["password"].ToString(); // Retrieve hashed password from the database
 
-                        Response.Redirect("login.aspx");
+                        if (BCrypt.Net.BCrypt.Verify(password, hashedPasswordFromDB)) // Verify the password
+                        {
+                            Session["userId"] = reader["customer_id"].ToString();
+                            Session["username"] = reader["name"].ToString();
+                            Session["email"] = reader["email"].ToString();
+                            Session["loginStatus"] = true;
+
+                            Response.Redirect("login.aspx");
+                        }
+                        else // If the password doesn't match
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Invalid Credential, please try again');", true);
+                        }
                     }
                     else // If the record doesn't exist
                     {
