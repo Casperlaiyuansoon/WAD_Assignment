@@ -52,7 +52,7 @@ namespace tarfly
                             Session["admin_email"] = reader["email"].ToString();
                             Session["adminLoginStatus"] = true;
 
-                            Response.Redirect("admin_login.aspx");
+                            Response.Redirect("admin_dashboard.aspx");
                         }
                         else
                         {
